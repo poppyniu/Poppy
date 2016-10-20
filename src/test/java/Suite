@@ -3,6 +3,7 @@
   <test name="Test">
     <classes>
       <class name="TestNG1.TestNGPoppy"/>
+      
       <class name="TestNG1.Case1"/>
     </classes>
   </test> 

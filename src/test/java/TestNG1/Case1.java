@@ -26,7 +26,6 @@ public class Case1 {
 		{
 			Assert.assertTrue(true);
 		}
-//		poppy‘s code
 	
 	}
 

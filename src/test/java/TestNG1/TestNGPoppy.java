@@ -18,12 +18,12 @@ public class TestNGPoppy {
 		driver.manage().window().maximize();
 
 		WebElement txtbox = driver.findElement(By.name("wd"));
-		txtbox.sendKeys("Glen");
+		txtbox.sendKeys("Gle");
 
 		WebElement btn = driver.findElement(By.id("su"));
 		btn.click();
 
-		String expectedTitle = "Glen_百度搜索";
+		String expectedTitle = "Gle_百度搜索";
 		String actualTitle = driver.getTitle();
 
 		Assert.assertEquals(actualTitle, expectedTitle);
