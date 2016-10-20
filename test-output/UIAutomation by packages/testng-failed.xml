@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [UIAutomation by packages]">
+  <test name="TestNG1(failed)" preserve-order="true">
+    <classes>
+      <class name="TestNG1.Case1">
+        <methods>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TestNG1.Case1 -->
+      <class name="TestNG1.TestNGPoppy">
+        <methods>
+          <include name="tearDown"/>
+          <include name="TestNGCase"/>
+        </methods>
+      </class> <!-- TestNG1.TestNGPoppy -->
+    </classes>
+  </test> <!-- TestNG1(failed) -->
+</suite> <!-- Failed suite [UIAutomation by packages] -->
