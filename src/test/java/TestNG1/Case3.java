@@ -42,6 +42,8 @@ public class Case3 {
 		if (info.isDisplayed() == true) {
 			Assert.assertTrue(true);
 			System.out.println("login succeed ! ");
+			System.out.println("login succeed ! ");
+			System.out.println("login succeed ! ");
 		}
 
 	}
