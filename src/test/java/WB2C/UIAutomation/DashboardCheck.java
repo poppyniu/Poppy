@@ -36,7 +36,7 @@ public class DashboardCheck {
 	@Test(dataProvider = "data")
 	public void DashboardCheckItems(String nodeURL, String browser)
 			throws Exception {
-		driver = new FirefoxDriver();
+		//driver = new FirefoxDriver();
 		driver = new HtmlUnitDriver();
 		if (browser == "htmlunit") {
 			desiredCapabilities = DesiredCapabilities.htmlUnit();
