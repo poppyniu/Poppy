@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="classes" thread-count="5">
+  <test name="Test">
+    <classes> 
+      <class name="WB2C.UIAutomation.LoginFail"/> 
+      <class name="WB2C.UIAutomation.LoginSucceed"/> 
+    </classes>
+  </test> 
+</suite> 
