@@ -1,15 +1,18 @@
 package WB2C.UIAutomation;
 
 import java.net.URL;
+import java.io.File;
+
+import WB2CCommon.CommonUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import WB2CConstants.LoginConstants;
@@ -24,27 +27,18 @@ public class LoginSucceed {
 	LoginPage loginPage;
 	TestAccounts testaccounts;
 	DesiredCapabilities desiredCapabilities;
+    String url;
 
-	@DataProvider(name = "data")
-	public Object[][] data() {
-		return new Object[][] { { NodeIPConstants.linux_Node1_ip, "htmlunit" } };
-	}
-
-	@Test(dataProvider = "data")
-	public void TestLoginPass(String nodeURL, String browser) throws Exception {
-		// driver = new FirefoxDriver();
-		// driver = new HtmlUnitDriver();
-		if (browser == "htmlunit") {
-			desiredCapabilities = DesiredCapabilities.htmlUnit();
-		} else if (browser == "firefox") {
-			desiredCapabilities = DesiredCapabilities.firefox();
-		}
-
-		String url = nodeURL + "/wd/hub";
-		driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
+	@Parameters({"browser"})
+	@Test
+	public void TestLoginPass(String testNGBrowser) throws Exception {
+		desiredCapabilities= CommonUtil.getBrowser(testNGBrowser);
+        url = NodeIPConstants.windows_local_ip + "/wd/hub";
+        driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
 		loginPage = new LoginPage(driver);
 		testaccounts = new TestAccounts();
 		CommonWebDriver.get(driver, URLConstants.loginPageUrl.toString());
+		driver.manage().window().maximize();
 		loginPage.loginWithValidCredential(testaccounts.testbrandcode,
 				testaccounts.testusername, testaccounts.testuserpwd);
 		CommonWebDriver.isElementDisplayed(driver,

@@ -1,11 +1,14 @@
 package WB2C.UIAutomation;
 
+import java.io.File;
 import java.net.URL;
 
+import WB2CCommon.CommonUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -26,24 +29,15 @@ public class LoginFail {
 	TestAccounts testaccounts;
 	DesiredCapabilities desiredCapabilities;
 
-	@DataProvider(name = "data")
-	public Object[][] data() {
-		return new Object[][] { { NodeIPConstants.linux_Node1_ip, "htmlunit" } };
-	}
-
-	@Test(dataProvider = "data")
-	public void TestLoginFail(String nodeURL, String browser) throws Exception {
+	@Parameters({"browser"})
+	@Test
+	public void TestLoginFail(String testNGBrowser) throws Exception {
 		testaccounts = new TestAccounts();
-		// driver = new HtmlUnitDriver();
-		if (browser == "htmlunit") {
-			desiredCapabilities = DesiredCapabilities.htmlUnit();
-		} else if (browser == "firefox") {
-			desiredCapabilities = DesiredCapabilities.firefox();
-		}
-
-		String url = nodeURL + "/wd/hub";
+		desiredCapabilities= CommonUtil.getBrowser(testNGBrowser);
+		String url = NodeIPConstants.windows_local_ip + "/wd/hub";
 		driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
 		CommonWebDriver.get(driver, URLConstants.loginPageUrl.toString());
+		driver.manage().window().maximize();
 		//clear brandcode textbox
 		CommonWebDriver.clearTextbox(driver, By.xpath(LoginConstants.brandCode_input_xpath));
 		//send keys to brandcode textbox

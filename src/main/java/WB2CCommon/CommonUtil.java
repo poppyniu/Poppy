@@ -13,7 +13,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Reporter;
@@ -21,6 +23,8 @@ import org.testng.Reporter;
 import WB2CConstants.AppConstants;
 import WB2CConstants.FormConstants;
 import WB2CPages.LoginPage;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -41,8 +45,7 @@ import java.util.regex.Pattern;
 public class CommonUtil {
 	
 	private static Logger logger = LoggerFactory.getLogger(CommonUtil.class);
-	
-	
+
 	public static void printLog(String text){
 		System.setProperty("org.uncommons.reportng.escape-output", "false");
 		if(AppConstants.LOG_STEP){
@@ -54,7 +57,7 @@ public class CommonUtil {
 	/**
      * Will take screenshot.
      * @param driver WebDriver on a page, or WebElement on a page.
-     * @param filePath The file path to save screenshot(s).
+     * @param dirName The file path to save screenshot(s).
      * @return screenshot Path 
      * @throws Exception
      */
@@ -127,7 +130,7 @@ public class CommonUtil {
 	 * 
 	 * @param driver
 	 * @param tableBy
-	 * @param collumn
+	 * @param column
 	 * @return
 	 */
 	public static List<WebElement> getCellElementsByColumn(WebDriver driver, By tableBy, int column) {
@@ -214,7 +217,7 @@ public class CommonUtil {
 	/**
 	 * switch back to parent window
 	 * 
-	 * @param testDriver
+	 * @param driver
 	 * @param parentWindow
 	 */
 	public static void switchWindowBack(WebDriver driver, String parentWindow) throws Exception {
@@ -411,7 +414,7 @@ public class CommonUtil {
      * 
      * @param tableBy
      * @param name
-     * @param nameColumn Document name column number located in the document table 
+     * @param column Document name column number located in the document table
      * @return target document row number in document view
      */
     public static int findTargetItemRowNum(WebDriver driver, By tableBy, String name, int column) {
@@ -745,5 +748,36 @@ public class CommonUtil {
 		}
 		return files;
 	}*/
+
+	@Test
+	public static DesiredCapabilities getBrowser(String testNGBrowser){
+		DesiredCapabilities desiredCapabilities=null;
+		String pomBrowser=System.getProperty("browser").toString();
+		if(pomBrowser.equals("firefox"))
+		{
+			desiredCapabilities = DesiredCapabilities.firefox();
+		}
+		else if(pomBrowser.equals("chrome")) {
+			File file = new File("E:\\Software\\Chrome\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+			desiredCapabilities = DesiredCapabilities.chrome();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("test-type");
+			desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
+		}
+		else{
+			if (testNGBrowser.equals("firefox")) {
+				desiredCapabilities = DesiredCapabilities.firefox();
+			} else if (testNGBrowser.equals("chrome")) {
+				File file = new File("E:\\Software\\Chrome\\chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+				desiredCapabilities = DesiredCapabilities.chrome();
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("test-type");
+				desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
+			}
+		}
+		return desiredCapabilities;
+	}
 
 }
