@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="classes" thread-count="5">
   <test name="Test">
-    <classes> 
-      <class name="WB2C.UIAutomation.LoginFail"/> 
-      <class name="WB2C.UIAutomation.LoginSucceed"/> 
+    <classes>
+      <!--<parameter name="testNGBrowser" value="chrome"/>-->
+      <class name="WB2C.UIAutomation.LoginFail"/>
+      <class name="WB2C.UIAutomation.LoginSucceed"/>
+      <class name="WB2C.UIAutomation.LogOut"/>
+      <class name="WB2C.UIAutomation.DashboardCheck"/>
     </classes>
-  </test> 
-</suite> 
+  </test>
+</suite>
