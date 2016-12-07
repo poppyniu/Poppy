@@ -758,8 +758,6 @@ public class CommonUtil {
 			desiredCapabilities = DesiredCapabilities.firefox();
 		}
 		else if(pomBrowser.equals("chrome")) {
-			File file = new File("E:\\Software\\Chrome\\chromedriver.exe");
-			System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 			desiredCapabilities = DesiredCapabilities.chrome();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("test-type");
@@ -769,8 +767,6 @@ public class CommonUtil {
 			if (testNGBrowser.equals("firefox")) {
 				desiredCapabilities = DesiredCapabilities.firefox();
 			} else if (testNGBrowser.equals("chrome")) {
-				File file = new File("E:\\Software\\Chrome\\chromedriver.exe");
-				System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 				desiredCapabilities = DesiredCapabilities.chrome();
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("test-type");
