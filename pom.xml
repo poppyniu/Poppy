@@ -61,10 +61,10 @@
                 <version>2.17</version>
                 <configuration>
                     <systemPropertyVariables>
-                        <browser>${build.testOutputDirectory}/$browser</browser>
+                        <browser>${project.build.testOutputDirectory}/$browser</browser>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${build.testOutputDirectory}/Suite.xml</suiteXmlFile>
+                        <suiteXmlFile>${project.build.testOutputDirectory}/Suite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

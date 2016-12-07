@@ -18,25 +18,25 @@ import WB2CCommon.CommonWebDriver;
 import WB2CPages.LoginPage;
 
 public class LogOut {
-    WebDriver driver;
-    LoginPage loginPage;
-    TestAccounts testaccounts;
-    DesiredCapabilities desiredCapabilities;
+    private WebDriver driver;
+    private LoginPage loginPage;
+    private TestAccounts testaccounts;
+    private DesiredCapabilities desiredCapabilities;
 
 
     @Parameters({"browser"})
     @Test
-    public void LogOut(String testNGBrowser)
+    public void TestLogOut(String testNGBrowser)
             throws Exception {
         desiredCapabilities= CommonUtil.getBrowser(testNGBrowser);
-        String url = NodeIPConstants.windows_local_ip + "/wd/hub";
+        String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
         loginPage = new LoginPage(driver);
         testaccounts = new TestAccounts();
-        CommonWebDriver.get(driver, URLConstants.loginPageUrl.toString());
+        CommonWebDriver.get(driver, URLConstants.loginPageUrl);
         driver.manage().window().maximize();
-        loginPage.loginWithValidCredential(testaccounts.testbrandcode,
-                testaccounts.testusername, testaccounts.testuserpwd);
+        loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
+                TestAccounts.testusername, TestAccounts.testuserpwd);
         CommonWebDriver.wait(driver,2);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath("//i[@class='icon-angle-down']"));
@@ -45,7 +45,7 @@ public class LogOut {
         CommonWebDriver.wait(driver,10);
         Boolean loginPageTitleExist=CommonWebDriver.isElementDisplayed(driver,
                 By.xpath("//*[@class='form-title']"));
-        if(loginPageTitleExist==true)
+        if(loginPageTitleExist)
         {
             System.out.println("Log out succeed,test pass!");
         }

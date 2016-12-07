@@ -22,22 +22,22 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import sun.font.TrueTypeFont;
 
 public class DashboardCheck {
-	WebDriver driver;
-	LoginPage loginPage;
-	TestAccounts testaccounts;
-	DesiredCapabilities desiredCapabilities;
+	private WebDriver driver;
+	private LoginPage loginPage;
+	private TestAccounts testaccounts;
+	private DesiredCapabilities desiredCapabilities;
 
 	@Parameters({"browser"})
 	@Test
 	public void DashboardCheckItems(String testNGBrowser) throws Exception {
 		desiredCapabilities=CommonUtil.getBrowser(testNGBrowser);
-		String url = NodeIPConstants.windows_local_ip + "/wd/hub";
+		String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
 		driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
 		loginPage = new LoginPage(driver);
 		testaccounts = new TestAccounts();
-		CommonWebDriver.get(driver, URLConstants.loginPageUrl.toString());
-		loginPage.loginWithValidCredential(testaccounts.testbrandcode,
-				testaccounts.testusername, testaccounts.testuserpwd);
+		CommonWebDriver.get(driver, URLConstants.loginPageUrl);
+		loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
+				TestAccounts.testusername, TestAccounts.testuserpwd);
 		driver.manage().window().maximize();
 		CommonWebDriver.clickElementWhenPresent(driver,
 				By.xpath(SideMenuConstants.dashboard_xpath));
@@ -59,7 +59,7 @@ public class DashboardCheck {
 				By.xpath("//div[@id='subscribeLocation']"));
 		Boolean messageLocationChartExist = CommonWebDriver.isElementDisplayed(driver,
 				By.xpath("//div[@id='messageLocation']"));
-		if (pageTitleExist == true&blueBoardExist== true&greenBoardExist== true&purpleBoardExist==true&yellowBoardExist==true&subscribeChartExist==true&messageChartExist==true&locationChartExist==true&messageLocationChartExist==true) {
+		if (pageTitleExist&blueBoardExist&greenBoardExist&purpleBoardExist&yellowBoardExist&subscribeChartExist&messageChartExist&locationChartExist&messageLocationChartExist) {
 			System.out.println("The dashboaed items are correctly displayed,test pass!");
 		}
 	}
