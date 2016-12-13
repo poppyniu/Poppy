@@ -32,6 +32,7 @@ public class DashboardCheck {
 		loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
 				TestAccounts.testusername, TestAccounts.testuserpwd);
 		driver.manage().window().maximize();
+		CommonWebDriver.wait(driver,2);
 		CommonWebDriver.clickElementWhenPresent(driver,
 				By.xpath(SideMenuConstants.dashboard_xpath));
 		Boolean pageTitleExist = CommonWebDriver.isElementDisplayed(driver,
