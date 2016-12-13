@@ -1,14 +1,9 @@
 package WB2C.UIAutomation;
 
-import java.io.File;
 import java.net.URL;
-
 import WB2CCommon.CommonUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
@@ -18,8 +13,6 @@ import WB2CConstants.URLConstants;
 import WB2CConstants.NodeIPConstants;
 import WB2CCommon.CommonWebDriver;
 import WB2CPages.LoginPage;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import sun.font.TrueTypeFont;
 
 public class DashboardCheck {
 	private WebDriver driver;
