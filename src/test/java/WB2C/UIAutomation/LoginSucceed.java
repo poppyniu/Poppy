@@ -3,6 +3,7 @@ package WB2C.UIAutomation;
 import java.net.URL;
 import java.io.File;
 
+import WB2CCommon.CommonAssert;
 import WB2CCommon.CommonUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -41,8 +42,14 @@ public class LoginSucceed {
 		driver.manage().window().maximize();
 		loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
 				TestAccounts.testusername, TestAccounts.testuserpwd);
-		CommonWebDriver.isElementDisplayed(driver,
-				By.xpath(LoginConstants.span_username_xpath));
+		if(CommonWebDriver.isElementDisplayed(driver,
+				By.xpath(LoginConstants.span_username_xpath)))
+		{
+			System.out.println("Login succeed, test pass! ");
+		}
+		else
+			CommonAssert.fail("Login get error, test fail!");
+
 	}
 
 	@AfterTest

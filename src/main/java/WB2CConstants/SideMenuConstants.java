@@ -8,6 +8,10 @@ public class SideMenuConstants {
 	public static String wechat_management_xpath = "//i[@class='icon-comments']";
 	public static String wechat_management_desc = "The wechat management menu on the left side menu bar";
 
+	public static String wechat_acount_xpath = "//a[@id='wxAccountMgmt']";
+	public static String wechat_text_image_xpath = "//a[@id='materialNewsMgmt']";
+	public static String wechat_custom_menu_xpath = "//a[@id='wxMenuMgmt']";
+
 	public static String membership_management_xpath = "//i[@class='icon-group']";
 	public static String membership_management_desc = "The membership management menu on the left side menu bar";
 

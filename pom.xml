@@ -52,6 +52,11 @@
             <artifactId>logback-classic</artifactId>
             <version>1.1.3</version>
         </dependency>
+        <dependency>
+            <groupId>com.epam</groupId>
+            <artifactId>TestUtil</artifactId>
+            <version>0.1.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -62,6 +67,8 @@
                 <configuration>
                     <systemPropertyVariables>
                         <browser>${project.build.testOutputDirectory}/$browser</browser>
+                        <testdata>${project.basedir}\src\test\resources\test.jpg</testdata>
+                        <testdata1>${project.basedir}\src\test\resources\test1.jpg</testdata1>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
                         <suiteXmlFile>${project.build.testOutputDirectory}/Suite.xml</suiteXmlFile>

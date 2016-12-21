@@ -51,7 +51,7 @@ public class CommonWebDriver {
      * @return 
      * @throws InterruptedException
      */
-    private static boolean navigateAndLoadPage(WebDriver driver, String URL, long timeout) throws InterruptedException{
+    public static boolean navigateAndLoadPage(WebDriver driver, String URL, long timeout) throws InterruptedException{
     	boolean openFailed = true;
     	int smallWaiting = 3;
     	int waitTime = 0;
@@ -125,7 +125,6 @@ public class CommonWebDriver {
     /**
      * Wait time
      * @param driver
-     * @param timeOut In Seconds 
      */
     public static void wait(WebDriver driver, long timeOutInSeconds) {
         try {
@@ -523,7 +522,7 @@ public class CommonWebDriver {
      * Wrap up message
      * 
      * @param desc
-     * @return
+     * @return message
      */
     private static String packErrMsg(String desc){
     	String message = "";
@@ -539,7 +538,6 @@ public class CommonWebDriver {
 	 * clear text box if it's not empty
 	 * 
 	 * @param driver
-	 * @param element
 	 * @return
 	 */
 	public static void clearTextbox(WebDriver driver,By by)
@@ -554,7 +552,6 @@ public class CommonWebDriver {
 	 * check if element exists
 	 * 
 	 * @param driver
-	 * @param element
 	 * @return
 	 */
 	public static boolean isElementDisplayed(WebDriver driver, By by) {
@@ -570,5 +567,18 @@ public class CommonWebDriver {
 		return elementStatus;
 
 	}
+
+    public static boolean isContentAppeared(WebDriver driver,String content) {
+        boolean status = false;
+        try {
+            driver.findElement(By.xpath("//*[contains(@src,'" + content + "')]"));
+            System.out.println(content + " is appeard!");
+            status = true;
+        } catch (NoSuchElementException e) {
+            System.out.println("'" + content + "' doesn't exist!");
+        }
+          return status;
+       }
+
 
 }

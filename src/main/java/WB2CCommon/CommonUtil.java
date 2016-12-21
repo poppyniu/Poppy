@@ -26,6 +26,8 @@ import WB2CPages.LoginPage;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -715,8 +717,8 @@ public class CommonUtil {
     
     /**
      * Find matched values in a string according to specified regular expression
-     * @param input
-     * @param regex
+     * @param input input value
+     * @param regex regex value
      * @return
      */
     public static List<String> findMatchedValues(String input, String regex){
@@ -776,4 +778,22 @@ public class CommonUtil {
 		return desiredCapabilities;
 	}
 
+	// put string into clipboard
+	public  static void setClipboardData(String string) {
+		  StringSelection stringSelection = new StringSelection(string);
+		  Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+		       }
+
+
+	public static void alertExist(WebDriver driver,String content)
+	{
+		Alert alert=driver.switchTo().alert();
+		String alertText=alert.getText().toString();
+		if(alertText.toString().contains(content))
+		{
+			System.out.println("See the correct alert, test pass! ");
+		}
+		else
+			CommonAssert.fail("Does not see the correct dialog, test fail!");
+	}
 }
