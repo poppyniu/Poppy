@@ -3,31 +3,31 @@
   <test name="Test">
     <classes>
       <!--<parameter name="testNGBrowser" value="chrome"/>-->
-      <class name="WB2C.UIAutomation.LoginFail"/>
-      <class name="WB2C.UIAutomation.LoginSucceed"/>
-      <class name="WB2C.UIAutomation.LogOut"/>
-      <class name="WB2C.UIAutomation.DashboardCheck"/>
+      <!--<class name="WB2C.UIAutomation.LoginFail"/>-->
+      <!--<class name="WB2C.UIAutomation.LoginSucceed"/>-->
+      <!--<class name="WB2C.UIAutomation.LogOut"/>-->
+      <!--<class name="WB2C.UIAutomation.DashboardCheck"/>-->
       <class name="WB2C.UIAutomation.AddSecondaryImageText"/>
-      <class name="WB2C.UIAutomation.AddSecondaryInvalidImageText"/>
-      <class name="WB2C.UIAutomation.CustomMenuCreate"/>
-      <class name="WB2C.UIAutomation.CustomMenuEdit"/>
-      <class name="WB2C.UIAutomation.CustomMenuInvalidCreate"/>
-      <class name="WB2C.UIAutomation.CustomMenuRefresh"/>
-      <class name="WB2C.UIAutomation.CustomMenuSynchronize"/>
-      <class name="WB2C.UIAutomation.DeleteSecondaryImageText"/>
-      <class name="WB2C.UIAutomation.EditSecondaryImageText"/>
-      <class name="WB2C.UIAutomation.ImageTextCreate"/>
-      <class name="WB2C.UIAutomation.ImageTextDelete"/>
-      <class name="WB2C.UIAutomation.ImageTextEdit"/>
-      <class name="WB2C.UIAutomation.ImageTextInvalidCreate"/>
-      <class name="WB2C.UIAutomation.ImageTextInvalidDelete"/>
-      <class name="WB2C.UIAutomation.ImageTextRefresh"/>
-      <class name="WB2C.UIAutomation.ImageTextSearch"/>
-      <class name="WB2C.UIAutomation.ImageTextSwitching"/>
-      <class name="WB2C.UIAutomation.InvalidDeleteSecondaryImageText"/>
-      <class name="WB2C.UIAutomation.WechatAccountInvalidDelete"/>
-      <class name="WB2C.UIAutomation.WechatAccountRefresh"/>
-      <class name="WB2C.UIAutomation.WechatAccountSearch"/>
+      <!--<class name="WB2C.UIAutomation.AddSecondaryInvalidImageText"/>-->
+      <!--<class name="WB2C.UIAutomation.CustomMenuCreate"/>-->
+      <!--<class name="WB2C.UIAutomation.CustomMenuEdit"/>-->
+      <!--<class name="WB2C.UIAutomation.CustomMenuInvalidCreate"/>-->
+      <!--<class name="WB2C.UIAutomation.CustomMenuRefresh"/>-->
+      <!--<class name="WB2C.UIAutomation.CustomMenuSynchronize"/>-->
+      <!--<class name="WB2C.UIAutomation.DeleteSecondaryImageText"/>-->
+      <!--<class name="WB2C.UIAutomation.EditSecondaryImageText"/>-->
+      <!--<class name="WB2C.UIAutomation.ImageTextCreate"/>-->
+      <!--<class name="WB2C.UIAutomation.ImageTextDelete"/>-->
+      <!--<class name="WB2C.UIAutomation.ImageTextEdit"/>-->
+      <!--<class name="WB2C.UIAutomation.ImageTextInvalidCreate"/>-->
+      <!--<class name="WB2C.UIAutomation.ImageTextInvalidDelete"/>-->
+      <!--<class name="WB2C.UIAutomation.ImageTextRefresh"/>-->
+      <!--<class name="WB2C.UIAutomation.ImageTextSearch"/>-->
+      <!--<class name="WB2C.UIAutomation.ImageTextSwitching"/>-->
+      <!--<class name="WB2C.UIAutomation.InvalidDeleteSecondaryImageText"/>-->
+      <!--<class name="WB2C.UIAutomation.WechatAccountInvalidDelete"/>-->
+      <!--<class name="WB2C.UIAutomation.WechatAccountRefresh"/>-->
+      <!--<class name="WB2C.UIAutomation.WechatAccountSearch"/>-->
     </classes>
   </test>
 </suite>
