@@ -65,10 +65,8 @@ public class AddSecondaryImageText {
         CommonWebDriver.wait(driver,2);
         CommonWebDriver.sendKeysToElement(driver,By.xpath("//input[@id='title']"),"secondary title",1);
         CommonWebDriver.sendKeysToElement(driver,By.xpath("//input[@id='author']"),"secondary author",1);
-        CommonWebDriver.clickElement(driver,By.xpath("//img[@id='image']"));
-        CommonWebDriver.wait(driver,3);
         driver.findElement(By.xpath("//input[@type='file']")).sendKeys(testDataPath);
-        CommonWebDriver.wait(driver,3);
+        CommonWebDriver.wait(driver,2);
         CommonWebDriver.sendKeysToElement(driver,By.xpath("//textarea[@id='summary']"),"secondary summary",1);
         CommonWebDriver.sendKeysToElement(driver,By.xpath("//input[@id='url']"),"https://www.baidu.com",1);
         CommonWebDriver.clickElement(driver,By.xpath("//div[@id='tabs']/ul/li[2]/a"));
