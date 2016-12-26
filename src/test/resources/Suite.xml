@@ -3,7 +3,7 @@
   <test name="Test">
     <classes>
       <!--<parameter name="testNGBrowser" value="chrome"/>-->
-      <!--<class name="WB2C.UIAutomation.AddSecondaryImageText"/>-->
+      <class name="WB2C.UIAutomation.AddSecondaryImageText"/>
       <!--<class name="WB2C.UIAutomation.AddSecondaryInvalidImageText"/>-->
       <!--<class name="WB2C.UIAutomation.CustomMenuCreate"/>-->
       <!--<class name="WB2C.UIAutomation.CustomMenuDelete"/>-->
@@ -25,9 +25,9 @@
       <!--<class name="WB2C.UIAutomation.ImageTextSearch"/>-->
       <!--<class name="WB2C.UIAutomation.ImageTextSwitching"/>-->
       <!--<class name="WB2C.UIAutomation.InvalidDeleteSecondaryImageText"/>-->
-      <class name="WB2C.UIAutomation.LoginFail"/>
-      <class name="WB2C.UIAutomation.LoginSucceed"/>
-      <class name="WB2C.UIAutomation.LogOut"/>
+      <!--<class name="WB2C.UIAutomation.LoginFail"/>-->
+      <!--<class name="WB2C.UIAutomation.LoginSucceed"/>-->
+      <!--<class name="WB2C.UIAutomation.LogOut"/>-->
       <!--<class name="WB2C.UIAutomation.WechatAccountInvalidDelete"/>-->
       <!--<class name="WB2C.UIAutomation.WechatAccountRefresh"/>-->
       <!--<class name="WB2C.UIAutomation.WechatAccountSearch"/>-->
