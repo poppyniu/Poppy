@@ -10,7 +10,7 @@ public class PageObject {
     public PageObject(WebDriver driver) {
         this.driver = driver;
     }
-    
+
 //    public void logout() throws Exception{
 //    	SideTopNavBar sideTopNavBar = new SideTopNavBar(driver);
 //    	sideTopNavBar.clickMeIcon();

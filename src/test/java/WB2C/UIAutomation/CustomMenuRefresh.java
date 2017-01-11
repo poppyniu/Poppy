@@ -37,22 +37,20 @@ public class CustomMenuRefresh {
         driver.manage().window().maximize();
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
                 TestAccounts.testusername, TestAccounts.testuserpwd);
-        CommonWebDriver.navigateAndLoadPage(driver,URLConstants.homePageUrl,3);
+        CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.wechat_management_xpath));
-        CommonWebDriver.wait(driver,2);
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.wechat_custom_menu_xpath));
-        CommonWebDriver.wait(driver,4);
-        CommonWebDriver.switchToFrame(driver,By.xpath("//iframe[@id='wxMenuMgmtFrame']"));
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnRefresh']"));
-        CommonWebDriver.wait(driver,2);
-        boolean checkBoxSelected=CommonWebDriver.getElement(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li")).isSelected();
-        if(!checkBoxSelected)
-        {
+        CommonWebDriver.wait(driver, 4);
+        CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='wxMenuMgmtFrame']"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnRefresh']"));
+        CommonWebDriver.wait(driver, 2);
+        boolean checkBoxSelected = CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li")).isSelected();
+        if (!checkBoxSelected) {
             System.out.println("Refresh custom menu page succeed, test pass! ");
-        }
-        else
+        } else
             CommonAssert.fail("Refresh custom menu page get error, test fail!");
 
     }

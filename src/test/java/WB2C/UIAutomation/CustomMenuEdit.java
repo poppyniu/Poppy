@@ -40,17 +40,17 @@ public class CustomMenuEdit {
         driver.manage().window().maximize();
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
                 TestAccounts.testusername, TestAccounts.testuserpwd);
-        CommonWebDriver.navigateAndLoadPage(driver,URLConstants.homePageUrl,3);
+        CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.wechat_management_xpath));
-        CommonWebDriver.wait(driver,2);
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.wechat_custom_menu_xpath));
-        CommonWebDriver.wait(driver,4);
-        CommonWebDriver.switchToFrame(driver,By.xpath("//iframe[@id='wxMenuMgmtFrame']"));
-        WebElement table=driver.findElement(By.xpath(".//*[@class='k-selectable']"));
+        CommonWebDriver.wait(driver, 4);
+        CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='wxMenuMgmtFrame']"));
+        WebElement table = driver.findElement(By.xpath(".//*[@class='k-selectable']"));
         List<WebElement> rows = table.findElements(By.tagName("tr"));
-        int rowsCount=rows.size()-1;
-        if (rowsCount==0) {
+        int rowsCount = rows.size() - 1;
+        if (rowsCount == 0) {
             CustomMenuPage.CreateFirstLevelMenu(driver);
             CommonWebDriver.wait(driver, 2);
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//tbody/tr[1]/td[1]/a/li"));
@@ -64,13 +64,11 @@ public class CustomMenuEdit {
             if (editName.contains("edit")) {
                 System.out.println("Edit custom menu succeed, test pass! ");
                 //delete test data
-                CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/tbody/tr[1]/td[7]/a[4]/li"));
-                CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
+                CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/table/tbody/tr[1]/td[7]/a[4]/li"));
+                CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-ok']"));
             } else
                 CommonAssert.fail("Edit custom menu get error, test fail!");
-        }
-        else
-        {
+        } else {
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//tbody/tr[1]/td[1]/a/li"));
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//tbody/tr[1]/td[7]/a[3]"));
             CommonWebDriver.wait(driver, 1);

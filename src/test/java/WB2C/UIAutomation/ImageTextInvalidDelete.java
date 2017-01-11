@@ -29,7 +29,7 @@ public class ImageTextInvalidDelete {
     private TestAccounts testaccounts;
     private DesiredCapabilities desiredCapabilities;
     private ImageTextPage imageTextPage = new ImageTextPage();
-    private ImageTextMaterialUtil imageTextMaterialUtil=new ImageTextMaterialUtil();
+    private ImageTextMaterialUtil imageTextMaterialUtil = new ImageTextMaterialUtil();
     private MaterialNews materialNews;
 
     @Parameters({"browser"})
@@ -44,31 +44,29 @@ public class ImageTextInvalidDelete {
         driver.manage().window().maximize();
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
                 TestAccounts.testusername, TestAccounts.testuserpwd);
-        CommonWebDriver.navigateAndLoadPage(driver,URLConstants.homePageUrl,3);
+        CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.wechat_management_xpath));
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.wechat_text_image_xpath));
-        CommonWebDriver.wait(driver,4);
-        CommonWebDriver.switchToFrame(driver,By.xpath("//iframe[@id='materialNewsMgmtFrame']"));
+        CommonWebDriver.wait(driver, 4);
+        CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='materialNewsMgmtFrame']"));
         //prepare test data
-        materialNews=imageTextMaterialUtil.createTextImageMaterial();
-        CommonWebDriver.wait(driver,2);
+        materialNews = imageTextMaterialUtil.createTextImageMaterial();
+        CommonWebDriver.wait(driver, 2);
         //delete the new created test data
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//a[@id='btnRefresh']"));
-        CommonWebDriver.wait(driver,4);
-        CommonWebDriver.sendKeysWithEnterToElement(driver,By.xpath("//input[@id='searchText']"),"test title");
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath("//div[@id='container']/div[3]/div/div[3]/ul/li[3]/a/i"));
-        CommonWebDriver.wait(driver,1);
+        CommonWebDriver.wait(driver, 4);
+        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath("//input[@id='searchText']"), "test title");
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//div[@id='container']/div[3]/div/div[3]/ul/li[3]/a/i"));
+        CommonWebDriver.wait(driver, 1);
         Actions action = new Actions(driver);
         action.sendKeys(Keys.TAB).perform();
         action.sendKeys(Keys.ENTER).perform();
-        CommonWebDriver.wait(driver,2);
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath("//img[@src='/WCPPRO/api/file/5/test.jpg']")))
-        {
+        CommonWebDriver.wait(driver, 2);
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//img[@src='/WCPPRO/api/file/5/test.jpg']"))) {
             System.out.println("Cancel the delete action succeed, test pass! ");
-        }
-        else
+        } else
             Assert.fail("Cancel the delete action get error, test fail");
     }
 

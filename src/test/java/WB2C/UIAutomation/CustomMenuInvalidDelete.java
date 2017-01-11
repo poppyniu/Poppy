@@ -40,71 +40,63 @@ public class CustomMenuInvalidDelete {
         driver.manage().window().maximize();
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
                 TestAccounts.testusername, TestAccounts.testuserpwd);
-        CommonWebDriver.navigateAndLoadPage(driver,URLConstants.homePageUrl,3);
+        CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.wechat_management_xpath));
-        CommonWebDriver.wait(driver,2);
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.wechat_custom_menu_xpath));
-        CommonWebDriver.wait(driver,4);
-        CommonWebDriver.switchToFrame(driver,By.xpath("//iframe[@id='wxMenuMgmtFrame']"));
+        CommonWebDriver.wait(driver, 4);
+        CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='wxMenuMgmtFrame']"));
         // select nothing and delete
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnRemove']"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnRemove']"));
         CommonWebDriver.wait(driver, 1);
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@class='alertify-log alertify-log-delete alertify-log-show']")))
-        {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@class='alertify-log alertify-log-delete alertify-log-show']"))) {
             System.out.println("Select nothing to delete, see the correct wanring message, test pass! ");
-        }
-        else CommonAssert.fail("Select nothing to delete, does not see the correct wanring message, test fail!");
+        } else CommonAssert.fail("Select nothing to delete, does not see the correct wanring message, test fail!");
 
-        WebElement table=driver.findElement(By.xpath(".//*[@class='k-selectable']"));
+        WebElement table = driver.findElement(By.xpath(".//*[@class='k-selectable']"));
         List<WebElement> rows = table.findElements(By.tagName("tr"));
-        int rowsCount=rows.size()-1;
-        if (rowsCount==0) {
+        int rowsCount = rows.size() - 1;
+        if (rowsCount == 0) {
             CustomMenuPage.CreateFirstLevelMenu(driver);
             CommonWebDriver.wait(driver, 2);
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//tbody/tr[1]/td[1]/a/li"));
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//tbody/tr[1]/td[7]/a[4]"));
             CommonWebDriver.wait(driver, 1);
-            if (CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@id='alertify']/div/article/p"))) {
+            if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='alertify']/div/article/p"))) {
                 System.out.println("Confirm to delete dialog appears! ");
                 //cancel delete custom menu
-                CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-cancel']"));
+                CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-cancel']"));
                 CommonWebDriver.wait(driver, 2);
-                WebElement table1=driver.findElement(By.xpath(".//*[@class='k-selectable']"));
+                WebElement table1 = driver.findElement(By.xpath(".//*[@class='k-selectable']"));
                 List<WebElement> rows1 = table1.findElements(By.tagName("tr"));
-                int rowsCount1=rows1.size()-1;
-                if (rowsCount1==1)
-                {
+                int rowsCount1 = rows1.size() - 1;
+                if (rowsCount1 == 1) {
                     System.out.println("The custom menu is not deleted, test pass! ");
                     //delete test data
                     CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//tbody/tr[1]/td[1]/a/li"));
                     CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//tbody/tr[1]/td[7]/a[4]"));
                     CommonWebDriver.wait(driver, 1);
-                    CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
-                }
-                else CommonAssert.fail("Cancel the delete get error, test fail!");
+                    CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-ok']"));
+                } else CommonAssert.fail("Cancel the delete get error, test fail!");
 
             } else
                 CommonAssert.fail("Confirm to delete dialog does not appears, test fail!");
-        }
-        else
-        {
+        } else {
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//tbody/tr[1]/td[1]/a/li"));
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//tbody/tr[1]/td[7]/a[4]"));
             CommonWebDriver.wait(driver, 1);
-            if (CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@id='alertify']/div/article/p"))) {
+            if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='alertify']/div/article/p"))) {
                 System.out.println("Confirm to delete dialog appears! ");
                 //cancel delete custom menu
-                CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-cancel']"));
+                CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-cancel']"));
                 CommonWebDriver.wait(driver, 2);
-                WebElement table1=driver.findElement(By.xpath(".//*[@class='k-selectable']"));
+                WebElement table1 = driver.findElement(By.xpath(".//*[@class='k-selectable']"));
                 List<WebElement> rows1 = table1.findElements(By.tagName("tr"));
-                int rowsCount1=rows1.size()-1;
-                if (rowsCount1==rowsCount)
-                {
+                int rowsCount1 = rows1.size() - 1;
+                if (rowsCount1 == rowsCount) {
                     System.out.println("The custom menu is not deleted, test pass! ");
-                }
-                else CommonAssert.fail("Cancel the delete function get error, test fail!");
+                } else CommonAssert.fail("Cancel the delete function get error, test fail!");
 
             } else
                 CommonAssert.fail("Confirm to delete dialog does not appears, test fail!");

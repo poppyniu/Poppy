@@ -1,17 +1,25 @@
 package WB2C.UIAutomation;
 
-import java.net.URL;
-import java.util.List;
 import WB2CCommon.CommonAssert;
 import WB2CCommon.CommonUtil;
-import WB2CConstants.*;
+import WB2CCommon.CommonWebDriver;
+import WB2CConstants.NodeIPConstants;
+import WB2CConstants.SideMenuConstants;
+import WB2CConstants.TestAccounts;
+import WB2CConstants.URLConstants;
 import WB2CPages.CustomMenuPage;
-import org.openqa.selenium.*;
+import WB2CPages.LoginPage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.*;
-import WB2CCommon.CommonWebDriver;
-import WB2CPages.LoginPage;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import java.net.URL;
+import java.util.List;
 
 public class CustomMenuInvalidCreate {
     private WebDriver driver;
@@ -31,58 +39,50 @@ public class CustomMenuInvalidCreate {
         driver.manage().window().maximize();
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
                 TestAccounts.testusername, TestAccounts.testuserpwd);
-        CommonWebDriver.navigateAndLoadPage(driver,URLConstants.homePageUrl,3);
+        CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.wechat_management_xpath));
-        CommonWebDriver.wait(driver,2);
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.wechat_custom_menu_xpath));
-        CommonWebDriver.wait(driver,4);
-        CommonWebDriver.switchToFrame(driver,By.xpath("//iframe[@id='wxMenuMgmtFrame']"));
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnNew']"));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnSave']"));
-        CommonWebDriver.wait(driver,2);
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath("//span[@class='k-icon k-warning']"))&CommonWebDriver.isElementDisplayed(driver,By.xpath("//form[@id='form']/ul/li[2]/span/span"))&CommonWebDriver.isElementDisplayed(driver,By.xpath("//form[@id='form']/ul/li[8]/span/span[2]/span"))) {
+        CommonWebDriver.wait(driver, 4);
+        CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='wxMenuMgmtFrame']"));
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnNew']"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
+        CommonWebDriver.wait(driver, 2);
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//span[@class='k-icon k-warning']")) & CommonWebDriver.isElementDisplayed(driver, By.xpath("//form[@id='form']/ul/li[2]/span/span")) & CommonWebDriver.isElementDisplayed(driver, By.xpath("//form[@id='form']/ul/li[8]/span/span[2]/span"))) {
             System.out.println("Do not input name,key,state see the correct warning message, test pass! ");
-            CommonWebDriver.clickElement(driver,By.xpath("//span[@class='k-icon k-i-close']"));
-        }
-        else
+            CommonWebDriver.clickElement(driver, By.xpath("//span[@class='k-icon k-i-close']"));
+        } else
             CommonAssert.fail("Do not input name,key,state does not see the correct warning message, test fail!");
         //create more than 3 first level menu
-        List<WebElement> levelOneIcon=driver.findElements(By.xpath("//i[@class='icon-reorder level-one']"));
-        int levelOneIconCount=levelOneIcon.size();
-        int needCreateNum=3-levelOneIconCount;
-        if(needCreateNum==0)
-        {
+        List<WebElement> levelOneIcon = driver.findElements(By.xpath("//i[@class='icon-reorder level-one']"));
+        int levelOneIconCount = levelOneIcon.size();
+        int needCreateNum = 3 - levelOneIconCount;
+        if (needCreateNum == 0) {
             CustomMenuPage.CreateFirstLevelMenu(driver);
-          CommonUtil.alertExist(driver,"最多允许创建3个一级菜单");
-        }
-        else if(needCreateNum==1)
-        {
+            CommonUtil.alertExist(driver, "最多允许创建3个一级菜单");
+        } else if (needCreateNum == 1) {
             CustomMenuPage.CreateFirstLevelMenu(driver);
-            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.wait(driver, 2);
             CustomMenuPage.CreateFirstLevelMenu(driver);
-            CommonUtil.alertExist(driver,"最多允许创建3个一级菜单");
-        }
-        else if(needCreateNum==2)
-        {
+            CommonUtil.alertExist(driver, "最多允许创建3个一级菜单");
+        } else if (needCreateNum == 2) {
             CustomMenuPage.CreateFirstLevelMenu(driver);
-            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.wait(driver, 2);
             CustomMenuPage.CreateFirstLevelMenu(driver);
-            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.wait(driver, 2);
             CustomMenuPage.CreateFirstLevelMenu(driver);
-            CommonUtil.alertExist(driver,"最多允许创建3个一级菜单");
-        }
-        else if(needCreateNum==3)
-        {
+            CommonUtil.alertExist(driver, "最多允许创建3个一级菜单");
+        } else if (needCreateNum == 3) {
             CustomMenuPage.CreateFirstLevelMenu(driver);
-            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.wait(driver, 2);
             CustomMenuPage.CreateFirstLevelMenu(driver);
-            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.wait(driver, 2);
             CustomMenuPage.CreateFirstLevelMenu(driver);
-            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.wait(driver, 2);
             CustomMenuPage.CreateFirstLevelMenu(driver);
-            CommonUtil.alertExist(driver,"最多允许创建3个一级菜单");
+            CommonUtil.alertExist(driver, "最多允许创建3个一级菜单");
         }
 
     }

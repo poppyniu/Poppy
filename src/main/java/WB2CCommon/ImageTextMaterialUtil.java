@@ -6,10 +6,6 @@ import com.util.MaterialImageUtil;
 import com.util.MaterialNewsUtil;
 import org.junit.Test;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 
 public class ImageTextMaterialUtil {
 
@@ -32,7 +28,7 @@ public class ImageTextMaterialUtil {
         materialImage.setCreatedBy("Poppy");
         materialImage.setCreatedDate(null);
         materialImage = MaterialImageUtil.createMaterialImage(materialImage);
-        System.out.println("图片ID = "  +  materialImage.getId());
+        System.out.println("图片ID = " + materialImage.getId());
         materialNews.setImage(materialImage);
         materialNews = MaterialNewsUtil.createMaterial(materialNews);
         return materialNews;

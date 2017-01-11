@@ -1,15 +1,21 @@
 package WB2C.UIAutomation;
 
-import java.net.URL;
 import WB2CCommon.CommonUtil;
-import WB2CConstants.*;
+import WB2CCommon.CommonWebDriver;
+import WB2CConstants.NodeIPConstants;
+import WB2CConstants.SideMenuConstants;
+import WB2CConstants.TestAccounts;
+import WB2CConstants.URLConstants;
+import WB2CPages.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.*;
-import WB2CCommon.CommonWebDriver;
-import WB2CPages.LoginPage;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import java.net.URL;
 
 public class WechatAccountSearch {
     private WebDriver driver;
@@ -29,18 +35,17 @@ public class WechatAccountSearch {
         driver.manage().window().maximize();
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
                 TestAccounts.testusername, TestAccounts.testuserpwd);
-        CommonWebDriver.navigateAndLoadPage(driver,URLConstants.homePageUrl,3);
+        CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.wechat_management_xpath));
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.wechat_acount_xpath));
-        CommonWebDriver.switchToFrame(driver,By.xpath("//iframe[@id='wxAccountMgmtFrame']"));
-        CommonWebDriver.sendKeysToElement(driver,By.xpath("//input[@id='searchText']"), "Burberr",
+        CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='wxAccountMgmtFrame']"));
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), "Burberr",
                 "WeChat Account Search text box.");
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath("//a[@id='btnSearch']/li"));
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath("//table[@class='k-selectable']/tbody/tr/td[2]")))
-        {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//table[@class='k-selectable']/tbody/tr/td[2]"))) {
             System.out.println("The wechat account search function works well, test pass!");
         }
     }
