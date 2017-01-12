@@ -13,6 +13,10 @@
             <class name="WB2C.UIAutomation.AutoResponseInvalidDelete"/>
             <class name="WB2C.UIAutomation.AutoResponseMultipleDelete"/>
             <class name="WB2C.UIAutomation.AutoResponseRefresh"/>
+            <class name="WB2C.UIAutomation.CustomerServiceMngEdit"/>
+            <class name="WB2C.UIAutomation.CustomerServiceMngPageSwitch"/>
+            <class name="WB2C.UIAutomation.CustomerServiceMngRefresh"/>
+            <class name="WB2C.UIAutomation.CustomerServiceMngSearch"/>
             <class name="WB2C.UIAutomation.CustomMenuCreate"/>
             <class name="WB2C.UIAutomation.CustomMenuDelete"/>
             <class name="WB2C.UIAutomation.CustomMenuEdit"/>
@@ -75,6 +79,15 @@
             <class name="WB2C.UIAutomation.QuickReplyPageSwtiching"/>
             <class name="WB2C.UIAutomation.QuickReplyRefresh"/>
             <class name="WB2C.UIAutomation.QuickReplySearch"/>
+            <class name="WB2C.UIAutomation.QuickReplySingleItemValidDelete"/>
+            <class name="WB2C.UIAutomation.SelfServiceDelete"/>
+            <class name="WB2C.UIAutomation.SelfServiceEdit"/>
+            <class name="WB2C.UIAutomation.SelfServiceInvalidCreate"/>
+            <class name="WB2C.UIAutomation.SelfServiceInvalidDelete"/>
+            <class name="WB2C.UIAutomation.SelfServiceMultiDelete"/>
+            <class name="WB2C.UIAutomation.SelfServicePreview"/>
+            <class name="WB2C.UIAutomation.SelfServiceRefresh"/>
+            <class name="WB2C.UIAutomation.SelfServiceValidCreate"/>
             <class name="WB2C.UIAutomation.SessionManagementDownloadEvaluation"/>
             <class name="WB2C.UIAutomation.SessionManagementRefresh"/>
             <class name="WB2C.UIAutomation.SessionManagementSearch"/>
