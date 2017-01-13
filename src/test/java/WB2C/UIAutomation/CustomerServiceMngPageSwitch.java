@@ -40,7 +40,7 @@ public class CustomerServiceMngPageSwitch {
 
     public void CustomerServiceMngPageSwitch(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
-        String url = NodeIPConstants.windows_local_ip + "/wd/hub";
+        String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
         loginPage = new LoginPage(driver);
         testaccounts = new TestAccounts();
