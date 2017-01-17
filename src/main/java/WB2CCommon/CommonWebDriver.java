@@ -575,8 +575,8 @@ public class CommonWebDriver {
     public static boolean isElementDisplayed(WebDriver driver, By by) {
         WebElement element;
         boolean elementStatus;
-        element = driver.findElement(by);
         try {
+            element = driver.findElement(by);
             elementStatus = element.isDisplayed();
         } catch (Exception ex) {
             elementStatus = false;

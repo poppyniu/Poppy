@@ -20,9 +20,12 @@ public class SideMenuConstants {
 
     public static String customer_service_xpath = "//i[@class='icon-comment']";
     public static String customer_service_desc = "The customer service menu on the left side menu bar";
+    public static String customer_servicemng_xpath = "//a[@id='serviceUserMgmt']";
+    public static String self_service_xpath = "//a[@id='intelligenceMenuMgmt']";
     public static String quick_reply_xpath = "//a[@id='quickMessageMgmt']";
     public static String session_management_xpath = "//a[@id='sessionMgmt']";
     public static String message_management_xpath = "//a[@id='messageMgmt']";
+    public static String human_service_xpath = ".//*[@id='serviceMgmt']";
 
     public static String scene_apply_xpath = "//i[@class='icon-shopping-cart']";
     public static String scene_apply_desc = "The scene apply menu on the left side menu bar";
