@@ -13,6 +13,7 @@
             <class name="WB2C.UIAutomation.AutoResponseInvalidDelete"/>
             <class name="WB2C.UIAutomation.AutoResponseMultipleDelete"/>
             <class name="WB2C.UIAutomation.AutoResponseRefresh"/>
+            <class name="WB2C.UIAutomation.AutoResponseSwitch"/>
             <class name="WB2C.UIAutomation.CustomerServiceMngEdit"/>
             <class name="WB2C.UIAutomation.CustomerServiceMngPageSwitch"/>
             <class name="WB2C.UIAutomation.CustomerServiceMngRefresh"/>
@@ -49,6 +50,7 @@
             <class name="WB2C.UIAutomation.GroupMessageRefresh"/>
             <class name="WB2C.UIAutomation.GroupMessageSearch"/>
             <class name="WB2C.UIAutomation.GroupMessageSwitching"/>
+            <class name="WB2C.UIAutomation.HumanServiceSearch"/>
             <class name="WB2C.UIAutomation.ImageTextCreate"/>
             <class name="WB2C.UIAutomation.ImageTextDelete"/>
             <class name="WB2C.UIAutomation.ImageTextEdit"/>
@@ -68,6 +70,7 @@
             <class name="WB2C.UIAutomation.MembershipCategoryRefresh"/>
             <class name="WB2C.UIAutomation.MembershipCategorySearch"/>
             <class name="WB2C.UIAutomation.MembershipCategorySingleItemDelete"/>
+            <class name="WB2C.UIAutomation.MembershipCategorySwitch"/>
             <class name="WB2C.UIAutomation.MemberStatisticsMonth"/>
             <class name="WB2C.UIAutomation.MemberStatisticsYear"/>
             <class name="WB2C.UIAutomation.MessageManagementPageSwitching"/>
