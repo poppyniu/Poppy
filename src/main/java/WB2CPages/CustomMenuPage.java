@@ -17,10 +17,11 @@ public class CustomMenuPage {
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='name']"), "test menu");
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='event']"), "test key");
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='form']/ul/li[3]/span/span/span/span"));
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath("//ul[@id='type_listbox']/li[3]"));
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='text']"), "test response");
         CommonWebDriver.clickElement(driver, By.xpath("//form[@id='form']/ul/li[8]/span/span/span/span"));
-        CommonWebDriver.wait(driver, 1);
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath("//ul[@id='state_listbox']/li[1]"));
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);

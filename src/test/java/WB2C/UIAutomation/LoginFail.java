@@ -23,7 +23,7 @@ public class LoginFail {
 
     @Parameters({"browser"})
     @Test
-    public void TestLoginFail(String testNGBrowser) throws Exception {
+    public void testLoginFail(String testNGBrowser) throws Exception {
         testaccounts = new TestAccounts();
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";

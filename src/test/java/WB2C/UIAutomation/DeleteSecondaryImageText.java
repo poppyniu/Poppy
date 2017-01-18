@@ -36,7 +36,7 @@ public class DeleteSecondaryImageText {
 
     @Parameters({"browser"})
     @Test
-    public void SecondaryImageTextDelete(String testNGBrowser) throws Exception {
+    public void secondaryImageTextDelete(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

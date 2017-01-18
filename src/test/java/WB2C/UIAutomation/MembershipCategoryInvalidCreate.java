@@ -24,7 +24,7 @@ public class MembershipCategoryInvalidCreate {
 
     @Parameters({"browser"})
     @Test
-    public void MembershipValueInvalidCreate(String testNGBrowser) throws Exception {
+    public void invalidCreateMembershipCategory(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

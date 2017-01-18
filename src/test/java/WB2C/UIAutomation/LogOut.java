@@ -25,7 +25,7 @@ public class LogOut {
 
     @Parameters({"browser"})
     @Test
-    public void TestLogOut(String testNGBrowser)
+    public void testLogOut(String testNGBrowser)
             throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";

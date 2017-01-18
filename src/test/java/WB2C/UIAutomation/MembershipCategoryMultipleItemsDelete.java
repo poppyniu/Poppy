@@ -15,9 +15,6 @@ import org.testng.annotations.Test;
 
 import java.net.URL;
 
-/**
- * Created by jshen on 2016/12/23.
- */
 public class MembershipCategoryMultipleItemsDelete {
 
     private WebDriver driver;
@@ -28,7 +25,7 @@ public class MembershipCategoryMultipleItemsDelete {
 
     @Parameters({"browser"})
     @Test
-    public void MembershipCategoryMultipleItemsDelete(String testNGBrowser) throws Exception {
+    public void deleteMembershipCategoryMultipleItems(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

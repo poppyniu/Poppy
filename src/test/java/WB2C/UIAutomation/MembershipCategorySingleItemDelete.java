@@ -24,7 +24,7 @@ public class MembershipCategorySingleItemDelete {
 
     @Parameters({"browser"})
     @Test
-    public void MembershipCategorySingleItemDelete(String testNGBrowser) throws Exception {
+    public void singleItemDeleteMembershipCategory(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

@@ -25,7 +25,7 @@ public class SessionManagementUpfoldMessageRecords {
 
     @Parameters({"browser"})
     @Test
-    public void SessionManagementUpfoldMessageRecords(String testNGBrowser) throws Exception {
+    public void upfoldMessageRecordsSessionManagement(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

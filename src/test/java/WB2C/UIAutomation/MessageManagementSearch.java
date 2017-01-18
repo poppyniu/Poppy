@@ -15,9 +15,6 @@ import org.testng.annotations.Test;
 
 import java.net.URL;
 
-/**
- * Created by jshen on 2017/1/4.
- */
 public class MessageManagementSearch {
 
 
@@ -29,7 +26,7 @@ public class MessageManagementSearch {
 
     @Parameters({"browser"})
     @Test
-    public void MessageManagementSearch(String testNGBrowser) throws Exception {
+    public void searchMessageManagement(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

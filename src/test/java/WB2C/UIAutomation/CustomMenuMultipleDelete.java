@@ -30,7 +30,7 @@ public class CustomMenuMultipleDelete {
 
     @Parameters({"browser"})
     @Test
-    public void MultipleDeleteCustomMenu(String testNGBrowser) throws Exception {
+    public void multipleDeleteCustomMenu(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

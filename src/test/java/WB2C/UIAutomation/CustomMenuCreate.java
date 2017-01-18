@@ -29,7 +29,7 @@ public class CustomMenuCreate {
 
     @Parameters({"browser"})
     @Test
-    public void CreateCustomMenuCreate(String testNGBrowser) throws Exception {
+    public void createCustomMenu(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
@@ -71,7 +71,7 @@ public class CustomMenuCreate {
         } else
             CommonAssert.fail("Create custom menu get error, test fail!");
         //delete test data
-        CommonWebDriver.clickElement(driver, By.xpath("//div[@id='grid']/table/tbody/tr[3]/td[7]/a[4]/li"));
+        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[7]/a[4]/li"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-ok']"));
     }

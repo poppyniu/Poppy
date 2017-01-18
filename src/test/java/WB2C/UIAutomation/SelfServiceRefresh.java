@@ -19,9 +19,6 @@ import org.testng.annotations.Test;
 
 import java.net.URL;
 
-/**
- * Created by Joe.Liu on 2016/12/26.
- */
 public class SelfServiceRefresh {
 
     private WebDriver driver;
@@ -33,7 +30,7 @@ public class SelfServiceRefresh {
     @Parameters({"browser"})
     @Test
 
-    public void SelfServiceRefresh(String testNGBrowser) throws Exception {
+    public void refreshSelfService(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
@@ -55,7 +52,7 @@ public class SelfServiceRefresh {
         CommonWebDriver.wait(driver,4);
         CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnRefresh']"));
         CommonWebDriver.wait(driver,2);
-        String textboxValue=CommonWebDriver.getElement(driver,By.xpath("//input[@id='searchText']")).getAttribute("value").toString();
+        String textboxValue=CommonWebDriver.getElement(driver,By.xpath("//input[@id='searchText']")).getAttribute("value");
         if(textboxValue.equals(""))
         {
             System.out.println("The page is refreshed, test pass");

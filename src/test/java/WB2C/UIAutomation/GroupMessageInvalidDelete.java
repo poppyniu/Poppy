@@ -26,7 +26,7 @@ public class GroupMessageInvalidDelete {
 
     @Parameters({"browser"})
     @Test
-    public void InvalidDeleteGroupMessage(String testNGBrowser) throws Exception {
+    public void invalidDeleteGroupMessage(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

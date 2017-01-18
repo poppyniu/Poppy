@@ -27,7 +27,7 @@ public class ImageTextInvalidCreate {
 
     @Parameters({"browser"})
     @Test
-    public void ImageTextInValidCreate(String testNGBrowser) throws Exception {
+    public void imageTextInValidCreate(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

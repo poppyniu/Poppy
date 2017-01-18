@@ -16,9 +16,6 @@ import org.testng.annotations.Test;
 
 import java.net.URL;
 
-/**
- * Created by jshen on 2017/1/4.
- */
 public class MessageManagementPageSwitching {
 
     private WebDriver driver;
@@ -29,7 +26,7 @@ public class MessageManagementPageSwitching {
 
     @Parameters({"browser"})
     @Test
-    public void MessageManagementPageSwitching (String testNGBrowser) throws Exception {
+    public void switchMessageManagement (String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

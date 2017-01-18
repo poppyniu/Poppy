@@ -19,9 +19,6 @@ import org.testng.annotations.Test;
 
 import java.net.URL;
 
-/**
- * Created by Joe.Liu on 2016/12/28.
- */
 public class CustomerServiceMngSearch {
 
     private WebDriver driver;
@@ -33,7 +30,7 @@ public class CustomerServiceMngSearch {
     @Parameters({"browser"})
     @Test
 
-    public void CustomerServiceMngSearch(String testNGBrowser) throws Exception {
+    public void searchCustomerServiceMng(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

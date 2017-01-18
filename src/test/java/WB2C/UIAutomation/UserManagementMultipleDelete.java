@@ -27,7 +27,7 @@ public class UserManagementMultipleDelete {
 
     @Parameters({"browser"})
     @Test
-    public void MultipleDeleteUserManagement(String testNGBrowser) throws Exception {
+    public void multipleDeleteUserManagement(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
@@ -47,8 +47,8 @@ public class UserManagementMultipleDelete {
         //create first test user
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnNew']"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='username']"), "testuser");
-        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='nickname']"), "testuser");
+        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='username']"), "youyou");
+        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='nickname']"), "youyou");
         CommonWebDriver.sendKeysToElement(driver,By.xpath(".//form[@id='userForm']/ul/li/input[@id='password']"),"pass");
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//form[@id='userForm']/ul/li/input[@id='repassword']"), "pass");
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userForm']/ul/li[7]/span/span[1]/span/span"));
@@ -61,11 +61,11 @@ public class UserManagementMultipleDelete {
         CommonWebDriver.wait(driver, 1);
         CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
-        //create first test user
+        //create second test user
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnNew']"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='username']"), "testuser1");
-        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='nickname']"), "testuser1");
+        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='username']"), "youyou1");
+        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='nickname']"), "youyou1");
         CommonWebDriver.sendKeysToElement(driver,By.xpath(".//form[@id='userForm']/ul/li/input[@id='password']"),"pass");
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//form[@id='userForm']/ul/li/input[@id='repassword']"), "pass");
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userForm']/ul/li[7]/span/span[1]/span/span"));
@@ -78,9 +78,9 @@ public class UserManagementMultipleDelete {
         CommonWebDriver.wait(driver, 1);
         CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "testuser");
+        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "youyou");
         CommonWebDriver.wait(driver, 2);
-        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("testuser")&CommonWebDriver.getElement(driver,By.xpath(".//*[@id='grid']/table/tbody/tr[2]/td[2]")).getAttribute("innerHTML").contains("testuser1")) {
+        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("youyou")&CommonWebDriver.getElement(driver,By.xpath(".//*[@id='grid']/table/tbody/tr[2]/td[2]")).getAttribute("innerHTML").contains("youyou1")) {
             System.out.println("Search and create users succeed, test pass! ");
         } else
             CommonAssert.fail("Search and create users get error, test fail! ");

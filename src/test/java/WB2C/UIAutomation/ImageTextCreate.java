@@ -29,7 +29,7 @@ public class ImageTextCreate {
 
     @Parameters({"browser"})
     @Test
-    public void ImageTextValidCreate(String testNGBrowser) throws Exception {
+    public void imageTextValidCreate(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
@@ -45,10 +45,11 @@ public class ImageTextCreate {
         //delete the newly added test data to keep test env clean
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//a[@id='btnRefresh']"));
         CommonWebDriver.wait(driver, 4);
-        CommonWebDriver.clickElement(driver, By.xpath("//div[@id='container']/div[3]/div/div[3]/ul/li[3]/a"));
-        CommonWebDriver.wait(driver, 1);
-        Actions action = new Actions(driver);
-        action.sendKeys(Keys.ENTER).perform();
+        CommonWebDriver.sendKeysWithEnterToElement(driver,By.xpath(".//*[@id='searchText']"),"test title");
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='container']/div[3]/div/div[3]/ul/li[3]/a/i"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='container']/div[3]/div/div[4]/a[1]"));
         CommonWebDriver.wait(driver, 2);
     }
 

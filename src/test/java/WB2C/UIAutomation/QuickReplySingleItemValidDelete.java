@@ -15,9 +15,6 @@ import org.testng.annotations.Test;
 
 import java.net.URL;
 
-/**
- * Created by jshen on 2017/1/4.
- */
 public class QuickReplySingleItemValidDelete {
     private WebDriver driver;
     private LoginPage loginPage;
@@ -27,7 +24,7 @@ public class QuickReplySingleItemValidDelete {
 
     @Parameters({"browser"})
     @Test
-    public void QuickReplySingleItemValidDelete(String testNGBrowser) throws Exception {
+    public void validDeleteQuickReplySingleItem(String testNGBrowser) throws Exception {
 
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         url = NodeIPConstants.windows_Node1_ip + "/wd/hub";

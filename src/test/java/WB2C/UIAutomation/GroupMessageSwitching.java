@@ -26,7 +26,7 @@ public class GroupMessageSwitching {
 
     @Parameters({"browser"})
     @Test
-    public void SwitchGroupMessage(String testNGBrowser) throws Exception {
+    public void switchGroupMessage(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

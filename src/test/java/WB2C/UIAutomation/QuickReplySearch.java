@@ -26,7 +26,7 @@ public class QuickReplySearch {
 
     @Parameters({"browser"})
     @Test
-    public void QuickReplySearch(String testNGBrowser) throws Exception {
+    public void searchQuickReply(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

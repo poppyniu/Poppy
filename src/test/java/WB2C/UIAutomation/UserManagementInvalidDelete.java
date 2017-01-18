@@ -27,7 +27,7 @@ public class UserManagementInvalidDelete {
 
     @Parameters({"browser"})
     @Test
-    public void InvalidDeleteUserManagement(String testNGBrowser) throws Exception {
+    public void invalidDeleteUserManagement(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
@@ -55,8 +55,8 @@ public class UserManagementInvalidDelete {
         //create test data
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnNew']"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='username']"), "testuser");
-        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='nickname']"), "testuser");
+        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='username']"), "youyou");
+        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='nickname']"), "youyou");
         CommonWebDriver.sendKeysToElement(driver,By.xpath(".//form[@id='userForm']/ul/li/input[@id='password']"),"pass");
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//form[@id='userForm']/ul/li/input[@id='repassword']"), "pass");
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userForm']/ul/li[7]/span/span[1]/span/span"));
@@ -69,9 +69,9 @@ public class UserManagementInvalidDelete {
         CommonWebDriver.wait(driver, 1);
         CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "testuser");
+        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "youyou");
         CommonWebDriver.wait(driver, 2);
-        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("testuser")) {
+        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("youyou")) {
             System.out.println("Search and create user succeed, test pass! ");
         } else
             CommonAssert.fail("Search and create user get error, test fail! ");
@@ -85,8 +85,13 @@ public class UserManagementInvalidDelete {
             CommonAssert.fail("Click delete button does not see the correct dialog, test fail! ");
         CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-cancel']"));
         CommonWebDriver.wait(driver,2);
-        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("testuser")) {
+        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("youyou")) {
             System.out.println("Cancel delete succeed, test pass! ");
+            //delete test data
+            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[7]/a[3]/li"));
+            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
         } else
             CommonAssert.fail("Cancel delete get error, test fail! ");
     }

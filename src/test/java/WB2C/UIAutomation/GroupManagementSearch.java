@@ -27,7 +27,7 @@ public class GroupManagementSearch {
 
     @Parameters({"browser"})
     @Test
-    public void SearchGroupManagement(String testNGBrowser) throws Exception {
+    public void searchGroupManagement(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

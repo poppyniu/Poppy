@@ -26,7 +26,7 @@ public class AutoResponseInvalidCreate {
 
     @Parameters({"browser"})
     @Test
-    public void InValidCreateAutoResponse(String testNGBrowser) throws Exception {
+    public void inValidCreateAutoResponse(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
@@ -39,6 +39,7 @@ public class AutoResponseInvalidCreate {
         CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.wechat_management_xpath));
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.we_chat_auto_response));
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='automessageMgmtFrame']"));

@@ -29,7 +29,7 @@ public class MemberStatisticsMonth {
 
     @Parameters({"browser"})
     @Test
-    public void MonthMemberStatistics(String testNGBrowser) throws Exception {
+    public void monthMemberStatistics(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

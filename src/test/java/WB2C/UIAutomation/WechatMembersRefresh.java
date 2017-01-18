@@ -25,7 +25,7 @@ public class WechatMembersRefresh {
 
     @Parameters({"browser"})
     @Test
-    public void WechatMembersRefresh(String testNGBrowser) throws Exception {
+    public void refreshWechatMembers(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

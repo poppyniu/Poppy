@@ -15,9 +15,6 @@ import org.testng.annotations.Test;
 
 import java.net.URL;
 
-/**
- * Created by jshen on 2017/1/4.
- */
 public class QuickReplyInvalidDelete {
     private WebDriver driver;
     private LoginPage loginPage;
@@ -27,7 +24,7 @@ public class QuickReplyInvalidDelete {
 
     @Parameters({"browser"})
     @Test
-    public void QuickReplyInvalidDelete(String testNGBrowser) throws Exception {
+    public void invalidDeleteQuickReply(String testNGBrowser) throws Exception {
 
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         url = NodeIPConstants.windows_Node1_ip + "/wd/hub";

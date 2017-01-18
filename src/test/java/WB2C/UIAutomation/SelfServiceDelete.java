@@ -21,9 +21,6 @@ import org.testng.annotations.Test;
 import java.net.URL;
 import java.util.List;
 
-/**
- * Created by Joe.Liu on 2016/12/26.
- */
 public class SelfServiceDelete {
     private WebDriver driver;
     private LoginPage loginPage;
@@ -34,7 +31,7 @@ public class SelfServiceDelete {
     @Parameters({"browser"})
     @Test
 
-    public void SelfServiceDelete(String testNGBrowser) throws Exception {
+    public void delateSelfService(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

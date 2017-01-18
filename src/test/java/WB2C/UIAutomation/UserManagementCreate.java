@@ -29,7 +29,7 @@ public class UserManagementCreate {
 
     @Parameters({"browser"})
     @Test
-    public void CreateUserManagement(String testNGBrowser) throws Exception {
+    public void createUserManagement(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
@@ -48,8 +48,8 @@ public class UserManagementCreate {
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='userMgmtFrame']"));
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnNew']"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='username']"), "testuser");
-        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='nickname']"), "testuser");
+        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='username']"), "youyou");
+        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='nickname']"), "youyou");
         CommonWebDriver.sendKeysToElement(driver,By.xpath(".//form[@id='userForm']/ul/li/input[@id='password']"),"pass");
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//form[@id='userForm']/ul/li/input[@id='repassword']"), "pass");
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userForm']/ul/li[7]/span/span[1]/span/span"));
@@ -62,9 +62,9 @@ public class UserManagementCreate {
         CommonWebDriver.wait(driver, 1);
         CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "testuser");
+        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "youyou");
         CommonWebDriver.wait(driver, 2);
-        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("testuser")) {
+        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("youyou")) {
             System.out.println("Create user succeed, test pass! ");
         } else
             CommonAssert.fail("Create user get error, test fail! ");
@@ -88,7 +88,7 @@ public class UserManagementCreate {
                 TestAccounts.testusername2, TestAccounts.testuserpwd);
         CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.wait(driver, 2);
-        if (CommonWebDriver.getElement(driver, By.xpath("html/body/div[1]/div/div/ul/li/a/span[2]")).getAttribute("innerHTML").contains("testuser")) {
+        if (CommonWebDriver.getElement(driver, By.xpath("html/body/div[1]/div/div/ul/li/a/span[2]")).getAttribute("innerHTML").contains("youyou")) {
             System.out.println("The new user can login succeed, test pass! ");
         } else
             CommonAssert.fail("The new user can not login, test fail! ");
@@ -100,9 +100,10 @@ public class UserManagementCreate {
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='userMgmtFrame']"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "testuser");
+        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "youyou");
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[7]/a[3]/li"));
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='alertify-ok']"));
 
     }

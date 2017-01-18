@@ -26,7 +26,7 @@ public class GroupMessageEdit {
 
     @Parameters({"browser"})
     @Test
-    public void EditGroupMessage(String testNGBrowser) throws Exception {
+    public void editGroupMessage(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

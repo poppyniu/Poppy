@@ -26,7 +26,7 @@ public class GroupMessageRefresh {
 
     @Parameters({"browser"})
     @Test
-    public void SearchGroupMessage(String testNGBrowser) throws Exception {
+    public void refreshGroupMessage(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
@@ -52,7 +52,7 @@ public class GroupMessageRefresh {
         //Click refresh button
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='btnRefresh']"));
         CommonWebDriver.wait(driver, 2);
-        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='searchText']")).getAttribute("value").equals(null)) {
+        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='searchText']")).getAttribute("value").equals("")) {
             System.out.println("The refresh function works well, test pass! ");
         } else
             CommonAssert.fail("The refresh function does not works well, test fail! ");

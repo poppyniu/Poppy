@@ -20,9 +20,6 @@ import org.testng.annotations.Test;
 import java.net.URL;
 import java.util.List;
 
-/**
- * Created by Joe.Liu on 2016/12/27.
- */
 public class SelfServiceMultiDelete {
 
     private WebDriver driver;
@@ -34,7 +31,7 @@ public class SelfServiceMultiDelete {
     @Parameters({"browser"})
     @Test
 
-    public void SelfServiceMultiDelete(String testNGBrowser) throws Exception {
+    public void multiDeleteSelfService(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

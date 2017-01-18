@@ -4,6 +4,7 @@ import WB2CCommon.CommonWebDriver;
 import WB2CConstants.SideMenuConstants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 
 public class ImageTextPage {
@@ -26,9 +27,12 @@ public class ImageTextPage {
         CommonWebDriver.clickElement(driver, By.xpath("//div[@id='tabs']/ul/li[2]/a"));
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//div[@id='myEditor']"), "test editor", 1);
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
+        CommonWebDriver.wait(driver, 2);
         if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//img[@src='/WCPPRO/api/file/5/test.jpg']"))) {
             System.out.println("Create new text image material succeed, test pass! ");
         }
+        else
+            Assert.fail("Create new image test get error, test fail!");
 
     }
 

@@ -20,9 +20,6 @@ import org.testng.annotations.Test;
 
 import java.net.URL;
 
-/**
- * Created by Joe.Liu on 2016/12/29.
- */
 public class CustomerServiceMngEdit {
 
     private WebDriver driver;
@@ -34,7 +31,7 @@ public class CustomerServiceMngEdit {
     @Parameters({"browser"})
     @Test
 
-    public void CustomerServiceMngEdit(String testNGBrowser) throws Exception {
+    public void editCustomerServiceMng(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

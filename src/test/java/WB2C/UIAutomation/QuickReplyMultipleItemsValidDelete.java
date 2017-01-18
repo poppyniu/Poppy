@@ -24,7 +24,7 @@ public class QuickReplyMultipleItemsValidDelete {
 
     @Parameters({"browser"})
     @Test
-    public void QuickReplyMultipleItemsValidDelete(String testNGBrowser) throws Exception {
+    public void validDeleteQuickReplyMultipleItems(String testNGBrowser) throws Exception {
 
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         url = NodeIPConstants.windows_Node1_ip + "/wd/hub";

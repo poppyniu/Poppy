@@ -32,7 +32,7 @@ public class ImageTextEdit {
 
     @Parameters({"browser"})
     @Test
-    public void EditImageText(String testNGBrowser) throws Exception {
+    public void editImageText(String testNGBrowser) throws Exception {
         String testDataPath1 = System.getProperty("testdata1");
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";

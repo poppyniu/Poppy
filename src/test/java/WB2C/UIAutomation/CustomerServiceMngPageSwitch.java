@@ -23,9 +23,6 @@ import org.testng.annotations.Test;
 import java.net.URL;
 import java.util.List;
 
-/**
- * Created by Joe.Liu on 2017/1/9.
- */
 public class CustomerServiceMngPageSwitch {
 
     private WebDriver driver;
@@ -38,7 +35,7 @@ public class CustomerServiceMngPageSwitch {
     @Test
 
 
-    public void CustomerServiceMngPageSwitch(String testNGBrowser) throws Exception {
+    public void switchCustomerServiceMngPage(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

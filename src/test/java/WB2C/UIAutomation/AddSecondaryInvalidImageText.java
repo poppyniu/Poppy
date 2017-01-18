@@ -33,7 +33,7 @@ public class AddSecondaryInvalidImageText {
 
     @Parameters({"browser"})
     @Test
-    public void SecondaryInvalidImageTextAdd(String testNGBrowser) throws Exception {
+    public void secondaryInvalidImageTextAdd(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);

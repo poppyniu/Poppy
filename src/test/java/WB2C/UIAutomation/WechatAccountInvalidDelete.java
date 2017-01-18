@@ -25,7 +25,7 @@ public class WechatAccountInvalidDelete {
 
     @Parameters({"browser"})
     @Test
-    public void AccountInvalidDelete(String testNGBrowser) throws Exception {
+    public void accountInvalidDelete(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
@@ -42,9 +42,11 @@ public class WechatAccountInvalidDelete {
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='wxAccountMgmtFrame']"));
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRemove']"));
+        CommonWebDriver.wait(driver, 1);
         if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//article[@class='alertify-log alertify-log-delete alertify-log-show']"))) {
             System.out.println("The correct delete pop up dialog appear, test pass!");
         }
+        CommonWebDriver.wait(driver, 3);
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//div[@id='grid']/table/tbody/tr/td[5]/a[2]"));
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//button[@id='alertify-cancel']"), "Delete account pop up dialog cancel button.");
         if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//table[@class='k-selectable']/tbody/tr/td[2]"))) {
