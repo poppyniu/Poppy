@@ -45,7 +45,7 @@ public class GroupManagementInvalidCreate {
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.system_setup_group_management));
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='userGroupMgmtFrame']"));
-        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnNew']"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//a[@id='btnNew']"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);

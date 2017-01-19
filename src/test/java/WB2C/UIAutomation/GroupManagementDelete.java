@@ -65,6 +65,7 @@ public class GroupManagementDelete {
         }
         else
             CommonAssert.fail("Click delete button does not see the warning dialog, test fail!");
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='alertify-ok']"));
 
     }

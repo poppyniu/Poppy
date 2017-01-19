@@ -54,7 +54,8 @@ public class CustomMenuCreate {
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='name']"), "test menu");
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='event']"), "1");
-        CommonWebDriver.clickElement(driver, By.xpath("//span[@class='k-icon k-i-arrow-s']"));
+        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='form']/ul/li[3]/span/span/span/span"));
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath("//ul[@id='type_listbox']/li[3]"));
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='text']"), "test response");
         CommonWebDriver.clickElement(driver, By.xpath("//form[@id='form']/ul/li[8]/span/span/span/span"));

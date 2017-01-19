@@ -52,6 +52,7 @@ public class CustomMenuInvalidDelete {
         CommonWebDriver.wait(driver, 1);
         if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@class='alertify-log alertify-log-delete alertify-log-show']"))) {
             System.out.println("Select nothing to delete, see the correct wanring message, test pass! ");
+            CommonWebDriver.wait(driver, 2);
         } else CommonAssert.fail("Select nothing to delete, does not see the correct wanring message, test fail!");
 
         WebElement table = driver.findElement(By.xpath(".//*[@class='k-selectable']"));
@@ -85,7 +86,7 @@ public class CustomMenuInvalidDelete {
         } else {
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//tbody/tr[1]/td[1]/a/li"));
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//tbody/tr[1]/td[7]/a[4]"));
-            CommonWebDriver.wait(driver, 1);
+            CommonWebDriver.wait(driver, 2);
             if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='alertify']/div/article/p"))) {
                 System.out.println("Confirm to delete dialog appears! ");
                 //cancel delete custom menu

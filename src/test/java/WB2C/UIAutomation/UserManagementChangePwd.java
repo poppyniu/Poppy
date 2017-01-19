@@ -59,7 +59,7 @@ public class UserManagementChangePwd {
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userGroupId_listbox']/li[1]"));
         CommonWebDriver.wait(driver, 1);
         CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnSave']"));
-        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.wait(driver, 3);
         CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "youyou");
         CommonWebDriver.wait(driver, 2);
         if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("youyou")) {

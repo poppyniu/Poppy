@@ -44,22 +44,6 @@ public class UserManagementSwitching {
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.system_setup_user_management));
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='userMgmtFrame']"));
-        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnNew']"));
-        CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='username']"), "youyou");
-        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='nickname']"), "youyou");
-        CommonWebDriver.sendKeysToElement(driver,By.xpath(".//form[@id='userForm']/ul/li/input[@id='password']"),"pass");
-        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//form[@id='userForm']/ul/li/input[@id='repassword']"), "pass");
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userForm']/ul/li[7]/span/span[1]/span/span"));
-        CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userType_listbox']/li[1]"));
-        CommonWebDriver.wait(driver, 1);
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userForm']/ul/li[8]/span/span[1]/span/span"));
-        CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userGroupId_listbox']/li[1]"));
-        CommonWebDriver.wait(driver, 1);
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnSave']"));
-        CommonWebDriver.wait(driver, 2);
         //click page2 button
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/div/ul/li[2]/a"));
         CommonWebDriver.wait(driver, 2);
