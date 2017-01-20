@@ -68,7 +68,7 @@
         <dependency>
             <groupId>com.epam</groupId>
             <artifactId>TestUtil</artifactId>
-            <version>1.5-SNAPSHOT</version>
+            <version>1.6-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <build>
