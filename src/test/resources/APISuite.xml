@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="APISuite" parallel="classes" thread-count="1">
+    <test name="APITest">
+        <classes>
+            <class name="EBusinessAPITest.AddressDeleteAPITest"/>
+            <class name="EBusinessAPITest.AddressGetAPITest"/>
+            <class name="EBusinessAPITest.AddressIDGetAPITest"/>
+            <class name="EBusinessAPITest.AddressPostAPITest"/>
+            <class name="EBusinessAPITest.AddressPutAPITest"/>
+            <class name="EBusinessAPITest.AddressDefaultPatchAPITest"/>
+            <class name="EBusinessAPITest.AddressDefaultGetAPITest"/>
+            <class name="EBusinessAPITest.MemberDeleteAPITest"/>
+            <class name="EBusinessAPITest.MemberGetAPITest"/>
+            <class name="EBusinessAPITest.MemberIDGetAPITest"/>
+            <class name="EBusinessAPITest.MemberIDGetByOpenIdAPITest"/>
+            <class name="EBusinessAPITest.MemberIdPutAPITest"/>
+            <class name="EBusinessAPITest.MemberPostAPITest"/>
+            <class name="EBusinessAPITest.OrderDeleteAPITest"/>
+            <class name="EBusinessAPITest.OrderPostAPITest"/>
+            <class name="EBusinessAPITest.OrderGetAPITest"/>
+            <class name="EBusinessAPITest.OrderGetIDAPITest"/>
+            <class name="EBusinessAPITest.OrderGetInfoAPITest"/>
+            <class name="EBusinessAPITest.OrderPutAPITest"/>
+            <class name="EBusinessAPITest.ShopcartDeleteAPITest"/>
+            <class name="EBusinessAPITest.ShopcartGetAPITest"/>
+            <class name="EBusinessAPITest.ShopcartInvalidPostAPITest"/>
+            <class name="EBusinessAPITest.ShopcartPatchAPITest"/>
+            <class name="EBusinessAPITest.ShopcartPostAPITest"/>
+            <class name="EBusinessAPITest.PaymentPostAPITest"/>
+            <class name="EBusinessAPITest.ProductDeleteAPITest"/>
+            <class name="EBusinessAPITest.ProductPutAPITest"/>
+            <class name="EBusinessAPITest.ProductGetAPITest"/>
+            <class name="EBusinessAPITest.ProductIDGetAPITest"/>
+            <class name="EBusinessAPITest.ProductPostAPITest"/>
+            <class name="EBusinessAPITest.ProductCategoryGetAPITest"/>
+            <class name="EBusinessAPITest.ProductCategoryIDGetAPITest"/>
+            <class name="EBusinessAPITest.ProductCategoryPostAPITest"/>
+        </classes>
+    </test>
+</suite>
