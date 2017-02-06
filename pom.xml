@@ -70,7 +70,38 @@
             <artifactId>TestUtil</artifactId>
             <version>1.6-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.kevinsawicki</groupId>
+            <artifactId>http-request</artifactId>
+            <version>5.6</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+        </dependency>
     </dependencies>
+    <profiles>
+        <profile>
+            <id>
+                EBusiness
+            </id>
+            <properties>
+                <path>APISuite.xml</path>
+            </properties>
+            <activation><activeByDefault>false</activeByDefault></activation>
+        </profile>
+        <profile>
+            <id>
+                wechat
+            </id>
+            <properties>
+                <path>Suite.xml</path>
+            </properties>
+            <activation><activeByDefault>true</activeByDefault></activation>
+        </profile>
+    </profiles>
     <build>
         <plugins>
             <plugin>
@@ -84,7 +115,7 @@
                         <testdata1>E:/EPMWB2C/WB2C/src/test/resources/test1.jpg</testdata1>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${project.build.testOutputDirectory}/Suite.xml</suiteXmlFile>
+                        <suiteXmlFile>${project.build.testOutputDirectory}/${path}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
