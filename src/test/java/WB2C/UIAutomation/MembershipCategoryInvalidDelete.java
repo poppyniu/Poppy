@@ -45,11 +45,13 @@ public class MembershipCategoryInvalidDelete {
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='wxMbrCategoryMgmtFrame']"));
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRemove']"));
         CommonWebDriver.wait(driver, 2);
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath("//article[@class='alertify-log alertify-log-delete alertify-log-show']")))
-        {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//article[@class='alertify-log alertify-log-delete alertify-log-show']"))) {
             System.out.println("The correct delete pop up dialog appear, test pass!");
         }
     }
+
     @AfterMethod
-    public void tearDown() throws Exception {driver.quit();}
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
 }

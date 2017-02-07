@@ -11,6 +11,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 import java.net.URL;
 
 public class MembershipCategorySearch {
@@ -49,22 +50,22 @@ public class MembershipCategorySearch {
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
 
-        CommonWebDriver.sendKeysToElement(driver,By.xpath("//input[@id='searchText']"),expectValue ,
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), expectValue,
                 "Membership Category Search text box.");
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath("//a[@id='btnSearch']/li"));
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath("//table[@class='k-selectable']/tbody/tr/td[2]")))
-        {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//table[@class='k-selectable']/tbody/tr/td[2]"))) {
             System.out.println("The membership category search function works well, test pass!");
         }
         //delete test data
-        String chkXpath="//tr[1]/td[1]//li";
-        CommonWebDriver.clickElement(driver,By.xpath(chkXpath));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElement(driver,By.xpath("//tr[1]//li"+"[@class='icon-trash icon-large']"));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElement(driver,By.xpath("//button[@id='alertify-ok']"));
+        String chkXpath = "//tr[1]/td[1]//li";
+        CommonWebDriver.clickElement(driver, By.xpath(chkXpath));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath("//tr[1]//li" + "[@class='icon-trash icon-large']"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-ok']"));
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

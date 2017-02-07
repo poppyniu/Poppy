@@ -51,25 +51,28 @@ public class MembershipCategorySingleItemDelete {
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
 
-        CommonWebDriver.sendKeysToElement(driver,By.xpath("//input[@id='searchText']"),expectValue ,
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), expectValue,
                 "Membership Category Search text box.");
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath("//a[@id='btnSearch']/li"));
         CommonWebDriver.wait(driver, 2);
         //delete test data
-        String chkXpath="//tr[1]/td[1]//li";
-        CommonWebDriver.clickElement(driver,By.xpath(chkXpath));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElement(driver,By.xpath("//tr[1]//li"+"[@class='icon-trash icon-large']"));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElement(driver,By.xpath("//button[@id='alertify-ok']"));
-        CommonWebDriver.wait(driver,2);
-        String searchResult="//span[@class='k-state-selected']";
-        String actualNumber=CommonWebDriver.getElement(driver,By.xpath(searchResult)).getText();
-        String expectNumber="0";
-        Assert.assertEquals(actualNumber,expectNumber);
+        String chkXpath = "//tr[1]/td[1]//li";
+        CommonWebDriver.clickElement(driver, By.xpath(chkXpath));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath("//tr[1]//li" + "[@class='icon-trash icon-large']"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-ok']"));
+        CommonWebDriver.wait(driver, 2);
+        String searchResult = "//span[@class='k-state-selected']";
+        String actualNumber = CommonWebDriver.getElement(driver, By.xpath(searchResult)).getText();
+        String expectNumber = "0";
+        Assert.assertEquals(actualNumber, expectNumber);
 
     }
+
     @AfterTest
-    public void tearDown() throws Exception { driver.quit(); }
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
 }

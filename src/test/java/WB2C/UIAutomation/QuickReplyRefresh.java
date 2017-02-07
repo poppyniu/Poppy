@@ -25,7 +25,7 @@ public class QuickReplyRefresh {
 
     @Parameters({"browser"})
     @Test
-    public void refreshQuickReply (String testNGBrowser) throws Exception {
+    public void refreshQuickReply(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
@@ -46,23 +46,24 @@ public class QuickReplyRefresh {
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='quickMessageMgmtFrame']"));
         //get quick reply value from the first line
-        String inputSearch=driver.findElement(By.xpath("//tr/td[2]")).getText().trim();
-        CommonWebDriver.sendKeysToElement(driver,By.xpath("//input[@id='searchText']"),inputSearch ,
+        String inputSearch = driver.findElement(By.xpath("//tr/td[2]")).getText().trim();
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), inputSearch,
                 "quick reply Search text box.");
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath("//a[@id='btnSearch']/li"));
         CommonWebDriver.wait(driver, 2);
-        String actualValue=driver.findElement(By.xpath("//tr/td[2]")).getText().trim();
+        String actualValue = driver.findElement(By.xpath("//tr/td[2]")).getText().trim();
         //check the line
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@class='check-all']/li"));
-        CommonWebDriver.wait(driver,1);
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@class='check-all']/li"));
+        CommonWebDriver.wait(driver, 1);
         //verify that the checked line should be refreshed to unchecked
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnRefresh']"));
-        CommonWebDriver.wait(driver,2);
-        String icon_check_status=driver.findElement(By.xpath("//a[@class='check-all']/li")).getAttribute("class");
-        Assert.assertEquals(icon_check_status,"icon-large icon-check-empty");
-        Assert.assertEquals(actualValue,inputSearch);
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRefresh']"));
+        CommonWebDriver.wait(driver, 2);
+        String icon_check_status = driver.findElement(By.xpath("//a[@class='check-all']/li")).getAttribute("class");
+        Assert.assertEquals(icon_check_status, "icon-large icon-check-empty");
+        Assert.assertEquals(actualValue, inputSearch);
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

@@ -57,17 +57,16 @@ public class SelfServiceMultiDelete {
         CommonWebDriver.clickElement(driver, By.xpath(chkXpath));
         CommonWebDriver.clickElement(driver, By.xpath("//tr[" + newTableCount2 + "]/td[1]//li"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnRemove']"));
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath("//section[@id='alertify']")))
-        {
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRemove']"));
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//section[@id='alertify']"))) {
             System.out.println("The correct delete pop up dialog appear, test pass!");
         }
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath("//button[@id='alertify-ok']"),"Delete pop up dialog ok button.");
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//button[@id='alertify-ok']"), "Delete pop up dialog ok button.");
         CommonWebDriver.wait(driver, 2);
 
-        if (CommonWebDriver.isElementDisplayed(driver,By.xpath(chkXpath))) {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath(chkXpath))) {
             CommonAssert.fail("The item is not deleted, test fail!");
-        }else
+        } else
             System.out.println("The item is deleted, test pass!");
 
     }

@@ -45,17 +45,16 @@ public class HumanServiceSearch {
                 By.xpath(SideMenuConstants.human_service_xpath));
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='serviceMgmtFrame']"));
-        CommonWebDriver.sendKeysWithEnterToElement(driver,By.xpath(".//*[@id='quickMsgField']"),"健康");
+        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='quickMsgField']"), "健康");
         CommonWebDriver.wait(driver, 2);
-        if(CommonWebDriver.getElement(driver,By.xpath(".//*[@id='tools']/div/ul/li[3]/pre/span")).getAttribute("innerHTML").contains("健康"))
-        {
+        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='tools']/div/ul/li[3]/pre/span")).getAttribute("innerHTML").contains("健康")) {
             System.out.println("The search function works well, test pass");
-        }
-        else
+        } else
             Assert.fail("The search function does not work well， test fail!");
 
 
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

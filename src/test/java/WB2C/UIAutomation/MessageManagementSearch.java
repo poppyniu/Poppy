@@ -43,19 +43,22 @@ public class MessageManagementSearch {
                 By.xpath(SideMenuConstants.customer_service_xpath));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver,
-                By.xpath(SideMenuConstants.message_management_xpath ));
+                By.xpath(SideMenuConstants.message_management_xpath));
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='messageMgmtFrame']"));
         //try to search the message content from the second lines
-        String toSearchValue=driver.findElement(By.xpath("//tr[2]/td[6]")).getText().trim();
-        CommonWebDriver.sendKeysToElement(driver,By.xpath("//input[@id='searchText']"),toSearchValue ,
+        String toSearchValue = driver.findElement(By.xpath("//tr[2]/td[6]")).getText().trim();
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), toSearchValue,
                 "Message Search text box.");
         //search out the result
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSearch']/li"));
         CommonWebDriver.wait(driver, 2);
-        String afterSearchValue=driver.findElement(By.xpath("//tr/td[6]")).getText().trim();
-        Assert.assertEquals(afterSearchValue,toSearchValue);
+        String afterSearchValue = driver.findElement(By.xpath("//tr/td[6]")).getText().trim();
+        Assert.assertEquals(afterSearchValue, toSearchValue);
     }
+
     @AfterMethod
-    public void tearDown() throws Exception {driver.quit();}
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
 }

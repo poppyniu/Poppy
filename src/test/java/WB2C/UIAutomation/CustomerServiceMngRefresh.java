@@ -40,7 +40,7 @@ public class CustomerServiceMngRefresh {
         driver.manage().window().maximize();
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
                 TestAccounts.testusername1, TestAccounts.testuserpwd);
-        CommonWebDriver.navigateAndLoadPage(driver,URLConstants.homePageUrl,3);
+        CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
 
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.customer_service_xpath));
@@ -54,14 +54,11 @@ public class CustomerServiceMngRefresh {
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRefresh']"));
         CommonWebDriver.wait(driver, 4);
 
-        String textboxValue=CommonWebDriver.getElement(driver,By.xpath("//input[@id='searchText']")).getAttribute("value");
-        if(textboxValue.equals(""))
-        {
+        String textboxValue = CommonWebDriver.getElement(driver, By.xpath("//input[@id='searchText']")).getAttribute("value");
+        if (textboxValue.equals("")) {
             System.out.println("The page is refreshed, test pass");
-        }
-        else
+        } else
             CommonAssert.fail("The page is not refreshed, test fail!");
-
 
 
     }

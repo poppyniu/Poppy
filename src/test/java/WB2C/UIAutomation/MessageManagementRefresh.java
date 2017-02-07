@@ -44,7 +44,7 @@ public class MessageManagementRefresh {
                 By.xpath(SideMenuConstants.customer_service_xpath));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver,
-                By.xpath(SideMenuConstants.message_management_xpath ));
+                By.xpath(SideMenuConstants.message_management_xpath));
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='messageMgmtFrame']"));
         //click the last page
@@ -58,6 +58,9 @@ public class MessageManagementRefresh {
         Assert.assertTrue(e.getText().contains("显示1-10"));
 
     }
+
     @AfterMethod
-    public void tearDown() throws Exception {driver.quit();}
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
 }

@@ -8,9 +8,7 @@ import WB2CConstants.URLConstants;
 import WB2CPages.ImageTextPage;
 import WB2CPages.LoginPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
@@ -45,11 +43,11 @@ public class ImageTextCreate {
         //delete the newly added test data to keep test env clean
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//a[@id='btnRefresh']"));
         CommonWebDriver.wait(driver, 4);
-        CommonWebDriver.sendKeysWithEnterToElement(driver,By.xpath(".//*[@id='searchText']"),"test title");
+        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "test title");
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='container']/div[3]/div/div[3]/ul/li[3]/a/i"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='container']/div[3]/div/div[4]/a[1]"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='container']/div[3]/div/div[4]/a[1]"));
         CommonWebDriver.wait(driver, 2);
     }
 

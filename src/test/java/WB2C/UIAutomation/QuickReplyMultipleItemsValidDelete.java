@@ -12,6 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 import java.net.URL;
 
 public class QuickReplyMultipleItemsValidDelete {
@@ -64,12 +65,12 @@ public class QuickReplyMultipleItemsValidDelete {
                 By.xpath("//a[@id='btnSearch']/li"));
         CommonWebDriver.wait(driver, 2);
         //delete test data
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@class='check-all']/li"));
-        CommonWebDriver.wait(driver,1);
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnRemove']"));
-        CommonWebDriver.wait(driver,1);
-        CommonWebDriver.clickElement(driver,By.xpath("//button[@id='alertify-ok']"));
-        CommonWebDriver.wait(driver,1);
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@class='check-all']/li"));
+        CommonWebDriver.wait(driver, 1);
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRemove']"));
+        CommonWebDriver.wait(driver, 1);
+        CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-ok']"));
+        CommonWebDriver.wait(driver, 1);
         String searchResult = "//span[@class='k-state-selected']";
         String actualNumber = CommonWebDriver.getElement(driver, By.xpath(searchResult)).getText();
         String expectNumber = "0";

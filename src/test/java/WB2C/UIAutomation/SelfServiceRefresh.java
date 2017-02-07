@@ -40,24 +40,22 @@ public class SelfServiceRefresh {
         driver.manage().window().maximize();
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
                 TestAccounts.testusername1, TestAccounts.testuserpwd);
-        CommonWebDriver.navigateAndLoadPage(driver,URLConstants.homePageUrl,3);
+        CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         //create image text material
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.customer_service_xpath));
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.self_service_xpath));
-        CommonWebDriver.wait(driver,4);
-        CommonWebDriver.switchToFrame(driver,By.xpath("//iframe[@id='intelligenceMenuMgmtFrame']"));
+        CommonWebDriver.wait(driver, 4);
+        CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='intelligenceMenuMgmtFrame']"));
 
-        CommonWebDriver.sendKeysToElement(driver,By.xpath("//input[@id='searchText']"),"test");
-        CommonWebDriver.wait(driver,4);
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnRefresh']"));
-        CommonWebDriver.wait(driver,2);
-        String textboxValue=CommonWebDriver.getElement(driver,By.xpath("//input[@id='searchText']")).getAttribute("value");
-        if(textboxValue.equals(""))
-        {
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), "test");
+        CommonWebDriver.wait(driver, 4);
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRefresh']"));
+        CommonWebDriver.wait(driver, 2);
+        String textboxValue = CommonWebDriver.getElement(driver, By.xpath("//input[@id='searchText']")).getAttribute("value");
+        if (textboxValue.equals("")) {
             System.out.println("The page is refreshed, test pass");
-        }
-        else
+        } else
             CommonAssert.fail("The page is not refreshed, test fail!");
     }
 

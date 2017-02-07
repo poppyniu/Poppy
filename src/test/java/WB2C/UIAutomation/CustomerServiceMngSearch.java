@@ -40,7 +40,7 @@ public class CustomerServiceMngSearch {
         driver.manage().window().maximize();
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
                 TestAccounts.testusername1, TestAccounts.testuserpwd);
-        CommonWebDriver.navigateAndLoadPage(driver,URLConstants.homePageUrl,3);
+        CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
 
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.customer_service_xpath));
@@ -48,26 +48,22 @@ public class CustomerServiceMngSearch {
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.customer_servicemng_xpath));
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='serviceUserMgmtFrame']"));
-        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath("//input[@id='searchText']"), "joe",1);
+        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath("//input[@id='searchText']"), "joe", 1);
         CommonWebDriver.wait(driver, 4);
 
 
-
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath("//div[@id='grid']/table/tbody/tr/td[2]")))
-        {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//div[@id='grid']/table/tbody/tr/td[2]"))) {
             System.out.println("The item is searched out, test pass!");
         }
-        String textboxValue=CommonWebDriver.getElement(driver,By.xpath("//div[@id='grid']/table/tbody/tr/td[2]")).getText();
-        if(textboxValue.equals("joe"))
-        {
+        String textboxValue = CommonWebDriver.getElement(driver, By.xpath("//div[@id='grid']/table/tbody/tr/td[2]")).getText();
+        if (textboxValue.equals("joe")) {
             System.out.println("The item is searched out, test pass");
-        }
-        else
+        } else
             CommonAssert.fail("The item is not searched out, test fail!");
 
     }
 
-        //delete the newly added test data to keep test env clean
+    //delete the newly added test data to keep test env clean
 //        CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//a[@id='btnRefresh']"));
 //        CommonWebDriver.wait(driver,4);
 //        CommonWebDriver.clickElement(driver,By.xpath("//div[@id='container']/div[3]/div/div[3]/ul/li[3]/a"));

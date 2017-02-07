@@ -7,7 +7,6 @@ import WB2CConstants.NodeIPConstants;
 import WB2CConstants.SideMenuConstants;
 import WB2CConstants.TestAccounts;
 import WB2CConstants.URLConstants;
-import WB2CPages.AutoResponsePage;
 import WB2CPages.LoginPage;
 import WB2CPages.MembershipCategoryPage;
 import org.openqa.selenium.By;
@@ -102,14 +101,12 @@ public class MembershipCategorySwitch {
                 System.out.println("Filter auto response succeed, test pass! ");
             } else
                 CommonAssert.fail("Filter auto response get error, test fail! ");
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnRemove']"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnRemove']"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
-        }
-        else
-        {
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-ok']"));
+        } else {
             MembershipCategoryPage.CreateMembershipCategory(driver);
             CommonWebDriver.wait(driver, 2);
             MembershipCategoryPage.CreateMembershipCategory(driver);
@@ -180,17 +177,17 @@ public class MembershipCategorySwitch {
                 System.out.println("Filter auto response succeed, test pass! ");
             } else
                 CommonAssert.fail("Filter auto response get error, test fail! ");
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnRemove']"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnRemove']"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-ok']"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnRemove']"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnRemove']"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-ok']"));
         }
 
 

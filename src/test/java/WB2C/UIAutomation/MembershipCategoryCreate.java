@@ -9,10 +9,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.testng.Assert;
+
 import java.net.URL;
 import java.util.List;
 
@@ -46,8 +47,8 @@ public class MembershipCategoryCreate {
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='wxMbrCategoryMgmtFrame']"));
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnNew']"));
         CommonWebDriver.wait(driver, 2);
-        String expectValue="test member category";
-        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='name']"),expectValue);
+        String expectValue = "test member category";
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='name']"), expectValue);
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='description']"), "test description");
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
@@ -55,18 +56,21 @@ public class MembershipCategoryCreate {
         CommonWebDriver.wait(driver, 2);
         WebElement table = driver.findElement(By.xpath("//table[@class='k-selectable']"));
         List<WebElement> rows = table.findElements(By.tagName("tr"));
-        int newTableCount = rows.size()-1;
-        String memberXpath="//tr["+newTableCount+"]/td[2]";
-        String actualValue=table.findElement(By.xpath(memberXpath)).getText();
-        Assert.assertEquals(actualValue,expectValue);
+        int newTableCount = rows.size() - 1;
+        String memberXpath = "//tr[" + newTableCount + "]/td[2]";
+        String actualValue = table.findElement(By.xpath(memberXpath)).getText();
+        Assert.assertEquals(actualValue, expectValue);
         //delete test data
-        String chkXpath="//tr["+newTableCount+"]/td[1]//li";
-        CommonWebDriver.clickElement(driver,By.xpath(chkXpath));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElement(driver,By.xpath("//tr["+newTableCount+"]//li"+"[@class='icon-trash icon-large']"));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElement(driver,By.xpath("//button[@id='alertify-ok']"));
+        String chkXpath = "//tr[" + newTableCount + "]/td[1]//li";
+        CommonWebDriver.clickElement(driver, By.xpath(chkXpath));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath("//tr[" + newTableCount + "]//li" + "[@class='icon-trash icon-large']"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-ok']"));
     }
+
     @AfterMethod
-    public void tearDown() throws Exception {driver.quit();}
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
 }

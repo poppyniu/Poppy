@@ -554,7 +554,8 @@ public class CommonWebDriver {
 
     /**
      * clear text box if it's not empty
-     *add by poppy
+     * add by poppy
+     *
      * @param driver
      * @return
      */
@@ -568,7 +569,8 @@ public class CommonWebDriver {
 
     /**
      * check if element exists
-     *add by poppy
+     * add by poppy
+     *
      * @param driver
      * @return
      */
@@ -598,11 +600,12 @@ public class CommonWebDriver {
         }
         return status;
     }
+
     //add by poppy
-    public static boolean isMemberManagementMenuExist(WebDriver driver,String menuIcon) {
+    public static boolean isMemberManagementMenuExist(WebDriver driver, String menuIcon) {
         boolean status = false;
         try {
-            driver.findElement(By.xpath(".//*[@class='"+menuIcon+"']"));
+            driver.findElement(By.xpath(".//*[@class='" + menuIcon + "']"));
             System.out.println("WeChat Member Management" + " is appeard!");
             status = true;
         } catch (NoSuchElementException e) {

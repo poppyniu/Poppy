@@ -47,26 +47,27 @@ public class SessionManagementSearch {
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='sessionMgmtFrame']"));
         //get value from the first line
-        int i=4;
-        do{
-            String ii=Integer.toString(i);
-            String inputSearch=driver.findElement(By.xpath("//tr/td["+ii+"]")).getText().trim();
+        int i = 4;
+        do {
+            String ii = Integer.toString(i);
+            String inputSearch = driver.findElement(By.xpath("//tr/td[" + ii + "]")).getText().trim();
             CommonWebDriver.clearTextbox(driver, By.xpath("//input[@id='searchText']"));
-            CommonWebDriver.sendKeysToElement(driver,By.xpath("//input[@id='searchText']"),inputSearch ,
+            CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), inputSearch,
                     "quick reply Search text box.");
             CommonWebDriver.clickElementWhenPresent(driver,
                     By.xpath("//a[@id='btnSearch']/li"));
             CommonWebDriver.wait(driver, 2);
-            String actualValue=driver.findElement(By.xpath("//tr/td["+ii+"]")).getText().trim();
-            Assert.assertEquals(actualValue,inputSearch);
+            String actualValue = driver.findElement(By.xpath("//tr/td[" + ii + "]")).getText().trim();
+            Assert.assertEquals(actualValue, inputSearch);
             CommonWebDriver.clearTextbox(driver, By.xpath("//input[@id='searchText']"));
             CommonWebDriver.clickElementWhenPresent(driver,
                     By.xpath("//a[@id='btnSearch']/li"));
             CommonWebDriver.wait(driver, 2);
             i++;
-        } while (i<6);
+        } while (i < 6);
 
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

@@ -46,12 +46,11 @@ public class SystemConfigSkin {
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='configMgmtFrame']"));
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='theme']/li[2]/input"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnInfoSave']"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnInfoSave']"));
         CommonWebDriver.wait(driver, 2);
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@id='alertify']/div/article/p")))
-        {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='alertify']/div/article/p"))) {
             System.out.println("Change skin succeed, test pass! ");
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-ok']"));
         } else
             CommonAssert.fail("Change skin get error, test fail! ");
         //revert to default
@@ -64,12 +63,11 @@ public class SystemConfigSkin {
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='configMgmtFrame']"));
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='theme']/li[1]/input"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnInfoSave']"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnInfoSave']"));
         CommonWebDriver.wait(driver, 2);
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@id='alertify']/div/article/p")))
-        {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='alertify']/div/article/p"))) {
             System.out.println("Revert to default skin succeed, test pass! ");
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-ok']"));
         } else
             CommonAssert.fail("Revert to default skin get error, test fail! ");
 

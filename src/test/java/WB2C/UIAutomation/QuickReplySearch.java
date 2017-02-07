@@ -47,15 +47,16 @@ public class QuickReplySearch {
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='quickMessageMgmtFrame']"));
         //get quick reply value from the first line
-        String inputSearch=driver.findElement(By.xpath("//tr/td[2]")).getText().trim();
-        CommonWebDriver.sendKeysToElement(driver,By.xpath("//input[@id='searchText']"),inputSearch ,
+        String inputSearch = driver.findElement(By.xpath("//tr/td[2]")).getText().trim();
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), inputSearch,
                 "quick reply Search text box.");
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath("//a[@id='btnSearch']/li"));
         CommonWebDriver.wait(driver, 2);
-        String actualValue=driver.findElement(By.xpath("//tr/td[2]")).getText().trim();
-        Assert.assertEquals(actualValue,inputSearch);
+        String actualValue = driver.findElement(By.xpath("//tr/td[2]")).getText().trim();
+        Assert.assertEquals(actualValue, inputSearch);
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

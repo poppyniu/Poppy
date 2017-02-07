@@ -57,13 +57,13 @@ public class GroupManagementAuthority {
         } else
             CommonAssert.fail("Create group get error, test fail! ");
         //authority the new group
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/tbody/tr/td[4]/a[1]/li"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[4]/a[1]/li"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='usersWindow']/form/ul/li[5]/div/input[1]"));
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='usersWindow']/form/ul/li[5]/div/input[2]"));
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='usersWindow']/form/ul/li[5]/div/input[3]"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='usersWindow']/form/ul/li[5]/div/input[1]"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='usersWindow']/form/ul/li[5]/div/input[2]"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='usersWindow']/form/ul/li[5]/div/input[3]"));
         CommonWebDriver.wait(driver, 1);
-        CommonWebDriver.clickElement(driver,By.xpath(".//*[@id='btnPermissions']"));
+        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='btnPermissions']"));
         CommonWebDriver.wait(driver, 3);
 
         //click user management edit user authority
@@ -74,16 +74,16 @@ public class GroupManagementAuthority {
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.system_setup_user_management));
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='userMgmtFrame']"));
-        CommonWebDriver.sendKeysWithEnterToElement(driver,By.xpath(".//*[@id='searchText']"),"poppytest");
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElement(driver,By.xpath(".//*[@id='grid']/table/tbody/tr/td[7]/a[2]/li"));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='userForm']/ul/li[8]/span/span/span/span"));
-        CommonWebDriver.wait(driver,1);
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='userGroupId_listbox']/li[3]"));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnSave']"));
-        CommonWebDriver.wait(driver,2);
+        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "poppytest");
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[7]/a[2]/li"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='userForm']/ul/li[8]/span/span/span/span"));
+        CommonWebDriver.wait(driver, 1);
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='userGroupId_listbox']/li[3]"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnSave']"));
+        CommonWebDriver.wait(driver, 2);
         //logout from current user
         CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
@@ -103,10 +103,9 @@ public class GroupManagementAuthority {
                 TestAccounts.testusername3, TestAccounts.testuserpwd);
         CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         //judge if menu exists
-        if(!CommonWebDriver.isMemberManagementMenuExist(driver,"icon-group"))
-        {
+        if (!CommonWebDriver.isMemberManagementMenuExist(driver, "icon-group")) {
             System.out.println("The user can't see wechat management menu, test pass! ");
-        }else
+        } else
             CommonAssert.fail("The user can see wechat management menu, test fail! ");
 
         //delete test data

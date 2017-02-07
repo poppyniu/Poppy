@@ -7,6 +7,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -69,7 +70,7 @@ public class JsonUtility {
     }
 
     public static String postJsonContent(String urlStr, StringEntity inputBody) {
-        String output=null;
+        String output = null;
         try {
             DefaultHttpClient httpClient = new DefaultHttpClient();
             HttpPost postRequest = new HttpPost(
@@ -77,7 +78,7 @@ public class JsonUtility {
             inputBody.setContentType("application/json");
             postRequest.setEntity(inputBody);
             HttpResponse response = httpClient.execute(postRequest);
-            if (response.getStatusLine().getStatusCode() != 200&response.getStatusLine().getStatusCode() != 406) {
+            if (response.getStatusLine().getStatusCode() != 200 & response.getStatusLine().getStatusCode() != 406) {
                 throw new RuntimeException("Failed : HTTP error code : "
                         + response.getStatusLine().getStatusCode());
             }
@@ -95,10 +96,10 @@ public class JsonUtility {
             e.printStackTrace();
         }
         return "";
-        }
+    }
 
     public static String patchJsonContent(String urlStr, StringEntity inputBody) {
-        String output=null;
+        String output = null;
         try {
             DefaultHttpClient httpClient = new DefaultHttpClient();
             HttpPatch patchRequest = new HttpPatch(
@@ -128,7 +129,7 @@ public class JsonUtility {
     }
 
     public static String putJsonContent(String urlStr, StringEntity inputBody) {
-        String output=null;
+        String output = null;
         try {
             DefaultHttpClient httpClient = new DefaultHttpClient();
             HttpPut putRequest = new HttpPut(
@@ -158,8 +159,8 @@ public class JsonUtility {
     }
 
 
-    public static JSONObject jsonStrToJsonObject(String jsonContentStr){
-        JSONObject jsonObject=JSONObject.fromObject(jsonContentStr);
+    public static JSONObject jsonStrToJsonObject(String jsonContentStr) {
+        JSONObject jsonObject = JSONObject.fromObject(jsonContentStr);
         return jsonObject;
     }
 
@@ -174,7 +175,7 @@ public class JsonUtility {
             while ((len = inputStream.read(buffer, 0, buffer.length)) != -1) {
                 out.write(buffer, 0, len);
             }
-         // 将内存流转换为字符串
+            // 将内存流转换为字符串
             jsonStr = new String(out.toByteArray());
         } catch (IOException e) {
             e.printStackTrace();

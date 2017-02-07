@@ -72,7 +72,7 @@ public class GroupManagementInvalidCreate {
             alert.accept();
         } else
             CommonAssert.fail("Create group has a repeated name see the correct alert, test fail!");
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath("html/body/div[4]/div[1]/div/a/span"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath("html/body/div[4]/div[1]/div/a/span"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "test group");
         CommonWebDriver.wait(driver, 2);

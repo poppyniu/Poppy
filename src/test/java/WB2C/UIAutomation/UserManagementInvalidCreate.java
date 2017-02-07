@@ -46,9 +46,9 @@ public class UserManagementInvalidCreate {
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='userMgmtFrame']"));
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnNew']"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnSave']"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
-        if (CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@id='userForm']/ul/li[1]/span"))&CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@id='userForm']/ul/li[2]/span"))&CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@id='userForm']/ul/li[3]/span"))&CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@id='userForm']/ul/li[4]/span"))&CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@id='userForm']/ul/li[7]/span/span[2]"))&CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@id='userForm']/ul/li[8]/span/span[2]"))) {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='userForm']/ul/li[1]/span")) & CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='userForm']/ul/li[2]/span")) & CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='userForm']/ul/li[3]/span")) & CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='userForm']/ul/li[4]/span")) & CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='userForm']/ul/li[7]/span/span[2]")) & CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='userForm']/ul/li[8]/span/span[2]"))) {
             System.out.println("Create user without any info see the correct warning message, test pass! ");
         } else
             CommonAssert.fail("Create user without any info see the correct warning message, test fail! ");

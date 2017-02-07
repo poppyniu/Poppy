@@ -14,6 +14,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.net.URL;
+
 public class SessionManagementRefresh {
 
     private WebDriver driver;
@@ -47,13 +48,14 @@ public class SessionManagementRefresh {
         CommonWebDriver.clickElement(driver, By.xpath("//tr/td/a[@class='k-icon k-plus']"));
         CommonWebDriver.wait(driver, 2);
         //a class="k-link"
-        boolean iconMinus=CommonWebDriver.isElementDisplayed(driver, By.xpath("//tr/td/a[@class='k-icon k-minus']"));
+        boolean iconMinus = CommonWebDriver.isElementDisplayed(driver, By.xpath("//tr/td/a[@class='k-icon k-minus']"));
         Assert.assertTrue(iconMinus);
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnRefresh']"));
-        CommonWebDriver.wait(driver,2);
-        boolean iconPlus=CommonWebDriver.isElementDisplayed(driver, By.xpath("//tr/td/a[@class='k-icon k-plus']"));
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRefresh']"));
+        CommonWebDriver.wait(driver, 2);
+        boolean iconPlus = CommonWebDriver.isElementDisplayed(driver, By.xpath("//tr/td/a[@class='k-icon k-plus']"));
         Assert.assertTrue(iconPlus);
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

@@ -48,7 +48,7 @@ public class UserManagementChangePwd {
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='username']"), "youyou");
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='nickname']"), "youyou");
-        CommonWebDriver.sendKeysToElement(driver,By.xpath(".//form[@id='userForm']/ul/li/input[@id='password']"),"pass");
+        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//form[@id='userForm']/ul/li/input[@id='password']"), "pass");
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//form[@id='userForm']/ul/li/input[@id='repassword']"), "pass");
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userForm']/ul/li[7]/span/span[1]/span/span"));
         CommonWebDriver.wait(driver, 2);
@@ -58,7 +58,7 @@ public class UserManagementChangePwd {
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userGroupId_listbox']/li[1]"));
         CommonWebDriver.wait(driver, 1);
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnSave']"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnSave']"));
         CommonWebDriver.wait(driver, 3);
         CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "youyou");
         CommonWebDriver.wait(driver, 2);
@@ -67,11 +67,11 @@ public class UserManagementChangePwd {
         } else
             CommonAssert.fail("Create user get error, test fail! ");
         //click change pwd button
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/tbody/tr[1]/td[7]/a[1]/li"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/table/tbody/tr[1]/td[7]/a[1]/li"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.sendKeysToElement(driver,By.xpath(".//form[@id='passwordForm']/ul/li/input[@id='password']"),"new");
-        CommonWebDriver.sendKeysToElement(driver,By.xpath(".//form[@id='passwordForm']/ul/li/input[@id='repassword']"),"new");
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnPwdUpdate']"));
+        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//form[@id='passwordForm']/ul/li/input[@id='password']"), "new");
+        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//form[@id='passwordForm']/ul/li/input[@id='repassword']"), "new");
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnPwdUpdate']"));
         CommonWebDriver.wait(driver, 2);
 
         //logout from current user

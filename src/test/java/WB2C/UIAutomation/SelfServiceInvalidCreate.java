@@ -18,32 +18,32 @@ import java.net.URL;
 
 public class SelfServiceInvalidCreate {
 
-        private WebDriver driver;
-        private LoginPage loginPage;
-        private TestAccounts testaccounts;
-        private DesiredCapabilities desiredCapabilities;
-        private SelfServicePage selfServicePage = new SelfServicePage();
+    private WebDriver driver;
+    private LoginPage loginPage;
+    private TestAccounts testaccounts;
+    private DesiredCapabilities desiredCapabilities;
+    private SelfServicePage selfServicePage = new SelfServicePage();
 
-        @Parameters({"browser"})
-        @Test
+    @Parameters({"browser"})
+    @Test
 
-        public void invalidCreateSelfService(String testNGBrowser) throws Exception {
-            desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
-            String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
-            driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
-            loginPage = new LoginPage(driver);
-            testaccounts = new TestAccounts();
-            CommonWebDriver.get(driver, URLConstants.loginPageUrl);
-            driver.manage().window().maximize();
-            loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
-                    TestAccounts.testusername1, TestAccounts.testuserpwd);
-            CommonWebDriver.navigateAndLoadPage(driver,URLConstants.homePageUrl,3);
-            //create image text material
-            selfServicePage.InvalidCreateSelfServiceMaterial(driver);
-        }
+    public void invalidCreateSelfService(String testNGBrowser) throws Exception {
+        desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
+        String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
+        driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
+        loginPage = new LoginPage(driver);
+        testaccounts = new TestAccounts();
+        CommonWebDriver.get(driver, URLConstants.loginPageUrl);
+        driver.manage().window().maximize();
+        loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
+                TestAccounts.testusername1, TestAccounts.testuserpwd);
+        CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
+        //create image text material
+        selfServicePage.InvalidCreateSelfServiceMaterial(driver);
+    }
 
-        @AfterTest
-        public void tearDown() {
-            driver.quit();
-        }
+    @AfterTest
+    public void tearDown() {
+        driver.quit();
+    }
 }

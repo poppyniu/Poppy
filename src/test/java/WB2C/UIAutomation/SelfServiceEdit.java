@@ -40,7 +40,7 @@ public class SelfServiceEdit {
         driver.manage().window().maximize();
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
                 TestAccounts.testusername1, TestAccounts.testuserpwd);
-        CommonWebDriver.navigateAndLoadPage(driver,URLConstants.homePageUrl,3);
+        CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         //create image text material
         selfServicePage.CreateSelfServiceMaterial(driver);
 
@@ -55,19 +55,18 @@ public class SelfServiceEdit {
         CommonWebDriver.wait(driver, 2);
 
         //delete the newly added test data to keep test env clean
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath("//span[@id='window_wnd_title']")))
-        {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//span[@id='window_wnd_title']"))) {
             System.out.println("The correct edit pop up dialog appear, test pass!");
         }
-        CommonWebDriver.sendKeysToElement(driver,By.xpath("//input[@id='name']"),"edit name",1);
-        CommonWebDriver.wait(driver,4);
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnSave']"));
-        CommonWebDriver.wait(driver,4);
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='name']"), "edit name", 1);
+        CommonWebDriver.wait(driver, 4);
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
+        CommonWebDriver.wait(driver, 4);
         //delete the newly added test data to keep test env clean
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//div[@id='grid']/table/tbody/tr[5]/td[9]/a[4]/li"));
-        CommonWebDriver.wait(driver,4);
-        CommonWebDriver.clickElement(driver,By.xpath("//button[@id='alertify-ok']"));
-        CommonWebDriver.wait(driver,1);
+        CommonWebDriver.wait(driver, 4);
+        CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-ok']"));
+        CommonWebDriver.wait(driver, 1);
     }
 
     @AfterTest

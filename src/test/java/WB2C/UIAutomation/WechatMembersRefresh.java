@@ -45,12 +45,13 @@ public class WechatMembersRefresh {
                 By.xpath(SideMenuConstants.wechat_member_xpath));
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='wxMemberMgmtFrame']"));
-        CommonWebDriver.clickElement(driver,By.xpath("//table[@class='k-selectable']/tbody/tr/td[1]/a"));
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnRefresh']"));
-        boolean checkboxSelected =driver.findElement(By.xpath("//table[@class='k-selectable']/tbody/tr/td[1]/a")).isSelected();
-        if(!checkboxSelected)
+        CommonWebDriver.clickElement(driver, By.xpath("//table[@class='k-selectable']/tbody/tr/td[1]/a"));
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRefresh']"));
+        boolean checkboxSelected = driver.findElement(By.xpath("//table[@class='k-selectable']/tbody/tr/td[1]/a")).isSelected();
+        if (!checkboxSelected)
             System.out.println("The wechat account page is refreshed, test pass!");
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

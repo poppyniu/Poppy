@@ -58,14 +58,14 @@ public class GroupManagementEdit {
             CommonAssert.fail("Create group get error, scenario fail! ");
         //edit test data
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr[1]/td[4]/a[2]/li"));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clearTextbox(driver,By.xpath(".//*[@id='name']"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clearTextbox(driver, By.xpath(".//*[@id='name']"));
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='name']"), "edit test group");
-        CommonWebDriver.clearTextbox(driver,By.xpath(".//*[@id='description']"));
+        CommonWebDriver.clearTextbox(driver, By.xpath(".//*[@id='description']"));
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='description']"), "edit test group description");
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
-        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("edit")&CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[3]")).getAttribute("innerHTML").contains("edit")) {
+        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("edit") & CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[3]")).getAttribute("innerHTML").contains("edit")) {
             System.out.println("Eit group name and description succeed, test pass! ");
         } else
             CommonAssert.fail("Eit group name and description get error, test fail! ");

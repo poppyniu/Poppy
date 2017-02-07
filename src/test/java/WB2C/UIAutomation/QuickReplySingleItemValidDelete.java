@@ -40,7 +40,7 @@ public class QuickReplySingleItemValidDelete {
         CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.customer_service_xpath));
-        CommonWebDriver.wait(driver,2);
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.quick_reply_xpath));
         CommonWebDriver.wait(driver, 4);
@@ -48,29 +48,30 @@ public class QuickReplySingleItemValidDelete {
         //CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnNew']"));
         CommonWebDriver.wait(driver, 1);
-        String inputValue="test quick reply";
-        CommonWebDriver.sendKeysToElement(driver, By.xpath("//textarea[@id='content']"),inputValue);
+        String inputValue = "test quick reply";
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//textarea[@id='content']"), inputValue);
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.sendKeysToElement(driver,By.xpath("//input[@id='searchText']"),inputValue ,
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), inputValue,
                 "quick reply Search text box.");
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath("//a[@id='btnSearch']/li"));
         CommonWebDriver.wait(driver, 2);
-        String actualValue=driver.findElement(By.xpath("//tr/td[2]")).getText();
-        Assert.assertEquals(actualValue,inputValue);
+        String actualValue = driver.findElement(By.xpath("//tr/td[2]")).getText();
+        Assert.assertEquals(actualValue, inputValue);
         //delete test data
-        CommonWebDriver.clickElement(driver,By.xpath("//tr/td[1]//li"));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElement(driver,By.xpath("//tr//li[@class='icon-trash icon-large']"));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElement(driver,By.xpath("//button[@id='alertify-ok']"));
-        CommonWebDriver.wait(driver,2);
-        String searchResult="//span[@class='k-state-selected']";
-        String actualNumber=CommonWebDriver.getElement(driver,By.xpath(searchResult)).getText();
-        String expectNumber="0";
-        Assert.assertEquals(actualNumber,expectNumber);
+        CommonWebDriver.clickElement(driver, By.xpath("//tr/td[1]//li"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath("//tr//li[@class='icon-trash icon-large']"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-ok']"));
+        CommonWebDriver.wait(driver, 2);
+        String searchResult = "//span[@class='k-state-selected']";
+        String actualNumber = CommonWebDriver.getElement(driver, By.xpath(searchResult)).getText();
+        String expectNumber = "0";
+        Assert.assertEquals(actualNumber, expectNumber);
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

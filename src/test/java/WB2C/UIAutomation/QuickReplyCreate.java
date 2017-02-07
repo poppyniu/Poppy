@@ -48,25 +48,26 @@ public class QuickReplyCreate {
         //CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnNew']"));
         CommonWebDriver.wait(driver, 1);
-        String inputValue="test quick reply";
-        CommonWebDriver.sendKeysToElement(driver, By.xpath("//textarea[@id='content']"),inputValue);
+        String inputValue = "test quick reply";
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//textarea[@id='content']"), inputValue);
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.sendKeysToElement(driver,By.xpath("//input[@id='searchText']"),inputValue ,
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), inputValue,
                 "quick reply Search text box.");
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath("//a[@id='btnSearch']/li"));
         CommonWebDriver.wait(driver, 2);
-        String actualValue=driver.findElement(By.xpath("//tr/td[2]")).getText();
-        Assert.assertEquals(actualValue,inputValue);
+        String actualValue = driver.findElement(By.xpath("//tr/td[2]")).getText();
+        Assert.assertEquals(actualValue, inputValue);
         //delete test data
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@class='check-all']/li"));
-        CommonWebDriver.wait(driver,1);
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnRemove']"));
-        CommonWebDriver.wait(driver,1);
-        CommonWebDriver.clickElement(driver,By.xpath("//button[@id='alertify-ok']"));
-        CommonWebDriver.wait(driver,1);
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@class='check-all']/li"));
+        CommonWebDriver.wait(driver, 1);
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRemove']"));
+        CommonWebDriver.wait(driver, 1);
+        CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-ok']"));
+        CommonWebDriver.wait(driver, 1);
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

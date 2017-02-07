@@ -65,6 +65,7 @@ public class SessionManagementDownloadEvaluation {
         robot.keyPress(KeyEvent.VK_ENTER);
         Thread.sleep(5000L);
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

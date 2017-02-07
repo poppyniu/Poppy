@@ -54,8 +54,11 @@ public class MembershipCategoryRefresh {
             System.out.println("The membership category page is Not refreshed, test fail!");
         }
     }
+
     @AfterMethod
-    public void tearDown() throws Exception {driver.quit();}
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
 }
 
 

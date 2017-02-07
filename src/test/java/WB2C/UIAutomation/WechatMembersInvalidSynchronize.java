@@ -49,15 +49,15 @@ public class WechatMembersInvalidSynchronize {
         //CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath("//a[@id='btnInit']"));
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath("//article[@class='alertify-inner']")))
-        {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//article[@class='alertify-inner']"))) {
             CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-cancel']"));
             CommonWebDriver.wait(driver, 1);
             System.out.println("Sync message canceled, test pass!");
-        }else{
+        } else {
             System.out.println("Sync message didn't be canceled, test fail!");
         }
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

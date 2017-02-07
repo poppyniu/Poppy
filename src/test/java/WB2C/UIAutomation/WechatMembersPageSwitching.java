@@ -63,6 +63,7 @@ public class WechatMembersPageSwitching {
         CommonWebDriver.wait(driver, 3);
         Assert.assertTrue(e.getText().contains("显示11-20"));
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

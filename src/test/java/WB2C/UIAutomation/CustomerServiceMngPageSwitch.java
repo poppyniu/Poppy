@@ -10,7 +10,6 @@ import WB2CConstants.URLConstants;
 import WB2CPages.LoginPage;
 import WB2CPages.SelfServicePage;
 import WB2CPages.SystemSetupPage;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

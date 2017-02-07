@@ -4,7 +4,6 @@ import WB2CCommon.CommonAssert;
 import WB2CCommon.CommonUtil;
 import WB2CCommon.CommonWebDriver;
 import WB2CConstants.NodeIPConstants;
-import WB2CConstants.SideMenuConstants;
 import WB2CConstants.TestAccounts;
 import WB2CConstants.URLConstants;
 import WB2CPages.LoginPage;
@@ -57,36 +56,31 @@ public class SelfServiceDelete {
         CommonWebDriver.clickElement(driver, By.xpath(chkXpath));
         CommonWebDriver.wait(driver, 2);
 
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnRemove']"));
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath("//section[@id='alertify']")))
-        {
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRemove']"));
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//section[@id='alertify']"))) {
             System.out.println("The correct delete pop up dialog appear, test pass!");
         }
 
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath("//button[@id='alertify-cancel']"),"Delete account pop up dialog cancel button.");
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath(chkXpath)))
-        {
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//button[@id='alertify-cancel']"), "Delete account pop up dialog cancel button.");
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath(chkXpath))) {
             System.out.println("The wechat account is not deleted, test pass!");
-        }
-        else
-        CommonAssert.fail("cancel button does not work , test fail!");
+        } else
+            CommonAssert.fail("cancel button does not work , test fail!");
         CommonWebDriver.wait(driver, 2);
 
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnRemove']"));
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRemove']"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath("//button[@id='alertify-ok']"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//button[@id='alertify-ok']"));
         CommonWebDriver.wait(driver, 2);
-        if(!CommonWebDriver.isElementDisplayed(driver,By.xpath(chkXpath)))
-        {
+        if (!CommonWebDriver.isElementDisplayed(driver, By.xpath(chkXpath))) {
             System.out.println("The wechat account is deleted, test pass!");
-        }
-        else
-        CommonAssert.fail("OK button doesn't work, test fail!");
+        } else
+            CommonAssert.fail("OK button doesn't work, test fail!");
     }
 
-        @AfterTest
-        public void tearDown() {
-            driver.quit();
-        }
+    @AfterTest
+    public void tearDown() {
+        driver.quit();
+    }
 
 }

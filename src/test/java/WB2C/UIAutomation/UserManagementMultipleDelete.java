@@ -49,7 +49,7 @@ public class UserManagementMultipleDelete {
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='username']"), "youyou");
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='nickname']"), "youyou");
-        CommonWebDriver.sendKeysToElement(driver,By.xpath(".//form[@id='userForm']/ul/li/input[@id='password']"),"pass");
+        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//form[@id='userForm']/ul/li/input[@id='password']"), "pass");
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//form[@id='userForm']/ul/li/input[@id='repassword']"), "pass");
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userForm']/ul/li[7]/span/span[1]/span/span"));
         CommonWebDriver.wait(driver, 2);
@@ -59,14 +59,14 @@ public class UserManagementMultipleDelete {
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userGroupId_listbox']/li[1]"));
         CommonWebDriver.wait(driver, 1);
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnSave']"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
         //create second test user
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnNew']"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='username']"), "youyou1");
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='nickname']"), "youyou1");
-        CommonWebDriver.sendKeysToElement(driver,By.xpath(".//form[@id='userForm']/ul/li/input[@id='password']"),"pass");
+        CommonWebDriver.sendKeysToElement(driver, By.xpath(".//form[@id='userForm']/ul/li/input[@id='password']"), "pass");
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//form[@id='userForm']/ul/li/input[@id='repassword']"), "pass");
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userForm']/ul/li[7]/span/span[1]/span/span"));
         CommonWebDriver.wait(driver, 2);
@@ -76,20 +76,19 @@ public class UserManagementMultipleDelete {
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='userGroupId_listbox']/li[1]"));
         CommonWebDriver.wait(driver, 1);
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnSave']"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "youyou");
         CommonWebDriver.wait(driver, 2);
-        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("youyou")&CommonWebDriver.getElement(driver,By.xpath(".//*[@id='grid']/table/tbody/tr[2]/td[2]")).getAttribute("innerHTML").contains("youyou1")) {
+        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("youyou") & CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr[2]/td[2]")).getAttribute("innerHTML").contains("youyou1")) {
             System.out.println("Search and create users succeed, test pass! ");
         } else
             CommonAssert.fail("Search and create users get error, test fail! ");
         //test the multiple delete function
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
-        CommonWebDriver.wait(driver,1);
+        CommonWebDriver.wait(driver, 1);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='btnRemove']"));
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@id='alertify']/div/article/p")))
-        {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='alertify']/div/article/p"))) {
             System.out.println("Click delete button see the correct dialog, test pass! ");
             CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='alertify-ok']"));
         } else

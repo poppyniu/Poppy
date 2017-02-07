@@ -40,27 +40,28 @@ public class QuickReplyInvalidDelete {
         CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.customer_service_xpath));
-        CommonWebDriver.wait(driver,2);
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.quick_reply_xpath));
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='quickMessageMgmtFrame']"));
         //directly delete test data
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnRemove']"));
-        CommonWebDriver.wait(driver,1);
-        Assert.assertTrue(CommonWebDriver.isElementDisplayed(driver,By.xpath("//article[@class='alertify-log alertify-log-delete alertify-log-show']")));
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRemove']"));
+        CommonWebDriver.wait(driver, 1);
+        Assert.assertTrue(CommonWebDriver.isElementDisplayed(driver, By.xpath("//article[@class='alertify-log alertify-log-delete alertify-log-show']")));
 
         //delete test data with cancel
-        String beforeCancelValue=CommonWebDriver.getElement(driver,By.xpath("//tr/td[1]//li")).getText();
-        CommonWebDriver.clickElement(driver,By.xpath("//tr/td[1]//li"));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElement(driver,By.xpath("//tr//li[@class='icon-trash icon-large']"));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElement(driver,By.xpath("//button[@id='alertify-cancel']"));
-        CommonWebDriver.wait(driver,2);
-        String afterCancelValue=CommonWebDriver.getElement(driver,By.xpath("//tr/td[1]//li")).getText();
-        Assert.assertEquals(afterCancelValue,beforeCancelValue);
+        String beforeCancelValue = CommonWebDriver.getElement(driver, By.xpath("//tr/td[1]//li")).getText();
+        CommonWebDriver.clickElement(driver, By.xpath("//tr/td[1]//li"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath("//tr//li[@class='icon-trash icon-large']"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-cancel']"));
+        CommonWebDriver.wait(driver, 2);
+        String afterCancelValue = CommonWebDriver.getElement(driver, By.xpath("//tr/td[1]//li")).getText();
+        Assert.assertEquals(afterCancelValue, beforeCancelValue);
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

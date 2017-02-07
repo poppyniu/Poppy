@@ -48,11 +48,12 @@ public class SessionManagementUpfoldMessageRecords {
         CommonWebDriver.clickElement(driver, By.xpath("//tr/td/a[@class='k-icon k-plus']"));
         CommonWebDriver.wait(driver, 2);
         //a class="k-link"
-        boolean iconMinus=CommonWebDriver.isElementDisplayed(driver, By.xpath("//tr/td/a[@class='k-icon k-minus']"));
+        boolean iconMinus = CommonWebDriver.isElementDisplayed(driver, By.xpath("//tr/td/a[@class='k-icon k-minus']"));
         Assert.assertTrue(iconMinus);
-        String actual=CommonWebDriver.getElement(driver,By.xpath("//th[@data-title='内容']")).getText().trim();
+        String actual = CommonWebDriver.getElement(driver, By.xpath("//th[@data-title='内容']")).getText().trim();
         Assert.assertEquals(actual, "内容");
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

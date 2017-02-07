@@ -48,17 +48,17 @@ public class WechatMembersSynchronize {
         //CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath("//a[@id='btnInit']"));
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath("//article[@class='alertify-inner']")))
-        {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//article[@class='alertify-inner']"))) {
             CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-ok']"));
             CommonWebDriver.wait(driver, 1);
             CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-ok']"));
             CommonWebDriver.wait(driver, 1);
             System.out.println("Sync message pops up, test pass!");
-        }else{
+        } else {
             System.out.println("Sync message didn't pop up, test fail!");
         }
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

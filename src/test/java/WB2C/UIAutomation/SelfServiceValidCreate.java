@@ -1,22 +1,21 @@
 package WB2C.UIAutomation;
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.net.URL;
-
-import WB2CCommon.CommonAssert;
 import WB2CCommon.CommonUtil;
-import WB2CConstants.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.*;
 import WB2CCommon.CommonWebDriver;
+import WB2CConstants.NodeIPConstants;
+import WB2CConstants.TestAccounts;
+import WB2CConstants.URLConstants;
 import WB2CPages.LoginPage;
 import WB2CPages.SelfServicePage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import java.net.URL;
 
 public class SelfServiceValidCreate {
 
@@ -39,14 +38,14 @@ public class SelfServiceValidCreate {
         driver.manage().window().maximize();
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
                 TestAccounts.testusername1, TestAccounts.testuserpwd);
-        CommonWebDriver.navigateAndLoadPage(driver,URLConstants.homePageUrl,3);
+        CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         //create image text material
         selfServicePage.CreateSelfServiceMaterial(driver);
         //delete the newly added test data to keep test env clean
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//div[@id='grid']/table/tbody/tr[5]/td[9]/a[4]/li"));
-        CommonWebDriver.wait(driver,4);
-        CommonWebDriver.clickElement(driver,By.xpath("//button[@id='alertify-ok']"));
-        CommonWebDriver.wait(driver,1);
+        CommonWebDriver.wait(driver, 4);
+        CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-ok']"));
+        CommonWebDriver.wait(driver, 1);
     }
 
     @AfterTest

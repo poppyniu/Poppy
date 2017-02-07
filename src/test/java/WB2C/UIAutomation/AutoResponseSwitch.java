@@ -100,14 +100,12 @@ public class AutoResponseSwitch {
                 System.out.println("Filter auto response succeed, test pass! ");
             } else
                 CommonAssert.fail("Filter auto response get error, test fail! ");
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnRemove']"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnRemove']"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
-        }
-        else
-        {
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-ok']"));
+        } else {
             AutoResponsePage.CreateAutoResponse(driver);
             CommonWebDriver.wait(driver, 2);
             AutoResponsePage.CreateAutoResponse(driver);
@@ -178,17 +176,17 @@ public class AutoResponseSwitch {
                 System.out.println("Filter auto response succeed, test pass! ");
             } else
                 CommonAssert.fail("Filter auto response get error, test fail! ");
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnRemove']"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnRemove']"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-ok']"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnRemove']"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnRemove']"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-ok']"));
         }
 
 

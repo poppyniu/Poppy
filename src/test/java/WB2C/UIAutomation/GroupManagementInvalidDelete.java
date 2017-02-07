@@ -66,16 +66,14 @@ public class GroupManagementInvalidDelete {
             CommonAssert.fail("Create group get error, scenario fail! ");
         //cancel delete test data
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr[1]/td[4]/a[3]/li"));
-        CommonWebDriver.wait(driver,1);
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@id='alertify']/div/article/p")))
-        {
+        CommonWebDriver.wait(driver, 1);
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='alertify']/div/article/p"))) {
             System.out.println("Click delete button see the correct warning dialog, test pass! ");
-        }
-        else
+        } else
             CommonAssert.fail("Click delete button does not see the warning dialog, test fail!");
         //click cancel button
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='alertify-cancel']"));
-        CommonWebDriver.wait(driver,1);
+        CommonWebDriver.wait(driver, 1);
         if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("test group")) {
             System.out.println("Cancel delete succeed, test pass! ");
         } else

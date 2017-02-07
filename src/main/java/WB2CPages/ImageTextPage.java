@@ -30,8 +30,7 @@ public class ImageTextPage {
         CommonWebDriver.wait(driver, 2);
         if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//img[@src='/WCPPRO/api/file/5/test.jpg']"))) {
             System.out.println("Create new text image material succeed, test pass! ");
-        }
-        else
+        } else
             Assert.fail("Create new image test get error, test fail!");
 
     }

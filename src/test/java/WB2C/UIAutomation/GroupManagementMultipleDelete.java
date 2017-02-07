@@ -64,14 +64,12 @@ public class GroupManagementMultipleDelete {
         } else
             CommonAssert.fail("Create group get error, scenario fail! ");
         //select all and delete test data
-        CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='btnRemove']"));
-        CommonWebDriver.wait(driver,1);
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@id='alertify']/div/article/p"))&CommonWebDriver.getElement(driver,By.xpath(".//*[@id='alertify']/div/article/p")).getAttribute("innerHTML").contains("2"))
-        {
+        CommonWebDriver.wait(driver, 1);
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='alertify']/div/article/p")) & CommonWebDriver.getElement(driver, By.xpath(".//*[@id='alertify']/div/article/p")).getAttribute("innerHTML").contains("2")) {
             System.out.println("Click delete button see the correct warning dialog, test pass! ");
-        }
-        else
+        } else
             CommonAssert.fail("Click delete button does not see the warning dialog, test fail!");
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='alertify-ok']"));

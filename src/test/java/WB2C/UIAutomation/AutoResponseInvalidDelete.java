@@ -87,7 +87,7 @@ public class AutoResponseInvalidDelete {
             //delete test data
             CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[8]/a[4]/li"));
             CommonWebDriver.wait(driver, 2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
+            CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-ok']"));
             CommonWebDriver.wait(driver, 2);
         } else
             CommonAssert.fail("Cancel a delete get error, test fail!");

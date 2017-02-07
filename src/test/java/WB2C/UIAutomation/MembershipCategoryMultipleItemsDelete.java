@@ -53,7 +53,7 @@ public class MembershipCategoryMultipleItemsDelete {
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
         //create the second membership category
-        String newCat2 = newCat1+"2";
+        String newCat2 = newCat1 + "2";
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnNew']"));
         CommonWebDriver.wait(driver, 2);
         String expectValue1 = "test member category1";
@@ -62,24 +62,27 @@ public class MembershipCategoryMultipleItemsDelete {
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
         //search multiple membership categories
-        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"),newCat1 ,
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), newCat1,
                 "Membership Category Search text box.");
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath("//a[@id='btnSearch']/li"));
         //delete test data
-        String chkAllXpath="//a[@class='check-all']/li";
-        CommonWebDriver.clickElement(driver,By.xpath(chkAllXpath));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElement(driver,By.xpath("//*[@id='btnRemove']"));
-        CommonWebDriver.wait(driver,2);
-        CommonWebDriver.clickElement(driver,By.xpath("//button[@id='alertify-ok']"));
-        CommonWebDriver.wait(driver,2);
-        String searchResult="//span[@class='k-state-selected']";
-        String actualNumber=CommonWebDriver.getElement(driver,By.xpath(searchResult)).getText();
-        String expectNumber="0";
-        Assert.assertEquals(actualNumber,expectNumber);
+        String chkAllXpath = "//a[@class='check-all']/li";
+        CommonWebDriver.clickElement(driver, By.xpath(chkAllXpath));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath("//*[@id='btnRemove']"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-ok']"));
+        CommonWebDriver.wait(driver, 2);
+        String searchResult = "//span[@class='k-state-selected']";
+        String actualNumber = CommonWebDriver.getElement(driver, By.xpath(searchResult)).getText();
+        String expectNumber = "0";
+        Assert.assertEquals(actualNumber, expectNumber);
 
     }
+
     @AfterTest
-    public void tearDown() throws Exception { driver.quit(); }
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
 }

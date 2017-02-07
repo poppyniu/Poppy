@@ -11,7 +11,6 @@ import WB2CPages.LoginPage;
 import WB2CPages.SelfServicePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
@@ -19,7 +18,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.net.URL;
-import java.util.List;
 
 public class SelfServiceInvalidDelete {
 
@@ -47,20 +45,18 @@ public class SelfServiceInvalidDelete {
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.customer_service_xpath));
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.self_service_xpath));
-        CommonWebDriver.wait(driver,4);
-        CommonWebDriver.switchToFrame(driver,By.xpath("//iframe[@id='intelligenceMenuMgmtFrame']"));
+        CommonWebDriver.wait(driver, 4);
+        CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='intelligenceMenuMgmtFrame']"));
 
-       //delete test data
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnRemove']"));
-        CommonWebDriver.wait(driver,2);
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath("//section[@id='alertify-logs']/article")))
-        {
+        //delete test data
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRemove']"));
+        CommonWebDriver.wait(driver, 2);
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//section[@id='alertify-logs']/article"))) {
             System.out.println("The correct delete pop up dialog appear‘尚未勾选记录，无法进行删除操作。’ test pass!");
-        }
-        else
-        CommonAssert.fail("remove button does not work, test fail!");
+        } else
+            CommonAssert.fail("remove button does not work, test fail!");
 
-        CommonWebDriver.wait(driver,4);
+        CommonWebDriver.wait(driver, 4);
     }
 
     @AfterTest

@@ -58,12 +58,10 @@ public class GroupManagementDelete {
             CommonAssert.fail("Create group get error, scenario fail! ");
         //delete test data
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr[1]/td[4]/a[3]/li"));
-        CommonWebDriver.wait(driver,1);
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath(".//*[@id='alertify']/div/article/p")))
-        {
+        CommonWebDriver.wait(driver, 1);
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='alertify']/div/article/p"))) {
             System.out.println("Click delete button see the correct warning dialog, test pass! ");
-        }
-        else
+        } else
             CommonAssert.fail("Click delete button does not see the warning dialog, test fail!");
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='alertify-ok']"));

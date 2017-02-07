@@ -79,22 +79,23 @@ public class QuickReplyPageSwtiching {
                 By.xpath("//a[@id='btnSearch']/li"));
         CommonWebDriver.wait(driver, 3);
         //delete test data
-       for(int j = 0;; j++){
-           String pageNum=CommonWebDriver.getElement(driver, By.xpath("//span[@class='k-state-selected']")).getText();
-           if(pageNum.startsWith("0")){
-               break;
-           }
-           CommonWebDriver.clickElement(driver,By.xpath("//a[@class='check-all']/li"));
-           CommonWebDriver.wait(driver,2);
-           CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnRemove']"));
-           CommonWebDriver.wait(driver,2);
-           CommonWebDriver.clickElement(driver,By.xpath("//button[@id='alertify-ok']"));
-           CommonWebDriver.wait(driver,2);
-           CommonWebDriver.clickElementWhenPresent(driver,
-                   By.xpath("//a[@id='btnSearch']/li"));
-           CommonWebDriver.wait(driver, 2);
+        for (int j = 0; ; j++) {
+            String pageNum = CommonWebDriver.getElement(driver, By.xpath("//span[@class='k-state-selected']")).getText();
+            if (pageNum.startsWith("0")) {
+                break;
+            }
+            CommonWebDriver.clickElement(driver, By.xpath("//a[@class='check-all']/li"));
+            CommonWebDriver.wait(driver, 2);
+            CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnRemove']"));
+            CommonWebDriver.wait(driver, 2);
+            CommonWebDriver.clickElement(driver, By.xpath("//button[@id='alertify-ok']"));
+            CommonWebDriver.wait(driver, 2);
+            CommonWebDriver.clickElementWhenPresent(driver,
+                    By.xpath("//a[@id='btnSearch']/li"));
+            CommonWebDriver.wait(driver, 2);
         }
     }
+
     @AfterTest
     public void tearDown() throws Exception {
         driver.quit();

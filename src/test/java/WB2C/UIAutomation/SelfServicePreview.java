@@ -40,27 +40,24 @@ public class SelfServicePreview {
         driver.manage().window().maximize();
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
                 TestAccounts.testusername1, TestAccounts.testuserpwd);
-        CommonWebDriver.navigateAndLoadPage(driver,URLConstants.homePageUrl,3);
+        CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         //create image text material
 
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.customer_service_xpath));
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.self_service_xpath));
-        CommonWebDriver.wait(driver,4);
-        CommonWebDriver.switchToFrame(driver,By.xpath("//iframe[@id='intelligenceMenuMgmtFrame']"));
-        CommonWebDriver.wait(driver,4);
+        CommonWebDriver.wait(driver, 4);
+        CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='intelligenceMenuMgmtFrame']"));
+        CommonWebDriver.wait(driver, 4);
 
-        CommonWebDriver.clickElement(driver,By.xpath("//a[@id='btnPreview']"));
-        CommonWebDriver.wait(driver,2);
+        CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnPreview']"));
+        CommonWebDriver.wait(driver, 2);
 
-        if(CommonWebDriver.isElementDisplayed(driver,By.xpath("//span[@id='treeDemo_1_span']")))
-        {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//span[@id='treeDemo_1_span']"))) {
             System.out.println("The preview is displayed, test pass!");
-        }
-        else
+        } else
             CommonAssert.fail("preview button does not work , test fail!");
     }
-
 
 
     @AfterTest
