@@ -27,9 +27,9 @@ public class AddressDefaultGetAPITest {
         String entity = jsonObject.getString("entity");
         String newAddressIdStr = entity.substring(406, 442);
 
-        //patch default address
+        //patch default address to set the new address to default address
         String patchUrl = "http://54.222.195.248:8888/api/v1/burberry/address/default/" + newAddressIdStr;
-        StringEntity patchInputBody = new StringEntity("{\"memberId\":\"4a27dfdc-0343-4d45-80fc-19b017f45e76\",\"consignee\":\"Consignee\",\"consigneePhone\":\"Consignee Phone\",\"country\":\"中国\",\"province\":\"江苏省\",\"city\":\"苏州市\",\"area\":\"工业园区 \",\"address\":\"xxxxxx\",\"postalCode\":\"215000\",\"default\":0}");
+        StringEntity patchInputBody = new StringEntity("{\"memberId\":\"4a27dfdc-0343-4d45-80fc-19b017f45e76\"}");
         String patchResult = JsonUtility.patchJsonContent(patchUrl, patchInputBody);
         if (patchResult.contains("Mission accomplished")) {
             System.out.println("Patch address API succeed,test pass!");
@@ -39,11 +39,11 @@ public class AddressDefaultGetAPITest {
         String getDefaulturl = "http://54.222.195.248:8888/api/v1/burberry/address/default?memberId=4a27dfdc-0343-4d45-80fc-19b017f45e76";
         String getDefaultJsonStr = JsonUtility.getJsonContent(getDefaulturl);
         JSONObject getDefaultJsonObject = JsonUtility.jsonStrToJsonObject(getDefaultJsonStr);
-        String getDefaultEntity = jsonObject.getString("entity");
-        if (entity.contains("\"default\":1")) {
-            System.out.println("Get address API succeed,test pass!");
+        String getDefaultEntity = getDefaultJsonObject.getString("entity");
+        if (getDefaultEntity.contains("\"default\":1")) {
+            System.out.println("Get default address API succeed,test pass!");
         } else
-            CommonAssert.fail("Get address API get error, test fail!");
+            CommonAssert.fail("Get default address API get error, test fail!");
 
         //delete new address
         String deleteUrl = "http://54.222.195.248:8888/api/v1/burberry/address/" + newAddressIdStr;
