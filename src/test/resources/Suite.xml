@@ -3,7 +3,7 @@
     <test name="Test">
         <classes>
             <!--<parameter name="testNGBrowser" value="chrome"/>-->
-            <class name="WB2C.UIAutomation.AddSecondaryImageText"/>
+            <!--<class name="WB2C.UIAutomation.AddSecondaryImageText"/>-->
             <!--<class name="WB2C.UIAutomation.AddSecondaryInvalidImageText"/>-->
             <!--<class name="WB2C.UIAutomation.AutoResponseCreate"/>-->
             <!--<class name="WB2C.UIAutomation.AutoResponseDelete"/>-->
