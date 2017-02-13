@@ -2,11 +2,14 @@ package WB2C.UIAutomation;
 
 import WB2CCommon.CommonUtil;
 import WB2CCommon.CommonWebDriver;
+import WB2CCommon.ImageTextMaterialUtil;
 import WB2CConstants.NodeIPConstants;
+import WB2CConstants.SideMenuConstants;
 import WB2CConstants.TestAccounts;
 import WB2CConstants.URLConstants;
 import WB2CPages.ImageTextPage;
 import WB2CPages.LoginPage;
+import com.domain.wx.MaterialNews;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
