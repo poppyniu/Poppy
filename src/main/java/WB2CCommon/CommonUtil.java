@@ -781,4 +781,16 @@ public class CommonUtil {
         } else
             CommonAssert.fail("Does not see the correct dialog, test fail!");
     }
-}
+
+
+    public static boolean isAlertPresent(WebDriver driver) {
+        try {
+            Alert alert =driver.switchTo().alert();
+            alert.accept();
+            CommonWebDriver.wait(driver, 2);
+            return true;
+        } catch (NoAlertPresentException Ex) {
+            return false;
+        }
+    }
+    }

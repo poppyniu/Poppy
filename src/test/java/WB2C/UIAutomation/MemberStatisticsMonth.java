@@ -47,7 +47,7 @@ public class MemberStatisticsMonth {
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='reportMemDateMgmtFrame']"));
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='monthBtn']"));
-        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.wait(driver, 3);
         WebElement table = driver.findElement(By.xpath(".//*[@id='grid']/table"));
         List<WebElement> rows = table.findElements(By.tagName("tr"));
         int tableCount = rows.size();

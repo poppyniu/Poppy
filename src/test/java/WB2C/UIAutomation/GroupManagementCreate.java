@@ -11,6 +11,7 @@ import WB2CConstants.URLConstants;
 import WB2CPages.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
@@ -18,6 +19,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.net.URL;
+import java.util.List;
 
 public class GroupManagementCreate {
     private WebDriver driver;
@@ -60,6 +62,15 @@ public class GroupManagementCreate {
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr[1]/td[4]/a[3]/li"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='alertify-ok']"));
+        CommonWebDriver.wait(driver, 2);
+        WebElement table = driver.findElement(By.xpath(".//*[@id='grid']/table"));
+        List<WebElement> rows = table.findElements(By.tagName("tr"));
+        int tableCount = rows.size();
+        int expectCount = 1;
+        if (tableCount == expectCount) {
+            System.out.println("Delete a group succeed, test pass! ");
+        } else
+            CommonAssert.fail("Delete a group get error, test fail!");
 
     }
 

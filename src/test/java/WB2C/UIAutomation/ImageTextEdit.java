@@ -11,6 +11,7 @@ import WB2CPages.ImageTextPage;
 import WB2CPages.LoginPage;
 import com.domain.wx.MaterialNews;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -63,6 +64,10 @@ public class ImageTextEdit {
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='title']"), "edit title", 1);
         CommonWebDriver.clearTextbox(driver, By.xpath("//input[@id='author']"));
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='author']"), "edit author", 1);
+        CommonWebDriver.wait(driver, 2);
+        JavascriptExecutor removeAttribute = (JavascriptExecutor)driver;
+        removeAttribute.executeScript("document.getElementsByClassName('k-widget k-upload k-header k-upload-empty')[0].style.display='block';", new Object[0]);
+        CommonWebDriver.wait(driver, 3);
         String testDataPath = System.getProperty("testdata1");
         driver.findElement(By.xpath("//input[@type='file']")).sendKeys(testDataPath);
         CommonWebDriver.wait(driver, 2);

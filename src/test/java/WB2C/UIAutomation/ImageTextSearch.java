@@ -3,11 +3,14 @@ package WB2C.UIAutomation;
 import WB2CCommon.CommonAssert;
 import WB2CCommon.CommonUtil;
 import WB2CCommon.CommonWebDriver;
+import WB2CCommon.ImageTextMaterialUtil;
 import WB2CConstants.NodeIPConstants;
+import WB2CConstants.SideMenuConstants;
 import WB2CConstants.TestAccounts;
 import WB2CConstants.URLConstants;
 import WB2CPages.ImageTextPage;
 import WB2CPages.LoginPage;
+import com.domain.wx.MaterialNews;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -27,6 +30,8 @@ public class ImageTextSearch {
     private TestAccounts testaccounts;
     private DesiredCapabilities desiredCapabilities;
     private ImageTextPage imageTextPage = new ImageTextPage();
+    private ImageTextMaterialUtil imageTextMaterialUtil = new ImageTextMaterialUtil();
+    private MaterialNews materialNews;
 
     @Parameters({"browser"})
     @Test
@@ -41,8 +46,14 @@ public class ImageTextSearch {
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
                 TestAccounts.testusername, TestAccounts.testuserpwd);
         CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
+        CommonWebDriver.clickElementWhenPresent(driver,
+                By.xpath(SideMenuConstants.wechat_management_xpath));
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.wechat_text_image_xpath));
+        CommonWebDriver.wait(driver, 4);
+        CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='materialNewsMgmtFrame']"));
         //prepare test data
-        imageTextPage.CreateImageTextMaterial(driver);
+        materialNews = imageTextMaterialUtil.createTextImageMaterial();
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//a[@id='btnRefresh']"));
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath("//input[@id='searchText']"), "test");
@@ -51,18 +62,11 @@ public class ImageTextSearch {
             System.out.println("Input test value can search the correct data, test pass! ");
         } else
             CommonAssert.fail("The search function does not work well, test fail!");
-        //delete the newly added test data to keep test env clean
-        CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//a[@id='btnRefresh']"));
-        CommonWebDriver.wait(driver, 4);
-        CommonWebDriver.clickElement(driver, By.xpath("//div[@id='container']/div[3]/div/div[3]/ul/li[3]/a"));
-        CommonWebDriver.wait(driver, 1);
-        Actions action = new Actions(driver);
-        action.sendKeys(Keys.ENTER).perform();
-        CommonWebDriver.wait(driver, 2);
     }
 
     @AfterTest
     public void tearDown() {
+        imageTextMaterialUtil.DeleteTextImageMaterial(materialNews.getId());
         driver.quit();
     }
 }

@@ -1,5 +1,6 @@
 package WB2C.UIAutomation;
 
+import WB2CCommon.CommonAssert;
 import WB2CCommon.CommonUtil;
 import WB2CCommon.CommonWebDriver;
 import WB2CConstants.NodeIPConstants;
@@ -38,16 +39,21 @@ public class WechatAccountSearch {
         CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.wechat_management_xpath));
+        CommonWebDriver.wait(driver, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.wechat_acount_xpath));
+        CommonWebDriver.wait(driver, 3);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='wxAccountMgmtFrame']"));
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), "Burberr",
                 "WeChat Account Search text box.");
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath("//a[@id='btnSearch']/li"));
-        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//table[@class='k-selectable']/tbody/tr/td[2]"))) {
+        CommonWebDriver.wait(driver, 2);
+        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("Burberry")) {
             System.out.println("The wechat account search function works well, test pass!");
         }
+        else
+            CommonAssert.fail("Search wechat account get error, test fail! ");
     }
 
     @AfterTest

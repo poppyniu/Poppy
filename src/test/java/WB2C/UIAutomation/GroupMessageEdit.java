@@ -72,12 +72,12 @@ public class GroupMessageEdit {
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='tabs-2']/ul/li[2]/span/span/span/span"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='gender_option_selected']"));
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='tabs-2']/ul/li[3]/span/span/span/span"));
-        CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='province_listbox']/li[3]"));
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='tabs-2']/ul/li[4]/span/span/span/span"));
-        CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='city_option_selected']"));
+//        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='tabs-2']/ul/li[3]/span/span/span/span"));
+//        CommonWebDriver.wait(driver, 2);
+//        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='province_listbox']/li[3]"));
+//        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='tabs-2']/ul/li[4]/span/span/span/span"));
+//        CommonWebDriver.wait(driver, 2);
+//        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='city_option_selected']"));
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
         if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr[1]/td[2]")).getAttribute("innerHTML").contains("edit")) {
@@ -86,8 +86,11 @@ public class GroupMessageEdit {
             CommonAssert.fail("Edit group message get error, test fail! ");
 
         //delete test data
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[8]/a[4]/li"));
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='alertify-ok']"));
+        CommonWebDriver.wait(driver, 2);
 
     }
 

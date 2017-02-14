@@ -12,6 +12,7 @@ import WB2CPages.ImageTextPage;
 import WB2CPages.LoginPage;
 import com.domain.wx.MaterialNews;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -62,9 +63,12 @@ public class AddSecondaryImageText {
         //add secondary image text
         String testDataPath = System.getProperty("testdata1");
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='container']/div[3]/div/div[3]/ul/li[1]/a/i"));
-        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.wait(driver, 3);
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='title']"), "secondary title", 1);
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='author']"), "secondary author", 1);
+        JavascriptExecutor removeAttribute = (JavascriptExecutor)driver;
+        removeAttribute.executeScript("document.getElementsByClassName('k-widget k-upload k-header k-upload-empty')[0].style.display='block';", new Object[0]);
+        CommonWebDriver.wait(driver, 3);
         driver.findElement(By.xpath("//input[@type='file']")).sendKeys(testDataPath);
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//textarea[@id='summary']"), "secondary summary", 1);

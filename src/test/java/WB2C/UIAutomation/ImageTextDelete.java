@@ -57,10 +57,9 @@ public class ImageTextDelete {
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath("//input[@id='searchText']"), "test title");
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//div[@id='container']/div[3]/div/div[3]/ul/li[3]/a/i"));
-        CommonWebDriver.wait(driver, 1);
-        Actions action = new Actions(driver);
-        action.sendKeys(Keys.ENTER).perform();
+        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='container']/div[3]/div/div[3]/ul/li[3]/a/i"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='container']/div[3]/div/div[4]/a[1]"));
         CommonWebDriver.wait(driver, 2);
     }
 

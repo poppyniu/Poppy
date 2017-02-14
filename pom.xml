@@ -111,8 +111,8 @@
                 <configuration>
                     <systemPropertyVariables>
                         <browser>${project.build.testOutputDirectory}/$browser</browser>
-                        <testdata>E:/EPMWB2C/WB2C/src/test/resources/test.jpg</testdata>
-                        <testdata1>E:/EPMWB2C/WB2C/src/test/resources/test1.jpg</testdata1>
+                        <testdata>E:\EPMWB2C\WB2C\src\test\resources\test.jpg</testdata>
+                        <testdata1>E:\EPMWB2C\WB2C\src\test\resources\test1.jpg</testdata1>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
                         <suiteXmlFile>${project.build.testOutputDirectory}/${path}</suiteXmlFile>

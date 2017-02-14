@@ -58,11 +58,9 @@ public class ImageTextInvalidDelete {
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath("//input[@id='searchText']"), "test title");
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//div[@id='container']/div[3]/div/div[3]/ul/li[3]/a/i"));
-        CommonWebDriver.wait(driver, 1);
-        Actions action = new Actions(driver);
-        action.sendKeys(Keys.TAB).perform();
-        action.sendKeys(Keys.ENTER).perform();
+        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='container']/div[3]/div/div[3]/ul/li[3]/a/i"));
+        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='container']/div[3]/div/div[4]/a[2]"));
         CommonWebDriver.wait(driver, 2);
         if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//img[@src='/WCPPRO/api/file/5/test.jpg']"))) {
             System.out.println("Cancel the delete action succeed, test pass! ");
@@ -72,6 +70,7 @@ public class ImageTextInvalidDelete {
 
     @AfterTest
     public void tearDown() {
+        imageTextMaterialUtil.DeleteTextImageMaterial(materialNews.getId());
         driver.quit();
     }
 }

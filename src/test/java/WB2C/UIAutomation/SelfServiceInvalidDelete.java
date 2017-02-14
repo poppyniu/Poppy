@@ -39,7 +39,7 @@ public class SelfServiceInvalidDelete {
         CommonWebDriver.get(driver, URLConstants.loginPageUrl);
         driver.manage().window().maximize();
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
-                TestAccounts.testusername1, TestAccounts.testuserpwd);
+                TestAccounts.testusername, TestAccounts.testuserpwd);
         CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
 
         CommonWebDriver.clickElementWhenPresent(driver,

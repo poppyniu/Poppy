@@ -59,12 +59,12 @@ public class GroupMessagePreview {
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='tabs-2']/ul/li[2]/span/span/span/span"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='gender_option_selected']"));
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='tabs-2']/ul/li[3]/span/span/span/span"));
-        CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='province_listbox']/li[3]"));
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='tabs-2']/ul/li[4]/span/span/span/span"));
-        CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='city_option_selected']"));
+//        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='tabs-2']/ul/li[3]/span/span/span/span"));
+//        CommonWebDriver.wait(driver, 2);
+//        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='province_listbox']/li[3]"));
+//        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='tabs-2']/ul/li[4]/span/span/span/span"));
+//        CommonWebDriver.wait(driver, 2);
+//        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='city_option_selected']"));
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath(".//*[@id='searchText']"), "group message");

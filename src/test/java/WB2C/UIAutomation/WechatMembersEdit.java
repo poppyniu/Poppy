@@ -37,7 +37,7 @@ public class WechatMembersEdit {
         CommonWebDriver.get(driver, URLConstants.loginPageUrl);
         driver.manage().window().maximize();
         loginPage.loginWithValidCredential(TestAccounts.testbrandcode,
-                TestAccounts.testusername1, TestAccounts.testuserpwd);
+                TestAccounts.testusername, TestAccounts.testuserpwd);
         CommonWebDriver.isElementDisplayed(driver,
                 By.xpath(LoginConstants.span_username_xpath));
         CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
