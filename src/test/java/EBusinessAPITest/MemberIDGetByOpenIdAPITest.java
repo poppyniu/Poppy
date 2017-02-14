@@ -1,5 +1,6 @@
 package EBusinessAPITest;
 
+import EBusinessCommon.CommomConstants;
 import EBusinessCommon.JsonUtility;
 import WB2CCommon.CommonAssert;
 import net.sf.json.JSONObject;
@@ -15,9 +16,9 @@ public class MemberIDGetByOpenIdAPITest {
         String jsonStr = JsonUtility.getJsonContent(url);
         JSONObject jsonObject = JsonUtility.jsonStrToJsonObject(jsonStr);
         String entity = jsonObject.getString("entity");
-        if (entity.contains("4a27dfdc-0343-4d45-80fc-19b017f45e76")) {
+        if (entity.contains(CommomConstants.memberID)) {
             System.out.println("Get member Id by openid API works well,test pass!");
         } else
-            CommonAssert.fail("Get address Id by openid API does not work well, test fail!");
+            CommonAssert.fail("Get member Id by openid API does not work well, test fail!");
     }
 }

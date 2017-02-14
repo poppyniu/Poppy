@@ -24,8 +24,8 @@ public class MemberDeleteAPITest {
         String deleteMemberUrl = "http://54.222.195.248:8888/api/v1/burberry/member/" + newMemberId;
         String deleteResult = JsonUtility.deleteHttpRequest(deleteMemberUrl);
         if (deleteResult.contains("Mission accomplished")) {
-            System.out.println("Delete address API succeed,test pass!");
+            System.out.println("Delete member API succeed,test pass!");
         } else
-            CommonAssert.fail("Delete address API get error, test fail!");
+            CommonAssert.fail("Delete member API get error, test fail!");
     }
 }

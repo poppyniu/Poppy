@@ -15,9 +15,9 @@ public class MemberGetAPITest {
         String jsonStr = JsonUtility.getJsonContent(url);
         JSONObject jsonObject = JsonUtility.jsonStrToJsonObject(jsonStr);
         String entity = jsonObject.getString("entity");
-        if (entity.contains("4a27dfdc-0343-4d45-80fc-19b017f45e76")) {
+        if (entity.contains("memberId")) {
             System.out.println("Get member API works well,test pass!");
         } else
-            CommonAssert.fail("Get address API does not work well, test fail!");
+            CommonAssert.fail("Get member API does not work well, test fail!");
     }
 }
