@@ -75,8 +75,8 @@ public class CustomMenuSynchronize {
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='btnSync']"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-ok']"));
-        CommonWebDriver.wait(driver, 2);
-        if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='alertify']/div/article/p"))) {
+        CommonWebDriver.wait(driver, 5);
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='alertify']/div/article/p"))&CommonWebDriver.getElement(driver,By.xpath(".//*[@id='alertify']/div/article/p")).getText().contains("成功")) {
             System.out.println("Sync to we chat server succeed, test pass! ");
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-ok']"));
             CommonWebDriver.wait(driver, 2);

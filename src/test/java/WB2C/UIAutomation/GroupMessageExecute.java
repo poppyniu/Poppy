@@ -55,7 +55,7 @@ public class GroupMessageExecute {
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='tabs-2']/ul/li[1]/span/span/span/span"));
         CommonWebDriver.wait(driver, 2);
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='memberCategoryId_listbox']/li[5]"));
+        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='memberCategoryId_listbox']/li[1]"));
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='tabs-2']/ul/li[2]/span/span/span/span"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='gender_listbox']/li[2]"));
@@ -87,7 +87,7 @@ public class GroupMessageExecute {
             System.out.println("Execute group message see the wanrning message, scenario pass! ");
         } else
             CommonAssert.fail("Execute group message does not the wanrning message, scenario fail! ");
-        CommonWebDriver.wait(driver, 1);
+        CommonWebDriver.wait(driver, 3);
         String status = CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[3]")).getAttribute("innerHTML");
         if (status.contains("成功")) {
             System.out.println("Execute group message succeed, test pass! ");

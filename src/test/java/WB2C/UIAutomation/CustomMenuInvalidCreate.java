@@ -31,7 +31,7 @@ public class CustomMenuInvalidCreate {
     @Test
     public void invalidCreateCustomMenu(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
-        String url = NodeIPConstants.windows_local_ip + "/wd/hub";
+        String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
         loginPage = new LoginPage(driver);
         testaccounts = new TestAccounts();
@@ -62,11 +62,27 @@ public class CustomMenuInvalidCreate {
         if (needCreateNum == 0) {
             CustomMenuPage.CreateFirstLevelMenu(driver);
             CommonUtil.alertExist(driver, "最多允许创建3个一级菜单");
+            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath("html/body/div[7]/div[1]/div/a/span"));
+            CommonWebDriver.wait(driver,1);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
+            CommonWebDriver.wait(driver,1);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnRemove']"));
+            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
         } else if (needCreateNum == 1) {
             CustomMenuPage.CreateFirstLevelMenu(driver);
             CommonWebDriver.wait(driver, 2);
             CustomMenuPage.CreateFirstLevelMenu(driver);
             CommonUtil.alertExist(driver, "最多允许创建3个一级菜单");
+            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath("html/body/div[7]/div[1]/div/a/span"));
+            CommonWebDriver.wait(driver,1);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
+            CommonWebDriver.wait(driver,1);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnRemove']"));
+            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
         } else if (needCreateNum == 2) {
             CustomMenuPage.CreateFirstLevelMenu(driver);
             CommonWebDriver.wait(driver, 2);
@@ -74,6 +90,14 @@ public class CustomMenuInvalidCreate {
             CommonWebDriver.wait(driver, 2);
             CustomMenuPage.CreateFirstLevelMenu(driver);
             CommonUtil.alertExist(driver, "最多允许创建3个一级菜单");
+            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath("html/body/div[7]/div[1]/div/a/span"));
+            CommonWebDriver.wait(driver,1);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
+            CommonWebDriver.wait(driver,1);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnRemove']"));
+            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
         } else if (needCreateNum == 3) {
             CustomMenuPage.CreateFirstLevelMenu(driver);
             CommonWebDriver.wait(driver, 2);
@@ -83,6 +107,14 @@ public class CustomMenuInvalidCreate {
             CommonWebDriver.wait(driver, 2);
             CustomMenuPage.CreateFirstLevelMenu(driver);
             CommonUtil.alertExist(driver, "最多允许创建3个一级菜单");
+            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath("html/body/div[7]/div[1]/div/a/span"));
+            CommonWebDriver.wait(driver,1);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
+            CommonWebDriver.wait(driver,1);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='btnRemove']"));
+            CommonWebDriver.wait(driver,2);
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='alertify-ok']"));
         }
 
     }

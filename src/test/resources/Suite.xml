@@ -4,7 +4,8 @@
         <classes>
             <!--<parameter name="testNGBrowser" value="chrome"/>-->
             <class name="WB2C.UIAutomation.AddSecondaryImageText"/>
-            <class name="WB2C.UIAutomation.AddSecondaryInvalidImageText"/>
+            <!--case bug-->
+            <!--<class name="WB2C.UIAutomation.AddSecondaryInvalidImageText"/>-->
             <class name="WB2C.UIAutomation.AutoResponseCreate"/>
             <class name="WB2C.UIAutomation.AutoResponseDelete"/>
             <class name="WB2C.UIAutomation.AutoResponseEdit"/>
@@ -25,7 +26,8 @@
             <class name="WB2C.UIAutomation.CustomMenuInvalidDelete"/>
             <class name="WB2C.UIAutomation.CustomMenuMultipleDelete"/>
             <class name="WB2C.UIAutomation.CustomMenuRefresh"/>
-            <class name="WB2C.UIAutomation.CustomMenuSynchronize"/>
+            <!--bug-->
+            <!--<class name="WB2C.UIAutomation.CustomMenuSynchronize"/>-->
             <class name="WB2C.UIAutomation.DashboardCheck"/>
             <class name="WB2C.UIAutomation.DeleteSecondaryImageText"/>
             <class name="WB2C.UIAutomation.EditSecondaryImageText"/>

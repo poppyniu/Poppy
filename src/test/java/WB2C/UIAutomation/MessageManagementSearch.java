@@ -47,7 +47,7 @@ public class MessageManagementSearch {
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='messageMgmtFrame']"));
         //try to search the message content from the second lines
-        String toSearchValue = driver.findElement(By.xpath("//tr[2]/td[6]")).getText().trim();
+        String toSearchValue = "亲，欢迎使用自助服务～";
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), toSearchValue,
                 "Message Search text box.");
         //search out the result

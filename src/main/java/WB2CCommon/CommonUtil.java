@@ -778,6 +778,7 @@ public class CommonUtil {
         String alertText = alert.getText().toString();
         if (alertText.toString().contains(content)) {
             System.out.println("See the correct alert, test pass! ");
+            alert.accept();
         } else
             CommonAssert.fail("Does not see the correct dialog, test fail!");
     }
