@@ -11,7 +11,6 @@ public class AddressDefaultGetAPITest {
 
     @Test
     public void addressDefaultGetAPITest() throws Exception {
-
         //prepare test data add a new address which is not default
         String postUrl = "http://54.222.195.248:8888/api/v1/burberry/address";
         StringEntity inputBody = new StringEntity("{\"memberId\":\"4a27dfdc-0343-4d45-80fc-19b017f45e76\",\"consignee\":\"Consignee\",\"consigneePhone\":\"Consignee Phone\",\"country\":\"中国\",\"province\":\"江苏省\",\"city\":\"苏州市\",\"area\":\"工业园区 \",\"address\":\"xxxxxx\",\"postalCode\":\"215000\",\"default\":111}");
