@@ -27,7 +27,7 @@ public class GroupManagementInvalidDelete {
 
     @Parameters({"browser"})
     @Test
-    public void deleteGroupManagement(String testNGBrowser) throws Exception {
+    public void invalidDeleteGroupManagement(String testNGBrowser) throws Exception {
         desiredCapabilities = CommonUtil.getBrowser(testNGBrowser);
         String url = NodeIPConstants.windows_Node1_ip + "/wd/hub";
         driver = new RemoteWebDriver(new URL(url), desiredCapabilities);
@@ -65,7 +65,7 @@ public class GroupManagementInvalidDelete {
         } else
             CommonAssert.fail("Create group get error, scenario fail! ");
         //cancel delete test data
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr[1]/td[4]/a[3]/li"));
+        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[5]/a[2]/li"));
         CommonWebDriver.wait(driver, 1);
         if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='alertify']/div/article/p"))) {
             System.out.println("Click delete button see the correct warning dialog, test pass! ");
@@ -79,7 +79,7 @@ public class GroupManagementInvalidDelete {
         } else
             CommonAssert.fail("Cancel delete get error, test fail! ");
         //delete test data
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr[1]/td[4]/a[3]/li"));
+        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[5]/a[2]/li"));
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='alertify-ok']"));
 
 

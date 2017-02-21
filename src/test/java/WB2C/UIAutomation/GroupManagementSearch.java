@@ -57,7 +57,7 @@ public class GroupManagementSearch {
         } else
             CommonAssert.fail("Search group management get error, test fail! ");
         //delete test data
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr[1]/td[4]/a[3]/li"));
+        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[5]/a[2]/li"));
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='alertify-ok']"));
 
     }

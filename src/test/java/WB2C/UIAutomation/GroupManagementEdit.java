@@ -57,7 +57,7 @@ public class GroupManagementEdit {
         } else
             CommonAssert.fail("Create group get error, scenario fail! ");
         //edit test data
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr[1]/td[4]/a[2]/li"));
+        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[5]/a[3]/li"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clearTextbox(driver, By.xpath(".//*[@id='name']"));
         CommonWebDriver.sendKeysToElement(driver, By.xpath(".//*[@id='name']"), "edit test group");
@@ -70,7 +70,7 @@ public class GroupManagementEdit {
         } else
             CommonAssert.fail("Eit group name and description get error, test fail! ");
         //delete test data
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr[1]/td[4]/a[3]/li"));
+        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[5]/a[2]/li"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='alertify-ok']"));
 
