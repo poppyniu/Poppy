@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class ShopcartPatchAPITest {
 
     @Test
-    public void addressPostAPITest() throws Exception {
+    public void shopCartPostAPITest() throws Exception {
         //Add product to shopcart to prepare testdata
         String url = "http://54.222.195.248:8888/api/v1/burberry/shopcart";
         StringEntity inputBody = new StringEntity("{\"memberId\":\"4a27dfdc-0343-4d45-80fc-19b017f45e76\",\"productId\":\"c21b4294-6634-4443-9e85-bcdf69f293b3\",\"name\":\"Product Name\",\"price\":0,\"image\":\"test.jpg\",\"quantity\":1}");

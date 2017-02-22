@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class OrderDeleteAPITest {
 
     @Test
-    public void orderGetInfoAPITest() throws Exception {
+    public void orderDeleteAPITest() throws Exception {
         //add data to shopcart to prepare test data
         String url = "http://54.222.195.248:8888/api/v1/burberry/shopcart";
         StringEntity inputBody = new StringEntity("{\"memberId\":\"" + CommomConstants.memberID + "\",\"productId\":\"c21b4294-6634-4443-9e85-bcdf69f293b3\",\"name\":\"Product Name\",\"price\":0,\"image\":\"test.jpg\",\"quantity\":1}");
