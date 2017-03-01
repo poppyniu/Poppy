@@ -13,7 +13,7 @@ public class ProductDeleteAPITest {
     public void productDeleteAPITest() throws Exception {
         //create a product
         String url = "http://54.222.195.248:8888/api/v1/burberry/product";
-        StringEntity inputBody = new StringEntity("{\"name\":\"product name\",\"productCode\":\"ab102934\",\"digest\":\"example\",\"description\":\"example\",\"specification\":\"example\",\"extra\":{},\"images\":[\"test.jpg\"],\"price\":0,\"promoPrice\":0,\"inventory\":0,\"categoryIds\":[\"aaaaaaaa-bbbb-cccc-dddd-eeeeeeee\"]}");
+        StringEntity inputBody = new StringEntity("{\"name\":\"product name\",\"productCode\":\"ab102934\",\"digest\":\"example\",\"description\":\"example\",\"specification\":\"example\",\"extra\":{},\"images\":[\"test.jpg\"],\"price\":0,\"originalPrice\":0,\"totalQuantity\":0,\"categoryIds\":[\"aaaaaaaa-bbbb-cccc-dddd-eeeeeeee\"],\"status\":2,\"family\":[{}],\"skus\":[{\"attrs\":[{\"name\":\"color\",\"value\":\"Red\"}],\"price\":0,\"quantity\":0}]}");
         String postResult = JsonUtility.postJsonContent(url, inputBody);
         if (postResult.contains("Mission accomplished")) {
             System.out.println("Post product API succeed,test pass!");
@@ -24,7 +24,7 @@ public class ProductDeleteAPITest {
         String jsonStr = JsonUtility.getJsonContent(getProductUrl);
         JSONObject jsonObject = JsonUtility.jsonStrToJsonObject(jsonStr);
         String entity = jsonObject.getString("entity");
-        String productId = entity.substring(81, 117);
+        String productId = entity.substring(84, 120);
         if (entity.contains("productId")) {
             System.out.println("Get product API succeed,test pass!");
         } else

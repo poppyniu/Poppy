@@ -13,7 +13,7 @@ public class PaymentPostAPITest {
     public void paymentPostAPITest() throws Exception {
         //add data to shopcart to prepare test data
         String url = "http://54.222.195.248:8888/api/v1/burberry/shopcart";
-        StringEntity inputBody = new StringEntity("{\"memberId\":\"" + CommomConstants.memberID + "\",\"productId\":\"c21b4294-6634-4443-9e85-bcdf69f293b3\",\"name\":\"Product Name\",\"price\":0,\"image\":\"test.jpg\",\"quantity\":1}");
+        StringEntity inputBody = new StringEntity("{\"memberId\":\"" + CommomConstants.memberID + "\",\"productId\":\"" + CommomConstants.productID + "\",\"skuId\":\"" + CommomConstants.skuID + "\",\"skuAttrs\":{},\"name\":\"Product Name\",\"price\":0,\"image\":\"test.jpg\",\"quantity\":1}");
         String postResult = JsonUtility.postJsonContent(url, inputBody);
         if (postResult.contains("entity")) {
             System.out.println("Post shopcart API succeed,test pass!");
@@ -37,8 +37,8 @@ public class PaymentPostAPITest {
         } else
             CommonAssert.fail("Post payment API get error, test fail!");
         //put product to recover the inventory of the product
-        String productPutUrl = "http://54.222.195.248:8888/api/v1/burberry/product/c21b4294-6634-4443-9e85-bcdf69f293b3";
-        StringEntity productPutBody = new StringEntity("{\"name\":\"new poppy product\",\"productCode\":\"ab102934\",\"digest\":\"digest\",\"description\":\"description\",\"specification\":\"specification\",\"extra\":{},\"images\":[\"test.jpg \"],\"price\":0,\"inventory\":11,\"categoryIds\":[\"4ca84746-7c7e-49ea-ad09-89ac35e9077d\"]}");
+        String productPutUrl = "http://54.222.195.248:8888/api/v1/burberry/product/"+CommomConstants.productID;
+        StringEntity productPutBody = new StringEntity("{\"name\":\"product name\",\"productCode\":\"ab102934\",\"digest\":\"edit example\",\"description\":\"example\",\"specification\":\"example\",\"extra\":{},\"images\":[\"test.jpg\"],\"price\":0,\"originalPrice\":0,\"totalQuantity\":30,\"categoryIds\":[\"4ca84746-7c7e-49ea-ad09-89ac35e9077d\"],\"status\":2,\"family\":[{}],\"skus\":[{\"attrs\":[{\"name\":\"color\",\"value\":\"Red\"}],\"price\":0,\"quantity\":10}]}");
         String putResult = JsonUtility.putJsonContent(productPutUrl, productPutBody);
         if (putResult.contains("Mission accomplished")) {
             System.out.println("Put product API succeed,test pass!");
