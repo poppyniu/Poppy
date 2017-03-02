@@ -66,13 +66,8 @@ public class WechatMembersEdit {
         CommonWebDriver.wait(driver, 2);
         WebElement option = driver.findElement(By.xpath("//*[@id='memberCategoryId_listbox']/li[3]"));
         String expect_category = option.getText();
-        //CommonWebDriver.wait(driver, 1);
-        option.click();
-        Robot robot = new Robot();
-        robot.keyPress(KeyEvent.VK_ENTER);
-        CommonWebDriver.wait(driver, 1);
-        //*[@id='wxMemberForm']/ul/li[9]/span/span/input
-        //String expect_category=CommonWebDriver.getElement(driver,By.xpath("//*[@id='wxMemberForm']//li[9]//input")).getText();
+        CommonWebDriver.clickElementWhenPresent(driver,By.xpath("//*[@id='memberCategoryId_listbox']/li[3]"));
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//*[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
         //td4 会员类别 td7 备注

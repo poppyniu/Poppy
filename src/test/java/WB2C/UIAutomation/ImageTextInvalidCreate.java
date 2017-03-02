@@ -40,6 +40,7 @@ public class ImageTextInvalidCreate {
         CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.wechat_management_xpath));
+        CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.wechat_text_image_xpath));
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='materialNewsMgmtFrame']"));
