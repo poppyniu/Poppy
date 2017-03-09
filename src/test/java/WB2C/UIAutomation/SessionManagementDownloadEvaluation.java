@@ -5,7 +5,9 @@ import WB2CCommon.CommonWebDriver;
 import WB2CConstants.*;
 import WB2CPages.LoginPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
@@ -48,22 +50,34 @@ public class SessionManagementDownloadEvaluation {
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='sessionMgmtFrame']"));
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnDownload']"));
         CommonWebDriver.wait(driver, 1);
-        //create robot object
-        Robot robot = new Robot();
-        Thread.sleep(1000L);
-        //Click Down Arrow Key to select "Save File" Radio Button
-        robot.keyPress(KeyEvent.VK_DOWN);
-        Thread.sleep(1000L);
+//        //create robot object
+//        Robot robot = new Robot();
+//        Thread.sleep(1000L);
+//        //Click Down Arrow Key to select "Save File" Radio Button
+//        robot.keyPress(KeyEvent.VK_DOWN);
+//        Thread.sleep(1000L);
+//        // Click 3 times Tab to take focus on "OK" Button
+//        robot.keyPress(KeyEvent.VK_TAB);
+//        Thread.sleep(1000L);
+//        robot.keyPress(KeyEvent.VK_TAB);
+//        Thread.sleep(1000L);
+//        robot.keyPress(KeyEvent.VK_TAB);
+//        Thread.sleep(1000L);
+//        //Click "Enter" Button to download file
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        Thread.sleep(5000L);
+        Actions action = new Actions(driver);
+        action.sendKeys(Keys.DOWN).perform();
+        CommonWebDriver.wait(driver, 1);
         // Click 3 times Tab to take focus on "OK" Button
-        robot.keyPress(KeyEvent.VK_TAB);
-        Thread.sleep(1000L);
-        robot.keyPress(KeyEvent.VK_TAB);
-        Thread.sleep(1000L);
-        robot.keyPress(KeyEvent.VK_TAB);
-        Thread.sleep(1000L);
-        //Click "Enter" Button to download file
-        robot.keyPress(KeyEvent.VK_ENTER);
-        Thread.sleep(5000L);
+        action.sendKeys(Keys.TAB).perform();
+        CommonWebDriver.wait(driver, 1);
+        action.sendKeys(Keys.TAB).perform();
+        CommonWebDriver.wait(driver, 1);
+        action.sendKeys(Keys.TAB).perform();
+        CommonWebDriver.wait(driver, 1);
+        action.sendKeys(Keys.ENTER).perform();
+        CommonWebDriver.wait(driver, 1);
     }
 
     @AfterTest

@@ -77,7 +77,7 @@ public class AddSecondaryImageText {
         CommonWebDriver.clickElement(driver, By.xpath("//div[@id='tabs']/ul/li[2]/a"));
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//div[@id='myEditor']"), "secondary editor", 1);
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
-        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.wait(driver, 3);
         if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='container']/div[3]/div/div[2]/ul/li/img"))) {
             System.out.println("Create secondary image text material succeed, test pass! ");
         } else
@@ -89,6 +89,7 @@ public class AddSecondaryImageText {
     public void tearDown() {
         //delete the newly added test data to keep test env clean
         imageTextMaterialUtil.DeleteTextImageMaterial(materialNews1.getId());
+        CommonWebDriver.wait(driver, 3);
         driver.quit();
     }
 }
