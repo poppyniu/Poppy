@@ -104,6 +104,7 @@ public class AddSecondaryInvalidImageText {
         String alertText = alert.getText();
         if (alertText.contains("多图文消息最多只支持10个图文")) {
             System.out.println("Do not upload cover image see the correct dialog, test pass! ");
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews1.getId());
         } else
             CommonAssert.fail("Do not upload cover image does not see the correct dialog, test fail!");
 

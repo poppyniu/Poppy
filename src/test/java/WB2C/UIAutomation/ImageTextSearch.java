@@ -61,6 +61,7 @@ public class ImageTextSearch {
         CommonWebDriver.wait(driver, 2);
         if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//img[@src='/WCPPRO/api/file/5/test.jpg']"))) {
             System.out.println("Input test value can search the correct data, test pass! ");
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews.getId());
         } else
             CommonAssert.fail("The search function does not work well, test fail!");
     }

@@ -80,6 +80,7 @@ public class AddSecondaryImageText {
         CommonWebDriver.wait(driver, 3);
         if (CommonWebDriver.isElementDisplayed(driver, By.xpath(".//*[@id='container']/div[3]/div/div[2]/ul/li/img"))) {
             System.out.println("Create secondary image text material succeed, test pass! ");
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews1.getId());
         } else
             CommonAssert.fail("Create secondary image text material get error, test fail!");
 

@@ -109,6 +109,17 @@ public class ImageTextSwitching {
         String inputText = CommonWebDriver.getElement(driver, By.xpath("//input[@class='k-input']")).getAttribute("value");
         if (iconPlusCount2 >= 1 && inputText.equals("2")) {
             System.out.println("The second page has more than one data, switch page succeed, test pass!");
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews1.getId());
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews2.getId());
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews3.getId());
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews4.getId());
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews5.getId());
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews6.getId());
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews7.getId());
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews8.getId());
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews9.getId());
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews10.getId());
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews11.getId());
         } else {
             Assert.fail("The switch function does not work well, test fail");
         }

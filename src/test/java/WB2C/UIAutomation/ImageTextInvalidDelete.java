@@ -65,6 +65,7 @@ public class ImageTextInvalidDelete {
         CommonWebDriver.wait(driver, 2);
         if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//img[@src='/WCPPRO/api/file/5/test.jpg']"))) {
             System.out.println("Cancel the delete action succeed, test pass! ");
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews.getId());
         } else
             Assert.fail("Cancel the delete action get error, test fail");
     }

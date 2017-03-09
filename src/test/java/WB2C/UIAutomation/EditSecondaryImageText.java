@@ -86,6 +86,7 @@ public class EditSecondaryImageText {
         String secondaryTitle = CommonWebDriver.getElement(driver, By.xpath(".//*[@id='container']/div[3]/div/div[2]/ul/li/label")).getAttribute("innerHTML");
         if (secondaryTitle.contains("edit secondary title")) {
             System.out.println("Edit secondary image text material succeed, test pass! ");
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews1.getId());
         } else
             CommonAssert.fail("Edit secondary image text material get error, test fail!");
 

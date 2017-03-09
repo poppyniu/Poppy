@@ -84,6 +84,7 @@ public class ImageTextEdit {
         CommonWebDriver.wait(driver, 5);
         if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//img[@src='/WCPPRO/api/file/5/test1.jpg']"))) {
             System.out.println("Edit text image succeed, test pass! ");
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews.getId());
         }
     }
 

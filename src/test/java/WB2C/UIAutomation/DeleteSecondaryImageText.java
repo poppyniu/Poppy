@@ -88,6 +88,7 @@ public class DeleteSecondaryImageText {
         CommonWebDriver.wait(driver, 2);
         if (!CommonWebDriver.isContentAppeared(driver, "test1")) {
             System.out.println("Delete secondary image text material succeed, test pass! ");
+            imageTextMaterialUtil.DeleteTextImageMaterial(materialNews1.getId());
         } else
             CommonAssert.fail("Delete secondary image text material get error, test fail!");
 
