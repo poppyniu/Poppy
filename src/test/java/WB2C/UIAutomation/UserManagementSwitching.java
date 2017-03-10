@@ -85,10 +85,6 @@ public class UserManagementSwitching {
         } else
             CommonAssert.fail("Switch to last page get error, test fail! ");
 
-        //delete test data
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[7]/a[3]/li"));
-        CommonWebDriver.clickElement(driver, By.xpath(".//*[@id='alertify-ok']"));
-
     }
 
     @AfterTest
