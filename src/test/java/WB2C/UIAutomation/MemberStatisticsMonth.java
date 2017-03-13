@@ -51,7 +51,7 @@ public class MemberStatisticsMonth {
         WebElement table = driver.findElement(By.xpath(".//*[@id='grid']/table"));
         List<WebElement> rows = table.findElements(By.tagName("tr"));
         int tableCount = rows.size();
-        int expectCount = 32;
+        int expectCount = 29;
         if (tableCount == expectCount) {
             System.out.println("The latest month data are correct, test pass! ");
         } else
