@@ -27,12 +27,12 @@
             <class name="WB2C.UIAutomation.CustomMenuMultipleDelete"/>
             <class name="WB2C.UIAutomation.CustomMenuRefresh"/>
             <!--bug-->
-            <!--<class name="WB2C.UIAutomation.CustomMenuSynchronize"/>-->
+            <class name="WB2C.UIAutomation.CustomMenuSynchronize"/>
             <class name="WB2C.UIAutomation.DashboardCheck"/>
             <class name="WB2C.UIAutomation.DeleteSecondaryImageText"/>
             <class name="WB2C.UIAutomation.EditSecondaryImageText"/>
             <!--bug-->
-            <!--<class name="WB2C.UIAutomation.GroupManagementAuthority"/>-->
+            <class name="WB2C.UIAutomation.GroupManagementAuthority"/>
             <class name="WB2C.UIAutomation.GroupManagementCreate"/>
             <class name="WB2C.UIAutomation.GroupManagementDelete"/>
             <class name="WB2C.UIAutomation.GroupManagementEdit"/>
