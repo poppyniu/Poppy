@@ -90,6 +90,6 @@ public class AddSecondaryImageText {
     public void tearDown() {
         //delete the newly added test data to keep test env clean
         imageTextMaterialUtil.DeleteTextImageMaterial(materialNews1.getId());
-        driver.close();
+        driver.quit();
     }
 }
