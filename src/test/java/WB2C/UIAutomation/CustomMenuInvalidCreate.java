@@ -63,7 +63,7 @@ public class CustomMenuInvalidCreate {
             CustomMenuPage.CreateFirstLevelMenu(driver);
             CommonUtil.alertExist(driver, "最多允许创建3个一级菜单");
             CommonWebDriver.wait(driver,2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath("html/body/div[7]/div[1]/div/a/span"));
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath("html/body/div[8]/div[1]/div/a/span"));
             CommonWebDriver.wait(driver,1);
             CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
             CommonWebDriver.wait(driver,1);
@@ -76,7 +76,7 @@ public class CustomMenuInvalidCreate {
             CustomMenuPage.CreateFirstLevelMenu(driver);
             CommonUtil.alertExist(driver, "最多允许创建3个一级菜单");
             CommonWebDriver.wait(driver,2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath("html/body/div[7]/div[1]/div/a/span"));
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath("html/body/div[8]/div[1]/div/a/span"));
             CommonWebDriver.wait(driver,1);
             CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
             CommonWebDriver.wait(driver,1);
@@ -91,7 +91,7 @@ public class CustomMenuInvalidCreate {
             CustomMenuPage.CreateFirstLevelMenu(driver);
             CommonUtil.alertExist(driver, "最多允许创建3个一级菜单");
             CommonWebDriver.wait(driver,2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath("html/body/div[7]/div[1]/div/a/span"));
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath("html/body/div[8]/div[1]/div/a/span"));
             CommonWebDriver.wait(driver,1);
             CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
             CommonWebDriver.wait(driver,1);
@@ -108,7 +108,7 @@ public class CustomMenuInvalidCreate {
             CustomMenuPage.CreateFirstLevelMenu(driver);
             CommonUtil.alertExist(driver, "最多允许创建3个一级菜单");
             CommonWebDriver.wait(driver,2);
-            CommonWebDriver.clickElementWhenPresent(driver,By.xpath("html/body/div[7]/div[1]/div/a/span"));
+            CommonWebDriver.clickElementWhenPresent(driver,By.xpath("html/body/div[8]/div[1]/div/a/span"));
             CommonWebDriver.wait(driver,1);
             CommonWebDriver.clickElementWhenPresent(driver,By.xpath(".//*[@id='grid']/table/thead/tr/th[1]/a/li"));
             CommonWebDriver.wait(driver,1);

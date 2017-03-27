@@ -87,7 +87,7 @@ public class GroupManagementAuthority {
         //logout from current user
         CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
-                By.xpath("//i[@class='icon-angle-down']"));
+                By.xpath("html/body/div[1]/div/div/ul/li[2]/a/i"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//*[@class='dropdown-menu']/*/a[@href='logout.html']"));
         CommonWebDriver.wait(driver, 5);

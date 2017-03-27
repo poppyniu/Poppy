@@ -46,7 +46,7 @@ public class MemberStatisticsYear {
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.member_statistical_time_xpath));
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='reportMemDateMgmtFrame']"));
-        CommonWebDriver.clickElement(driver, By.xpath("html/body/div[1]/button[1]"));
+        CommonWebDriver.clickElement(driver, By.xpath("html/body/div[2]/button[1]"));
         CommonWebDriver.wait(driver, 2);
         WebElement table = driver.findElement(By.xpath(".//*[@id='grid']/table"));
         List<WebElement> rows = table.findElements(By.tagName("tr"));

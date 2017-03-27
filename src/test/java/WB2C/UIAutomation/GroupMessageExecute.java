@@ -89,7 +89,7 @@ public class GroupMessageExecute {
             CommonAssert.fail("Execute group message does not the wanrning message, scenario fail! ");
         CommonWebDriver.wait(driver, 3);
         String status = CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[3]")).getAttribute("innerHTML");
-        if (status.contains("成功")) {
+        if (status.contains("成功")||status.contains("SUCCESS")) {
             System.out.println("Execute group message succeed, test pass! ");
         } else
             CommonAssert.fail("Execute group message get error, test fail! ");

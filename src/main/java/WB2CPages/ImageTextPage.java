@@ -54,7 +54,7 @@ public class ImageTextPage {
         removeAttribute.executeScript("document.getElementsByClassName('k-widget k-upload k-header k-upload-empty')[0].style.display='block';", new Object[0]);
         CommonWebDriver.wait(driver, 3);
         driver.findElement(By.xpath("//input[@type='file']")).sendKeys(testDataPath);
-        CommonWebDriver.wait(driver, 2);
+        CommonWebDriver.wait(driver, 5);
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
     }

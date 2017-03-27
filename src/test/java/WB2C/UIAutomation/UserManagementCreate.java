@@ -70,7 +70,7 @@ public class UserManagementCreate {
         //logout from current user
         CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.clickElementWhenPresent(driver,
-                By.xpath("//i[@class='icon-angle-down']"));
+                By.xpath("html/body/div[1]/div/div/ul/li[2]/a/i"));
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//*[@class='dropdown-menu']/*/a[@href='logout.html']"));
         CommonWebDriver.wait(driver, 5);
@@ -86,7 +86,7 @@ public class UserManagementCreate {
                 TestAccounts.testusername2, TestAccounts.testuserpwd);
         CommonWebDriver.navigateAndLoadPage(driver, URLConstants.homePageUrl, 3);
         CommonWebDriver.wait(driver, 2);
-        if (CommonWebDriver.getElement(driver, By.xpath("html/body/div[1]/div/div/ul/li/a/span[2]")).getAttribute("innerHTML").contains("youyou")) {
+        if (CommonWebDriver.getElement(driver, By.xpath("html/body/div[1]/div/div/ul/li[2]/a/span[2]")).getAttribute("innerHTML").contains("youyou")) {
             System.out.println("The new user can login succeed, test pass! ");
         } else
             CommonAssert.fail("The new user can not login, test fail! ");
