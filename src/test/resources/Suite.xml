@@ -118,6 +118,7 @@
             <class name="WB2C.UIAutomation.WechatMembersRefresh"/>
             <class name="WB2C.UIAutomation.WechatMembersSearch"/>
             <class name="WB2C.UIAutomation.WechatMembersSynchronize"/>
+            <class name="WB2C.UIAutomation.GlobalTest"/>
         </classes>
         <!--<classes>-->
             <!--<class name="WB2C.UIAutomation.ImageTextEdit"/>-->
