@@ -92,41 +92,41 @@ public class GlobalTest {
                 By.xpath(SideMenuConstants.wechat_management_xpath));
         CommonWebDriver.wait(driver, 2);
         if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='materialNewsMgmt']")).getAttribute("innerHTML").contains("图文素材")) {
-            System.out.println("The content management side menu is translated into english, test pass! ");
+            System.out.println("The content management side menu is translated into chinese, test pass! ");
         } else
-            CommonAssert.fail("The content management side menu is not translated into english, test fail! ");
+            CommonAssert.fail("The content management side menu is not translated into chinese, test fail! ");
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.membership_management_xpath));
         CommonWebDriver.wait(driver, 2);
         if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='wxMemberMgmt']")).getAttribute("innerHTML").contains("微信会员")) {
-            System.out.println("The member management side menu is translated into english, test pass! ");
+            System.out.println("The member management side menu is translated into chinese, test pass! ");
         } else
-            CommonAssert.fail("The member management side menu is not translated into english, test fail! ");
+            CommonAssert.fail("The member management side menu is not translated into chinese, test fail! ");
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.customer_service_xpath));
         CommonWebDriver.wait(driver, 2);
         if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='quickMessageMgmt']")).getAttribute("innerHTML").contains("快速回复")) {
-            System.out.println("The custom service system side menu is translated into english, test pass! ");
+            System.out.println("The custom service system side menu is translated into chinese, test pass! ");
         } else
-            CommonAssert.fail("The custom service system side menu is not translated into english, test fail! ");
+            CommonAssert.fail("The custom service system side menu is not translated into chinese, test fail! ");
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.system_setup_xpath));
         CommonWebDriver.wait(driver, 2);
         if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='userGroupMgmt']")).getAttribute("innerHTML").contains("群组管理")) {
-            System.out.println("The system management side menu is translated into english, test pass! ");
+            System.out.println("The system management side menu is translated into chinese, test pass! ");
         } else
-            CommonAssert.fail("The system management side menu is not translated into english, test fail! ");
+            CommonAssert.fail("The system management side menu is not translated into chinese, test fail! ");
         CommonWebDriver.wait(driver, 2);
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath(SideMenuConstants.statistical_analysis_xpath));
         CommonWebDriver.wait(driver, 2);
         if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='reportMemLocMgmt']")).getAttribute("innerHTML").contains("会员统计")) {
-            System.out.println("The analysis side menu is translated into english, test pass! ");
+            System.out.println("The analysis side menu is translated into chinese, test pass! ");
         } else
-            CommonAssert.fail("The analysis side menu is not translated into english, test fail! ");
+            CommonAssert.fail("The analysis side menu is not translated into chinese, test fail! ");
 
     }
 
