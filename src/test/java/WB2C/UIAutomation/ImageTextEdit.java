@@ -82,7 +82,7 @@ public class ImageTextEdit {
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//div[@id='myEditor']"), "edit editor", 1);
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
         CommonWebDriver.wait(driver, 5);
-        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//img[@src='/WCPPRO/api/file/5/test1.jpg']"))) {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//img[@src='/WCPPRO/api/file/3/test1.jpg']"))) {
             System.out.println("Edit text image succeed, test pass! ");
             imageTextMaterialUtil.DeleteTextImageMaterial(materialNews.getId());
         }

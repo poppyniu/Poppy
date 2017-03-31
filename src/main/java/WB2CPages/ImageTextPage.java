@@ -38,7 +38,7 @@ public class ImageTextPage {
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//div[@id='myEditor']"), "test editor", 1);
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
-        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//img[@src='/WCPPRO/api/file/5/test.jpg']"))) {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//img[@src='/WCPPRO/api/file/3/test.jpg']"))) {
             System.out.println("Create new text image material succeed, test pass! ");
         } else
             Assert.fail("Create new image test get error, test fail!");

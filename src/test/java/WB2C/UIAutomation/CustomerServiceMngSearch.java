@@ -48,7 +48,7 @@ public class CustomerServiceMngSearch {
         CommonWebDriver.clickElementWhenPresent(driver, By.xpath(SideMenuConstants.customer_servicemng_xpath));
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='serviceUserMgmtFrame']"));
-        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath("//input[@id='searchText']"), "joe", 1);
+        CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath("//input[@id='searchText']"), "testuser1", 1);
         CommonWebDriver.wait(driver, 4);
 
 
@@ -56,22 +56,12 @@ public class CustomerServiceMngSearch {
             System.out.println("The item is searched out, test pass!");
         }
         String textboxValue = CommonWebDriver.getElement(driver, By.xpath("//div[@id='grid']/table/tbody/tr/td[2]")).getText();
-        if (textboxValue.equals("joe")) {
+        if (textboxValue.equals("testuser1")) {
             System.out.println("The item is searched out, test pass");
         } else
             CommonAssert.fail("The item is not searched out, test fail!");
 
     }
-
-    //delete the newly added test data to keep test env clean
-//        CommonWebDriver.clickElementWhenPresent(driver, By.xpath("//a[@id='btnRefresh']"));
-//        CommonWebDriver.wait(driver,4);
-//        CommonWebDriver.clickElement(driver,By.xpath("//div[@id='container']/div[3]/div/div[3]/ul/li[3]/a"));
-//        CommonWebDriver.wait(driver,1);
-//        Actions action = new Actions(driver);
-//        action.sendKeys(Keys.ENTER).perform();
-//        CommonWebDriver.wait(driver,2);
-
 
     @AfterTest
     public void tearDown() {

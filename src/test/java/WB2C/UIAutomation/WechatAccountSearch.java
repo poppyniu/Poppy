@@ -44,12 +44,12 @@ public class WechatAccountSearch {
                 By.xpath(SideMenuConstants.wechat_acount_xpath));
         CommonWebDriver.wait(driver, 3);
         CommonWebDriver.switchToFrame(driver, By.xpath("//iframe[@id='wxAccountMgmtFrame']"));
-        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), "Burberr",
+        CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='searchText']"), "dextrys",
                 "WeChat Account Search text box.");
         CommonWebDriver.clickElementWhenPresent(driver,
                 By.xpath("//a[@id='btnSearch']/li"));
         CommonWebDriver.wait(driver, 2);
-        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("Burberry")) {
+        if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/table/tbody/tr/td[2]")).getAttribute("innerHTML").contains("dextrys-demo")) {
             System.out.println("The wechat account search function works well, test pass!");
         }
         else

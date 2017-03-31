@@ -55,14 +55,14 @@ public class AutoResponseSwitch {
             CommonWebDriver.wait(driver, 2);
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/div/ul/li[2]/a"));
             CommonWebDriver.wait(driver, 2);
-            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("显示11-")) {
+            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("11-")) {
                 System.out.println("Switch to next page works well, scenario pass! ");
             } else
                 CommonAssert.fail("Switch to next page get error, scenario fail! ");
             //click page1 page button
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/div/ul/li[1]/a"));
             CommonWebDriver.wait(driver, 2);
-            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("显示1-10")) {
+            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("1-10")) {
                 System.out.println("Switch to previous page works well, scenario pass! ");
             } else
                 CommonAssert.fail("Switch to previous page get error, scenario fail! ");
@@ -72,7 +72,7 @@ public class AutoResponseSwitch {
             //click first page button
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/div/a[1]/span"));
             CommonWebDriver.wait(driver, 2);
-            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("显示1-10")) {
+            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("1-10")) {
                 System.out.println("Switch to first page works well, test pass! ");
             } else
                 CommonAssert.fail("Switch to first page get error, test fail! ");
@@ -80,7 +80,7 @@ public class AutoResponseSwitch {
             //click next page button
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/div/a[3]/span"));
             CommonWebDriver.wait(driver, 2);
-            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("显示11-")) {
+            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("11-")) {
                 System.out.println("Switch to next page works well, test pass! ");
             } else
                 CommonAssert.fail("Switch to next page get error, test fail! ");
@@ -88,7 +88,7 @@ public class AutoResponseSwitch {
             //click last page button
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/div/a[2]/span"));
             CommonWebDriver.wait(driver, 2);
-            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("显示1-10")) {
+            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("1-10")) {
                 System.out.println("Switch to last page works well, test pass! ");
             } else
                 CommonAssert.fail("Switch to last page get error, test fail! ");
@@ -131,14 +131,14 @@ public class AutoResponseSwitch {
             //click page2 button
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/div/ul/li[2]/a"));
             CommonWebDriver.wait(driver, 2);
-            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("显示11-")) {
+            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("11-")) {
                 System.out.println("Switch to next page works well, scenario pass! ");
             } else
                 CommonAssert.fail("Switch to next page get error, scenario fail! ");
             //click page1 page button
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/div/ul/li[1]/a"));
             CommonWebDriver.wait(driver, 2);
-            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("显示1-10")) {
+            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("1-10")) {
                 System.out.println("Switch to previous page works well, scenario pass! ");
             } else
                 CommonAssert.fail("Switch to previous page get error, scenario fail! ");
@@ -148,7 +148,7 @@ public class AutoResponseSwitch {
             //click first page button
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/div/a[1]/span"));
             CommonWebDriver.wait(driver, 2);
-            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("显示1-10")) {
+            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("1-10")) {
                 System.out.println("Switch to first page works well, test pass! ");
             } else
                 CommonAssert.fail("Switch to first page get error, test fail! ");
@@ -156,7 +156,7 @@ public class AutoResponseSwitch {
             //click next page button
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/div/a[3]/span"));
             CommonWebDriver.wait(driver, 2);
-            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("显示11-")) {
+            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("11-")) {
                 System.out.println("Switch to next page works well, test pass! ");
             } else
                 CommonAssert.fail("Switch to next page get error, test fail! ");
@@ -164,7 +164,7 @@ public class AutoResponseSwitch {
             //click last page button
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/div/a[2]/span"));
             CommonWebDriver.wait(driver, 2);
-            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("显示1-10")) {
+            if (CommonWebDriver.getElement(driver, By.xpath(".//*[@id='grid']/div/span")).getAttribute("innerHTML").contains("1-10")) {
                 System.out.println("Switch to last page works well, test pass! ");
             } else
                 CommonAssert.fail("Switch to last page get error, test fail! ");

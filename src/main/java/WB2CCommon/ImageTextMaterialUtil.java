@@ -19,12 +19,12 @@ public class ImageTextMaterialUtil {
         materialNews.setContent("test content");
         materialNews.setContentCover(false);
         materialNews.setDeleted(false);
-        materialNews.setCompanyId(5);
+        materialNews.setCompanyId(3);
         //set cover image
         MaterialImage materialImage = new MaterialImage();
         materialImage.setName("test.jpg");
         materialImage.setPath("/usr/scrm/wcpshare/5/test.jpg");
-        materialImage.setCompanyId(5);
+        materialImage.setCompanyId(3);
         materialImage.setCreatedBy("Poppy");
         materialImage.setCreatedDate(null);
         materialImage = MaterialImageUtil.createMaterialImage(materialImage);

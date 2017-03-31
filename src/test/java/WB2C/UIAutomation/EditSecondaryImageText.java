@@ -58,7 +58,7 @@ public class EditSecondaryImageText {
         CommonWebDriver.wait(driver, 4);
         CommonWebDriver.sendKeysWithEnterToElement(driver, By.xpath("//input[@id='searchText']"), "test");
         CommonWebDriver.wait(driver, 2);
-        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//img[@src='/WCPPRO/api/file/5/test.jpg']"))) {
+        if (CommonWebDriver.isElementDisplayed(driver, By.xpath("//img[@src='/WCPPRO/api/file/3/test.jpg']"))) {
             System.out.println("Input test value can search the correct data, test pass! ");
         } else
             CommonAssert.fail("The search function does not work well, test fail!");

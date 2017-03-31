@@ -52,16 +52,16 @@ public class WechatMembersPageSwitching {
         CommonWebDriver.wait(driver, 3);
         //显示11-20
         WebElement e = CommonWebDriver.getElement(driver, By.xpath("//span[@class='k-pager-info k-label']"));
-        Assert.assertTrue(e.getText().contains("显示11-20"));
+        Assert.assertTrue(e.getText().contains("11-20"));
         //click the previous page
         CommonWebDriver.clickElement(driver, By.xpath("//span[@class='icon-step-backward']"));
         CommonWebDriver.wait(driver, 3);
         WebElement e1 = CommonWebDriver.getElement(driver, By.xpath("//span[@class='k-pager-info k-label']"));
-        Assert.assertTrue(e1.getText().contains("显示1-10"));
+        Assert.assertTrue(e1.getText().contains("1-10"));
         //click the second page
         CommonWebDriver.clickElement(driver, By.xpath("//a[@data-page='2']"));
         CommonWebDriver.wait(driver, 3);
-        Assert.assertTrue(e.getText().contains("显示11-20"));
+        Assert.assertTrue(e.getText().contains("11-20"));
     }
 
     @AfterTest

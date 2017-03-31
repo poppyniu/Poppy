@@ -50,7 +50,7 @@ public class MembershipCategoryInvalidCreate {
         CommonWebDriver.sendKeysToElement(driver, By.xpath("//input[@id='description']"), "test description");
         CommonWebDriver.clickElement(driver, By.xpath("//a[@id='btnSave']"));
         CommonWebDriver.wait(driver, 2);
-        boolean actualMessageStatus = CommonWebDriver.isElementDisplayedAndEnabled(driver, By.xpath("//*[@validationmessage='请输入类别名称']"));
+        boolean actualMessageStatus = CommonWebDriver.isElementDisplayedAndEnabled(driver, By.xpath(".//*[@id='wxMbrCategoryForm']/ul/li[1]/span/span"));
         boolean expect = true;
         Assert.assertEquals(actualMessageStatus, expect);
     }
