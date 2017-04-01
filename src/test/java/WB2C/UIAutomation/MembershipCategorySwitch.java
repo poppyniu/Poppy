@@ -51,7 +51,7 @@ public class MembershipCategorySwitch {
         List<WebElement> rows = table.findElements(By.tagName("tr"));
         int tableCount = rows.size();
         if (tableCount == 11) {
-            MembershipCategoryPage.CreateMembershipCategory(driver);
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category");
             //click page2 button
             CommonWebDriver.wait(driver, 2);
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/div/ul/li[2]/a"));
@@ -107,27 +107,27 @@ public class MembershipCategorySwitch {
             CommonWebDriver.wait(driver, 2);
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='alertify-ok']"));
         } else {
-            MembershipCategoryPage.CreateMembershipCategory(driver);
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver);
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category1");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver);
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category2");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver);
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category3");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver);
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category4");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver);
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category5");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver);
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category6");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver);
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category7");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver);
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category8");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver);
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category9");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver);
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category10");
             CommonWebDriver.wait(driver, 2);
             //click page2 button
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/div/ul/li[2]/a"));
