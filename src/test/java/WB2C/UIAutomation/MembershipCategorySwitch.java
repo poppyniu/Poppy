@@ -109,25 +109,25 @@ public class MembershipCategorySwitch {
         } else {
             MembershipCategoryPage.CreateMembershipCategory(driver,"test category");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver,"test category1");
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category one");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver,"test category2");
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category two");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver,"test category3");
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category three");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver,"test category4");
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category four");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver,"test category5");
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category five");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver,"test category6");
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category six");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver,"test category7");
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category seven");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver,"test category8");
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category eight");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver,"test category9");
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category nine");
             CommonWebDriver.wait(driver, 2);
-            MembershipCategoryPage.CreateMembershipCategory(driver,"test category10");
+            MembershipCategoryPage.CreateMembershipCategory(driver,"test category ten");
             CommonWebDriver.wait(driver, 2);
             //click page2 button
             CommonWebDriver.clickElementWhenPresent(driver, By.xpath(".//*[@id='grid']/div/ul/li[2]/a"));
