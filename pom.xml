@@ -85,7 +85,7 @@
     <profiles>
         <profile>
             <id>
-                EBusiness
+                Loyalty
             </id>
             <properties>
                 <path>LoyaltyAPISuite.xml</path>
@@ -94,7 +94,7 @@
         </profile>
         <profile>
             <id>
-                Loyalty
+                EBusiness
             </id>
             <properties>
                 <path>EBusinessAPISuite.xml</path>
