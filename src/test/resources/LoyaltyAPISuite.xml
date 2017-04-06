@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="APISuite" parallel="classes" thread-count="1">
+    <test name="APITest">
+        <classes>
+            <class name="LoyaltyAPITest.MemberResourceGetAPITest"/>
+            <class name="LoyaltyAPITest.MemberResourceGetIDAPITest"/>
+            <class name="LoyaltyAPITest.MemberResourceGetPointsAPITest"/>
+            <class name="LoyaltyAPITest.MemberResourcePostAPITest"/>
+            <class name="LoyaltyAPITest.MemberResourcePostPointsAPITest"/>
+            <class name="LoyaltyAPITest.MemberResourcePutAPITest"/>
+            <class name="LoyaltyAPITest.OrderResourcePostAPITest"/>
+            <class name="LoyaltyAPITest.PointsDetailGetAPITest"/>
+            <class name="LoyaltyAPITest.PointsRuleGetAPITest"/>
+            <class name="LoyaltyAPITest.PointsRulePostAPITest"/>
+            <class name="LoyaltyAPITest.PointsRuleRefreshEndpointPostAPITest"/>
+            <class name="LoyaltyAPITest.ProductPointsPostAPITest"/>
+            <class name="LoyaltyAPITest.UserJWTControllerFailPostAPITest"/>
+            <class name="LoyaltyAPITest.UserJWTControllerPostAPITest"/>
+        </classes>
+    </test>
+</suite>

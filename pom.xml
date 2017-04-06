@@ -88,7 +88,16 @@
                 EBusiness
             </id>
             <properties>
-                <path>APISuite.xml</path>
+                <path>LoyaltyAPISuite.xml</path>
+            </properties>
+            <activation><activeByDefault>false</activeByDefault></activation>
+        </profile>
+        <profile>
+            <id>
+                Loyalty
+            </id>
+            <properties>
+                <path>EBusinessAPISuite.xml</path>
             </properties>
             <activation><activeByDefault>false</activeByDefault></activation>
         </profile>
@@ -97,7 +106,7 @@
                 wechat
             </id>
             <properties>
-                <path>Suite.xml</path>
+                <path>UISuite.xml</path>
             </properties>
             <activation><activeByDefault>true</activeByDefault></activation>
         </profile>
