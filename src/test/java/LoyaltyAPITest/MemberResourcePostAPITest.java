@@ -1,6 +1,6 @@
 package LoyaltyAPITest;
 
-import EBusinessCommon.JsonUtility;
+import APICommon.JsonUtility;
 import WB2CCommon.CommonAssert;
 import org.apache.http.entity.StringEntity;
 import org.testng.annotations.Test;
@@ -17,7 +17,8 @@ public class MemberResourcePostAPITest {
         //authenticate first
         String idToken = JsonUtility.getIDToken();
         //request url
-        String urlMembers = "http://wechat1.dextrys.com:7777/api/members";
+        //String urlMembers = "http://wechat1.dextrys.com:7777/api/members";
+        String urlMembers = "http://10.0.245.71:8080/api/members";
         Date date=new Date();
         DateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String time=format.format(date);

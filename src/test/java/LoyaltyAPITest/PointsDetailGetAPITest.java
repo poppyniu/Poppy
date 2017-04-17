@@ -1,6 +1,6 @@
 package LoyaltyAPITest;
 
-import EBusinessCommon.JsonUtility;
+import APICommon.JsonUtility;
 import WB2CCommon.CommonAssert;
 import net.sf.json.JSONObject;
 import org.testng.annotations.Test;

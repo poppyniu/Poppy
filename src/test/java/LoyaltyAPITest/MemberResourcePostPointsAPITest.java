@@ -1,14 +1,10 @@
 package LoyaltyAPITest;
 
-import EBusinessCommon.JsonUtility;
+import APICommon.JsonUtility;
 import WB2CCommon.CommonAssert;
 import net.sf.json.JSONObject;
 import org.apache.http.entity.StringEntity;
 import org.testng.annotations.Test;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
 public class MemberResourcePostPointsAPITest {

@@ -1,4 +1,4 @@
-package EBusinessCommon;
+package APICommon;
 
 import WB2CCommon.CommonAssert;
 import net.sf.json.JSONObject;
@@ -128,6 +128,8 @@ public class JsonUtility {
             postRequest.setEntity(inputBody);
             postRequest.setHeader("Authorization","Bearer "+idToken);
             HttpResponse response = httpClient.execute(postRequest);
+            output = EntityUtils.toString(response.getEntity());
+            System.out.println(output);
             if (response.getStatusLine().getStatusCode() != 200 & response.getStatusLine().getStatusCode() != 406  & response.getStatusLine().getStatusCode() != 401) {
                 throw new RuntimeException("Failed : HTTP error code : "
                         + response.getStatusLine().getStatusCode());
@@ -146,7 +148,8 @@ public class JsonUtility {
         String url = "http://wechat1.dextrys.com:7777/api/authenticate";
         StringEntity inputBody = new StringEntity("{\"password\":\"admin\",\"rememberMe\":true,\"username\":\"admin\"}");
         String postResult = JsonUtility.postJsonContent(url, inputBody);
-        String idToken =postResult.substring(18,209);
+        JSONObject jsonObject=JSONObject.fromObject(postResult);
+        String idToken =jsonObject.getString("id_token");
         if (postResult.contains("id_token")) {
             System.out.println("Post user jwt controller API succeed,test pass!");
         } else

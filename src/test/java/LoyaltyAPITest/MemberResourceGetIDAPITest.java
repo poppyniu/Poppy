@@ -1,6 +1,6 @@
 package LoyaltyAPITest;
 
-import EBusinessCommon.JsonUtility;
+import APICommon.JsonUtility;
 import WB2CCommon.CommonAssert;
 import net.sf.json.JSONObject;
 import org.testng.annotations.Test;
@@ -17,7 +17,7 @@ public class MemberResourceGetIDAPITest {
         String jsonStr = JsonUtility.getJsonContent(url,idToken);
         JSONObject jsonObject = JsonUtility.jsonStrToJsonObject(jsonStr);
         String entity = jsonObject.getString("data");
-        if (entity.contains("poppy")) {
+        if (entity.contains("memberName")) {
             System.out.println("Get member resource by id API succeed,test pass!");
         } else
             CommonAssert.fail("Get member resource by id API get error, test fail!");

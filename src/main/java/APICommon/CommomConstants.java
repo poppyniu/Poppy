@@ -1,6 +1,4 @@
-package EBusinessCommon;
-
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
+package APICommon;
 
 public class CommomConstants {
     public static String memberID="dbf1b9b8-dcf3-4a6c-8dad-42a1eb0cdac6";

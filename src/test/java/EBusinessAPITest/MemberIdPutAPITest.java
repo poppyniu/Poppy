@@ -1,7 +1,7 @@
 package EBusinessAPITest;
 
-import EBusinessCommon.CommomConstants;
-import EBusinessCommon.JsonUtility;
+import APICommon.CommomConstants;
+import APICommon.JsonUtility;
 import WB2CCommon.CommonAssert;
 import org.apache.http.entity.StringEntity;
 import org.testng.annotations.Test;

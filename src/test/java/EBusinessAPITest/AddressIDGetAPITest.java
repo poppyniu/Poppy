@@ -1,11 +1,11 @@
 package EBusinessAPITest;
 
-import EBusinessCommon.JsonUtility;
+import APICommon.JsonUtility;
 import WB2CCommon.CommonAssert;
 import net.sf.json.JSONObject;
 import org.testng.annotations.Test;
 
-import static EBusinessCommon.CommomConstants.addressID;
+import static APICommon.CommomConstants.addressID;
 
 
 public class AddressIDGetAPITest {
