@@ -3,6 +3,7 @@ package WB2C.UIAutomation;
 import WB2CCommon.CommonAssert;
 import WB2CCommon.CommonUtil;
 import WB2CCommon.CommonWebDriver;
+import WB2CCommon.TestNGListener;
 import WB2CConstants.NodeIPConstants;
 import WB2CConstants.SideMenuConstants;
 import WB2CConstants.TestAccounts;
@@ -13,13 +14,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.net.URL;
 
-public class GroupMessageSwitching {
-    private WebDriver driver;
+@Listeners({ TestNGListener.class })
+public class GroupMessageSwitching extends CommonWebDriver{
     private LoginPage loginPage;
     private TestAccounts testaccounts;
     private DesiredCapabilities desiredCapabilities;

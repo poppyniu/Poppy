@@ -3,6 +3,7 @@ package WB2CCommon;
 import WB2CConstants.AppConstants;
 import WB2CUtility.GetUrlThread;
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -10,12 +11,22 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class CommonWebDriver {
     private static final long defaultTimeout = AppConstants.longWait;
     private static Logger logger = LoggerFactory.getLogger(CommonWebDriver.class);
+    public WebDriver driver;
+
+    public WebDriver getDriver() {
+        return driver;
+    }
 
     /**
      * Rewrite default get method to get specified URL, it will retry maximum 2 times if the URL is loaded failure
@@ -612,6 +623,43 @@ public class CommonWebDriver {
         }
         return status;
     }
+    /**
+     * @author Young
+     */
+    public void takeScreenShot() {
+        SimpleDateFormat sf = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+        Calendar cal = Calendar.getInstance();
+        Date date = cal.getTime();
+        String dateStr = sf.format(date);
+        String screenShotName = this.getClass().getSimpleName() + "_" + dateStr + ".png";
+        takeScreenShot((TakesScreenshot) this.getDriver(), screenShotName);
+    }
 
+    /**
+     * @author Poppy
+     * @param drivername
+     * @param screenShotName
+     */
+    public void takeScreenShot(TakesScreenshot drivername, String screenShotName) {
+        // this method will take screen shot ,require two parameters ,one is
+        // driver name, another is file name
+        String currentPath = System.getProperty("user.dir"); // get current work
+        File screenShotDir = new File(currentPath);
+        if (!screenShotDir.exists()) {
+            screenShotDir.mkdirs();
+        }
+        logger.info(currentPath);
+        File scrFile = drivername.getScreenshotAs(OutputType.FILE);
+        // Now you can do whatever you need to do with it, for example copy
+        try {
+            logger.info("save snapshot path is:" + currentPath + "\\"+ screenShotName);
+            FileUtils.copyFile(scrFile, new File(currentPath + "\\" + screenShotName));
+        } catch (Exception e) {
+            logger.error("Can't save screenshot");
+            e.printStackTrace();
+        } finally {
+            logger.info("screen shot finished");
+        }
+    }
 
 }
